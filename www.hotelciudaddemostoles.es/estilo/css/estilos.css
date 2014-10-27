@@ -1,0 +1,203 @@
+/* ---------------------------------------------------------------------- limpiando estilos */
+html, body,
+h1, h2, h3, h4, h5, h6,
+ul, li, 
+p, div,
+form, fieldset, label, button, input, img { margin:0px; padding:0px; border:none }
+html, body,
+h1, h2, h3, h4, h5, h6,
+ul, li, ol,
+p, div,
+form, fieldset, label, button, input, img { margin:0; padding:0; border:none }
+ul, li { list-style:none }
+
+.limp, .clear { clear:both; }
+html { background:#FFF }
+body { font-size:12px; font-family:Arial; color:#2a2a2a  }
+.info table th { text-align:center !important;}
+.info table td { text-align:center !important;}
+/* solucionar "flashes" */
+.imagen { width:1150px; height:350px; }
+.imagen span h5 { position:relative; top:-273px; text-align:right; color:#FFF; }
+.imagen img { width:1150px; height:350px; }
+.imagen-fijo { width:1150px; height:250px; }
+.imagen-fijo span h5 { position:relative; top:-273px; text-align:right; color:#FFF; }
+.imagen-fijo img { width:1150px; height:250px; }
+/* google maps */
+#mapagoogle { width:1150px; height:350px }
+.address { margin-top:3px; font-size:0.917em }
+#mapagoogle span { display:none }
+#mapagoogle a { font-weight:bold; color:#dd7d02; text-decoration:none }
+.gmnoprint { display:none }
+
+
+/* ---------------------------------------------------------------------- generales */
+a { color:#dd7d02; text-decoration:underline; outline:0 }
+a:hover { text-decoration:underline }
+h1 { display:none }
+
+#slideshow-home { position:absolute; z-index:10; width:1150px; left:50%; margin-left:-575px; height:460px; overflow:hidden; background:url(../img/_bgslideshow.gif) repeat-x bottom }
+#slideshow-home .slide { width:1150px; height:450px }
+#slideshow { position:absolute; z-index:10; width:1150px; left:50%; margin-left:-575px; height:360px; overflow:hidden; background:url(../img/_bgslideshow.gif) repeat-x bottom }
+#slideshow-fijo { position:absolute; z-index:10; width:1150px; left:50%; margin-left:-575px; height:260px; overflow:hidden; background:url(../img/_bgslideshow.gif) repeat-x bottom }
+#general { position:absolute; z-index:20; width:1150px; left:50%; margin-left:-575px; background:url(../img/_bg.gif) repeat-x left 47px }
+#general #bloque { margin:0 auto; width:1010px }
+
+/* ------------------------------------------ bloque */
+#header { width:1010px; height:120px; margin:18px auto 0 auto }
+#header .header-logo { height:120px; float:left; width:120px }
+#header .header-info { height:85px; float:right; width:870px; _overflow:hidden }
+#header .header-info .header-info-menu { float:left; width:720px }
+#menu { height:27px; margin-top:29px }
+#menu ul { height:27px }
+#menu ul li { height:27px; float:left; border-right:1px solid #373737 }
+#menu ul li a { display:block; float:left; height:20px; padding:7px 14px 0 14px; font-size:0.917em; color:#FFF; text-decoration:none; text-transform:uppercase }
+#menu ul li a:hover { background:#FFF; color:#2a2a2a }
+#menu ul li a.active { background:#FFF; color:#2a2a2a; cursor:pointer }	
+#header .header-info .header-info-idiomas { float:right; width:130px }
+#header .header-info .header-info-idiomas ul { padding-top:35px; font-size:0.917em; color:#FFF; text-align:right }
+#header .header-info .header-info-idiomas ul li { display:inline-block; display: -moz-inline-stack; zoom:1; *display: inline }
+#header .header-info .header-info-idiomas ul li a { display:block; color:#dd7d02 }
+#header .header-info .header-info-idiomas ul li a.active { font-weight:bold; text-decoration:none; color:#FFF; cursor:default }
+#header .header-info .telefono { width:100%; height:25px; text-align:right; font-size:2em; color:#d19c50; letter-spacing:-0.05em }
+#header .header-info .direccion { width:100%; height:25px; text-align:right }
+#header .header-info .direccion a { color:#FFF; font-weight:bold }
+
+#content-header { width:1010px; margin:33px auto 0 auto; height:300px; background-repeat:no-repeat; background-position:right bottom }
+#content-header .content-header-left { width:725px; float:left }
+#content-header .content-header-right { width:250px; float:right; padding-top:202px }
+#content-header .content-header-left .anuncio-imagen { position:relative; width:280px; padding:5px; height:160px; background:url(../img/_bganuncio.gif) no-repeat left top }
+#content-header .content-header-left .anuncio-imagen .tic { position:absolute; z-index:80; bottom:14px; right:14px; width:24px; height:21px }
+#content-header .content-header-left .anuncio-texto { width:100%; margin-top:13px }
+#content-header .content-header-left .anuncio-texto a { color:#FFF; text-decoration:none }
+#content-header .content-header-left .anuncio-texto a h3 { font-size:2em; letter-spacing:-0.015em; text-transform:uppercase; text-decoration:none }
+#content-header .content-header-left .anuncio-texto a p { font-size:1.333em; padding-left:3px; text-decoration:none }
+#content-header .content-header-right .reservas { width:100%; text-align:right; color:#FFF; font-size:0.917em }
+#content-header .content-header-right .reservas span { padding-left:15px; padding-top:5px; background:url(../img/_bgTlf.png) no-repeat left top; *background:url(../img/_bgTlf.gif) no-repeat left 3px }
+#content-header .content-header-right .telefono { width:100%; text-align:right; color:#FFF; font-size:2em; letter-spacing:-0.015em; text-transform:uppercase }
+	.content-header-interior { height:200px !important }
+	.content-header-interior .content-header-left {  }
+	.content-header-interior .content-header-right { padding-top:102px !important }
+	.content-header-mapa { height:200px !important }
+	.content-header-mapa .content-header-left {  }
+	.content-header-mapa .content-header-right { padding-top:102px !important }
+	.content-header-mapa .content-header-right .reservas { color:#000 !important }
+	.content-header-mapa .content-header-right .reservas span { background:url(../img/_bgTlfnegro.png) no-repeat left top !important; *background:url(../img/_bgTlfnegro.gif) no-repeat left 3px !important }
+	.content-header-mapa .content-header-right .telefono { color:#000 !important }
+	.content-header-texto { height:100px !important }
+	.content-header-texto .content-header-left {  }
+	.content-header-texto .content-header-right { padding-top:2px !important }
+
+#content { width:1010px; margin:0 auto; background:url(../img/_bgcontent.gif) repeat-y right top; padding-bottom:40px }
+#content .info { width:730px; float:left; text-align:justify; font-size:1.083em }
+#content .info h1 { display:block; color:#2a2a2a; font-size:1.667em; padding:0 0 1px 0; margin:0 0 10px 0; font-weight:bold; letter-spacing:-0.015em; border-bottom:1px solid #E5E5E5; text-align:left }
+#content .info h1 span.blue { color:#5387a3 }
+	#content .info-home h2 { display:block; color:#2a2a2a; font-size:2em; padding:0; margin:0; font-weight:bold; letter-spacing:-0.015em; text-align:left }
+	#content .info-home h2 span.blue { color:#5387a3 }
+	#content .info-home h3 { color:#727272; font-size:1.25em; margin:0 0 10px 0; padding:0; font-weight:bold; letter-spacing:-0.015em  }
+#content .info ul { margin:15px 0 }
+#content .info ul li { margin:3px 0; padding-left:7px; background:url(../img/tic03.gif) no-repeat left 6px }
+#content .info .ofertas-home { margin:28px 0 10px 0; width:100% }
+#content .info .ofertas-home .oferta-destacada { float:left; width:333px; padding:6px 8px 0 8px; margin-right:9px; height:20px; background:#5387a3 url(../img/_bgofertashome.gif) no-repeat; font-size:0.917em }
+#content .info .ofertas-home .oferta-destacada a { color:#FFF; text-decoration:none; display:block; height:26px; _height:20px; width:333px; cursor:pointer }
+#content .info .ofertas-home .oferta-destacada a:hover { color:#363636 }
+#content .info .ofertas-home .oferta-destacada .oferta-destacada-left { float:left; width:220px }
+#content .info .ofertas-home .oferta-destacada .oferta-destacada-right{ float:right; width:92px; text-align:right }
+#content .info .ofertas-home .oferta-destacada .oferta-destacada-right span.desde { float:left; width:30px; font-size:0.909em; margin-right:10px; padding-top:2px }
+#content .info .ofertas-home .oferta-destacada .oferta-destacada-right span.pvp { float:left; width:50px; text-align:right; font-weight:bold; font-size:1.273em }
+
+#content .info .ofertas { margin:30px 0 10px 0 }
+#content .info .ofertas .oferta { width:100%; margin-bottom:20px; padding-bottom:5px; border-bottom:1px solid #EDECE9; height:1%; overflow:hidden }
+#content .info .ofertas .oferta .oferta-izda { float:left; width:220px; height:120px }
+#content .info .ofertas .oferta .oferta-izda img { border:6px solid #2A2A2A }
+#content .info .ofertas .oferta .oferta-dcha { float:right; width:500px }
+#content .info .ofertas .oferta .oferta-dcha h2 { display:block; font-size:1.25em; letter-spacing:-0.05em; font-weight:bold; padding:0 0 3px 0 }
+#content .info .ofertas .oferta .oferta-dcha h2 a { text-decoration:none; color:#727272 }
+#content .info .ofertas .oferta .oferta-dcha p { text-align:justify }
+#content .info .ofertas .oferta .oferta-dcha p.mas { width:100%; text-align:right; margin-top:10px }
+#content .info .ofertas .oferta .oferta-dcha p.mas a { text-decoration:none; background:url(../img/bt_vermas.gif) no-repeat right top; height:19px; padding-right:25px; padding-top:2px; font-size:0.917em; font-weight:bold; color:#5387a3; display:block }
+
+#content .info .galerias { margin:30px 0 10px 0 }
+#content .info .galerias .pictures div { display:block; margin-bottom:15px; clear:both }
+#content .info .galerias .pictures strong { display:block; margin:11px 0 10px 0; color:#727272 }
+#content .info .galerias .pictures a { border:5px solid #2A2A2A; height:60px; width:85px; display:block; float:left; margin-right:12px; margin-bottom:10px }
+
+#content .destacados { float:right; width:255px; padding:0 1px }
+#content .destacados .banner { margin-bottom:15px }
+#content .destacados .banner img { border:6px solid #2a2a2a }
+#content .destacados .newsletter { width:255px; padding:20px 10px 0 10px; background:url(../img/_bgnewsletter.gif) no-repeat 10px top; color:#2a2a2a }
+#content .destacados .newsletter p { margin-bottom:4px }
+#content .destacados .newsletter .emailfield input { float:left; width:153px; height:13px; padding:5px; margin-right:5px; font-size:11px; font-family:Arial; color:#2a2a2a; background:url(../img/selNewsletter.gif) no-repeat; margin-top:3px }
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#content .destacados .newsletter .emailfield input { border:3px solid #b2b2b2; padding:2px 3px; background:#FFF }
+	}
+#content .destacados .newsletter .emailbutton a { display:block; float:left; background:url(../img/bt_newsletter.gif) repeat-x; color:#FFF; text-decoration:none; font-weight:bold; width:64px; text-align:center; height:19px; padding-top:4px; margin-top:3px }
+
+
+#footer { width:960px; margin:0 auto; padding:20px 25px 0 25px; height:105px; background:#f2f2f2 }
+#footer .footer-left { float:left; width:700px }
+#footer .footer-left ul { height:20px }
+#footer .footer-left ul li { float:left }
+#footer .footer-left ul li a { display:block; margin-right:7px; color:#949494; text-decoration:none; background:url(../img/ticPie.gif) no-repeat right; padding-right:9px }
+#footer .footer-left ul li.hmli-4 a { background:none }
+#footer .footer-left ul li a:hover { color:#dd7d02 } 
+#footer .footer-left p { clear:both }
+#footer .footer-right { float:right; width:200px; text-align:right }
+#footer .footer-right ul { height:16px; margin:0 0 20px 0; padding:0 }
+#footer .footer-right ul li { float:right; width:16px; height:16px; margin-left:3px; background-repeat:no-repeat; background-position:0 0 }
+#footer .footer-right ul li#facebook { background-image:url(../img/ic_facebook.gif) }
+#footer .footer-right ul li#twitter { background-image:url(../img/ic_twitter.gif) }
+#footer .footer-right ul li a { display:block; width:16px; height:16px }
+#footer .footer-right ul li a span { display:none }
+#footer .footer-right a.idiso { color:#454647; text-decoration:none }
+
+
+
+/* ---------------------------------------------------------------------- #booking */
+#booking { width:210px; color:#2a2a2a; padding-top:8px; padding-bottom:22px; border-top:1px solid #e5e5e5; margin-left:22px }
+	
+#booking select { font-family:Arial; font-size:11px; border:0; padding:4px; height:23px; color:#2a2a2a }
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#booking select { border:3px solid #b2b2b2; padding:0; background:#FFF }
+	}
+#booking select option { background:#FFF }
+
+#booking #fechas { width:100% }
+#booking #fechas label { display:block; margin-bottom:3px }
+#booking #fechas select { float:left; margin-right:3px; margin-bottom:2px }
+
+#booking #fechas select.dia { background:url(../img/sel01.gif) no-repeat; width:50px }
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#booking #fechas select.dia { border:3px solid #b2b2b2; padding:0; background:#FFF }
+	}
+#booking #fechas select.mesano { background:url(../img/sel02.gif) no-repeat; width:136px}
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#booking #fechas select.mesano { border:3px solid #b2b2b2; padding:0; background:#FFF }
+	}
+#booking #fechas img { margin-left:2px; padding-top:5px }
+
+#booking #habitaciones { width:100%; margin-top:10px }
+#booking #habitaciones label { float:left; margin-right:5px; padding-top:4px }
+#booking #habitaciones select#paxnumrooms { float:left; background:url(../img/sel03.gif) no-repeat; margin-right:3px; margin-bottom:2px; width:55px }
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#booking #habitaciones select#paxnumrooms { border:3px solid #b2b2b2; padding:0; background:#FFF }
+	}
+#booking #habitaciones #paxrooms { margin-top:5px }
+
+#booking #habitaciones #paxrooms .fieldRoom { background:#F5F5F5; padding:6px 0 6px 10px; width:198px; margin-top:2px }
+#booking #habitaciones #paxrooms .fieldRoom legend { display:none }
+#booking #habitaciones #paxrooms .fieldRoom label { width:auto; margin-right:3px; float:left }
+#booking #habitaciones #paxrooms .fieldRoom select { background:url(../img/sel04.gif) no-repeat; width:40px; margin-right:10px; float:left }
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#booking #habitaciones #paxrooms .fieldRoom select { border:3px solid #b2b2b2; padding:0; background:#FFF }
+	}
+#booking #habitaciones #paxrooms .fieldRoom .divChilds { padding-top:17px; margin:10px 0 }
+#booking #habitaciones #paxrooms .fieldRoom .divChilds select { background:url(../img/sel05.gif) no-repeat; width:40px; margin-right:50px; *margin-right:80px; margin-bottom:3px }
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		#booking #habitaciones #paxrooms .fieldRoom .divChilds select { border:3px solid #b2b2b2; padding:0; background:#FFF }
+	}
+#booking #envio { width:100%; margin:12px 0 3px 0 }
+#booking #envio .enviar { width:210px; margin-bottom:10px }
+#booking #envio .enviar a { margin-left:118px; color:#FFF; font-weight:bold; font-size:11px; display:block; width:91px; height:23px; padding-top:8px; text-align:center; text-decoration:none; background:url(../img/bt_enviar.gif) no-repeat }
+#booking #envio .cancelar { width:100%; height:15px; border-top:1px solid #b2b2b2; padding-top:7px }
+#booking #envio .cancelar a { font-size:11px; text-decoration:underline; color:#b2b2b2; background:url(../img/tic02.gif) no-repeat right 5px; padding-right:10px }
