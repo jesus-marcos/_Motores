@@ -1,0 +1,275 @@
+html { background: transparent; }
+ 
+body { background: #FFF !important; }
+ 
+#header {
+    width: 100%;
+}
+ 
+#summaryElements {
+    top: 200px!important;
+}
+#mirai_roomSelectionContainer h2 {
+    font-size: 18px;
+}
+ 
+/* start: structure */
+ 
+#mirai_roomSelectionContainer {
+    max-width:1200px;
+    margin:30px auto;
+}
+/* end: structure */
+/* start: general */
+#roomSelectionContainer, select, input, div.roomtypedetail span, #availableRoomList table.roomdetailBottomTable span {
+    font-family:verdana;
+    font-size:11px;
+    color:#555;
+}
+.mirai_alert { /* color de msg negativo*/
+    color:#d03741;
+}
+.mirai_advantage { /* color de msg positivo*/
+    color:#397435;
+}
+.mirai_note { /* color de asteristico*/
+    color:#ffa500;
+}
+.mirai_button, .mirai_button:visited { /* color de botón carrito*/
+    border-bottom-color:#166f27;
+    background-color:#1ba736;
+    color: #FFFFFE;
+}
+.mirai_button:hover {
+    background-color:#18832c;
+    color: #FFFFFE;
+}
+.mirai_button.selectRoom, .mirai_button.selectRoom:visited { /* color de botón seleccionar*/
+    border-bottom-color:#555;
+    background-color:#807e7e;
+    color: #FFFFFE;
+}
+.mirai_button.selectRoom:hover {
+    background-color:#333;
+    color: #FFFFFE;
+}
+.mirai_button.button_disabled, .mirai_button.button_disabled:hover{ /* color de botón desactivo*/
+    background-color:#dedede;
+    color:#bababa;
+}
+#mirai_rootTable a, #currencyDropdownTop a span, #mirai_selectionSummary a { /* color link text*/
+    color:#3876fa;
+}
+#mirai_rootTable a:hover, #currencyDropdownTop a:hover span, #mirai_selectionSummary a:hover,
+#availableRoomList tr.roomtype.hover p, #availableRoomList tr.roomrate.hover p, #availableRoomList tr.roomtype.hover .paxWrapper,
+#availableRoomList tr.roomrate.hover span, #availableRoomList tr.roomtype.widthdetail:hover p{ /* color link hover text /*#00f*/
+    color:#3876fa;
+}
+#availableRoomList tr.roomtype, #availableRoomList tr.roomrate td.col1, #availableRoomList tr.roomrate td.col2, #availableRoomList tr.roomrate td.col4, #availableRoomList td.tdRatesTable{
+    background-color:#E9E8E6; /*color fondo de cada fila*/
+}
+#availableRoomList tr.roomrate td.col3, #availableRoomList tr.roomrate td.col5{
+    background-color:#F6F6F6; /*color fondo de celdas alternativas*/
+}
+#availableRoomList tr.hover td, #availableRoomList tr.hover th {
+    background-color:#C3C4BE!important; /*color fondo de fila con efecto hover*/
+}
+#availableRoomList tr.detaildisplayed th, #availableRoomList tr.detaildisplayed td.col1,
+#availableRoomList tr.detaildisplayed td.col2, #availableRoomList tr.detaildisplayed td.col3,
+#availableRoomList tr.detaildisplayed td.col4, #availableRoomList tr.detaildisplayed td.col5{ /*color fondo de fila cuando está abierta la caja de los detalles: double class, IE6 interpreta como "tr.detaildisplayed" */
+    background-color:#dedddb;
+}
+#availableRoomList tr.roomtype p {
+    color:#444;/*color de nombre de habitaciones*/
+}
+#availableRoomList th, #availableRoomList td, #availableRoomList td.roomdetailBottomTableCol2 div {
+    border-color:#A4A39E; /* border de cada habitación*/
+}
+#availableRoomList tr.roomtype th {
+    border-bottom-color:#FFF; /*border-bottom de contenidos de las filas*/
+}
+table.roomdetailBottomTable {
+    border-color:#B0B1B4; /*border de la caja de los detalles de precios*/
+}
+#mirai_roomSelection, #currencyWrapper{ /*color fondo principal*/
+    background-color:#FFFFFE;
+}
+#availableRoomList tr.roomratedetail, .roomtypedetail, #availableRoomList tr.roomratedetail{ /*color fondo de las cajas detalles*/
+    background-color:#FFFFFE;
+}
+#availableRoomList table.alert tr.roomratedetail, #availableRoomList table.alert tr.roomratedetail td { /*color fondo con efecto alert*/
+    background-color:#FFFFB3 !important;
+}
+/* end: general */
+/* start: roomtypedetail */
+#availableRoomList tr.roomtypedetail td { /*color fondo de los detalles de habitaciones*/
+    background-color:#FFFFFE;
+}
+#availableRoomList div.roomtypedetail li, #availableRoomList table.roomdetailBottomTable li { /*estilo de bullet de la lista de los detalles*/
+    list-style:square;
+    color:#83eaf1;
+}
+    #availableRoomList div.roomtypedetail li.inforooms_liSub span { /*color de bullet secundario*/
+      color:#666;
+    }
+/* end: roomtypedetail */
+/* start: currency */
+    #currencyDropdownContents { /*estilo de la caja de currency*/
+      background-color:#FFFFFE;
+      border-color:#ccc;
+    }
+    #currencyDropdownContents li.actualCurrency a { /*color de fondo de moneda activado*/
+      background-color:#f7f6a0;
+    }
+    #currencyDropdownContents hr { /*color de la barrita*/
+      background-color:#ccc;
+    }
+/* end: currency */
+/* start: selectionSummary */
+#mirai_rootTable #summaryHeader { /*color fondo del carrito*/
+    background-color:#A4A39E;
+    border-color:#A4A39E;
+    color:#FFFFFE;
+}
+#mirai_rootTable #summaryDetailHeader { /*color fondo de segunda cabecera del carrito*/
+    color:#FFFFFE;
+    background-color: #CAC9C5;
+    border-color: #CAC9C5;
+}
+#mirai_rootTable #summaryContainer { /*color de border del carrito*/
+    border-color: #A4A39E;
+    background-color:#FFFFFE;
+}
+#mirai_totalPrice { /*color precio total*/
+    color:#333;
+}
+#mirai_rootTable #summaryNote, #mirai_rootTable #taxDetails, #mirai_rootTable .summary_type { /*color suave de los detalles del carrito*/
+    color:#888;
+}
+#mirai_rootTable #summaryContainer, #mirai_rootTable #summaryElements {
+    background-color:#FFFFFE;
+}
+/* end: selectionSummary */
+/* start: searching overlay */
+#mirai_overlay {
+    background-color:#000;
+}
+#mirai_loadingBox {
+    background-color:#fff;
+    color:#666;
+}
+/* end: searching overlay */
+/*start: tooltip style*/
+.ui-tooltip-mirai .ui-tooltip-titlebar,.ui-tooltip-mirai .ui-tooltip-content {
+    border-color:#ADD9ED !important;
+    color:#5E99BD !important;
+}
+#mirai_rootTable .ui-tooltip-mirai .ui-tooltip-content {
+    background-color:#E5F6FE !important;
+}
+#mirai_rootTable .ui-tooltip-mirai .ui-tooltip-titlebar {
+    background-color:#D0E9F5 !important;
+}
+/*end: tooltip style*/
+/*start: searching dialogue box*/
+.ui-widget-content {
+    border: 2px solid #888;
+    color: #222;
+}
+.ui-widget-header {
+    border: none;
+    background: #fff; /* Para el calendario*/
+}
+/*end: searching dialogue box*/
+/*start: searching table#mirai_associatedHotels*/
+#mirai_associatedHotels{
+    border-color:#A4A39E;
+}
+#mirai_associatedHotels .trOdd {
+    background-color:#E9E8E6;
+}
+/*end: searching table#mirai_associatedHotels*/
+ 
+dl.dropdown dd {
+    border-right: 1px solid #7B7C7D;
+    overflow: hidden;
+}
+ 
+#mirai_roomSelectionContainer {
+    width: 100%;
+}
+ 
+#availableRoomList tr.roomrate td.col1 {
+    width: 0;
+}
+ 
+dl.dropdown dt {
+    color: #000000;
+}
+ 
+dl.dropdown dt.focus {
+    background: #FFFFFF;
+}
+ 
+#content p {
+    margin: 0;
+}
+ 
+#mirai_roomSelection, #currencyWrapper {
+    background-color: transparent;
+}
+ 
+ 
+#logo {
+    margin: 0 auto;
+    width: 980px;
+    padding: 5px 0;
+}
+ 
+#logo a {
+    display: block;
+    margin: 0 auto;
+    text-indent: -999999px;
+    background: url("logoSentidoLanzaroteAequora.png") no-repeat 0 0 transparent;
+    height: 68px;
+    width: 250px;
+}
+ 
+#container {
+    margin: 0 auto;
+    width: 980px;
+}
+ 
+#mirai_bookentrance {
+    background: #C1D3E0;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+ 
+#mirai_be2, #mirai_be4, #mirai_be6 {
+    padding: 3px !important;
+}
+
+#mirai_be7 input {
+  background-color: #396cb2;
+  border: 0 none;
+  border-radius: 2px;
+  color: #fff;
+  padding: 7px 19px;
+}
+
+#mirai_be7 input:hover {
+    background: #264977;
+}
+
+.ui-datepicker .ui-datepicker-header, .ui-datepicker .ui-datepicker-buttonpane button, .ui-datepicker td:hover a {
+    background: #5C91D6 !important;
+    color: #FFF !important;
+}
+
+#ui-datepicker-div { font-size: 14px !important; }
+ 
+
+#mirai_be1, #mirai_be3, #mirai_be5, #mirai_be8 {
+    color: #333;
+} 

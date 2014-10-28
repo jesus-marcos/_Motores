@@ -156,7 +156,8 @@ border: 1px solid #aaa;
 }
 
 div.formreservasfluido {
-background-color: rgba(177,200,216,.8);
+  background-color: rgba(177, 200, 216, 0.8);
+  padding-bottom: 20px;
 }
 
 
@@ -193,8 +194,13 @@ padding:  0 9px 10px 0;
 
 #cajaFormreserva label{
   padding: 0 6px 0 0;
+  display: inline-block;
+}
+
+.home.page #cajaFormreserva label{
+  padding: 0 6px 0 0;
   width: 81px;
-display: inline-block;
+  display: inline-block;
 }
 
 #cajaFormreserva .botonRes {
@@ -376,3 +382,135 @@ color: white;
 .salones td {
 text-align: center;
 }
+
+/* MOTOR MIRAI */
+.formreservasfluido .page-content {position: relative;}
+.home.page #motor .preciominimo {
+  font-family: "Rosario";
+  font-weight: bold;
+  padding: 0 !important;
+  text-align: center;
+  width: 100% !important;
+  top: 270px;
+  position: absolute;
+  left: 0px;
+}
+.home.page .formreservasfluido #motor h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+}
+.page #motor > h2 {
+  margin: 13px 0 9px;
+}
+.home.page #motor {
+  background: none repeat scroll 0 0 #fff;
+  height: 250px;
+  left: 0;
+  padding: 30px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 184px;
+  z-index: 1000;
+}
+.home.page #mirai_be1, .home.page #mirai_be3, .home.page #mirai_be5 {
+  margin: 0 0.3em 0 0;
+  display: block;
+  text-align: left;
+}
+.home.page #mirai_be2 {
+  width: 7em;
+  position: absolute;
+  top: 73px;
+  left: 113px;
+  padding: 4px !important;
+}
+.home.page #mirai_be3, .home.page #mirai_be5 {
+  margin-top: 24px !important;
+}
+.home.page #mirai_be4 {
+  position: absolute;
+  top: 113px;
+  padding: 4px;
+  left: 113px;
+}
+.home.page #mirai_be6 {
+  position: absolute;
+  left: 112px;
+  top: 158px;
+  padding: 4px;
+}
+.home.page #mirai_be7 {
+  display: inline;
+  position: absolute;
+  top: 198px;
+  left: 30px;
+}
+.home.page #mirai_be7 input {
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: visible;
+  padding: 0.2em 0.8em;
+  width: 183px;
+  color: #fff;
+  border-radius: 2px;
+  border: 0 none;
+}
+#mirai_be7 input:hover {
+background: none repeat scroll 0 0 #264977;
+text-decoration: none;
+}
+.home.page #mirai_be8 {
+  color: #666;
+  cursor: pointer;
+  text-decoration: none !important;
+  top: 240px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+.page #mirai_be8:hover {text-decoration: underline !important;}
+.ui-datepicker .ui-datepicker-header, .ui-datepicker .ui-datepicker-buttonpane button, .ui-datepicker td:hover a {
+    background: #5C91D6 !important;
+    color: #FFF !important;
+}
+#ui-datepicker-div { font-size: 14px !important; }
+
+.page .preciominimo {
+  font-family: "Rosario";
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 45px;
+  width: auto !important;
+}
+.page #mirai_be7 input {
+  border-radius: 2px;
+  color: #fff;
+  padding: 7px 19px;
+  width: 185px;
+}
+#mirai_bookentrance input#mirai_be2, #mirai_bookentrance select#mirai_be4, #mirai_bookentrance input#mirai_be6 {
+  margin: 0 18px 0 0;
+  padding: 4px;
+}
+.page #mirai_be7 input {
+  border-radius: 2px;
+  color: #fff;
+  padding: 7px 19px;
+  width: 185px;
+}
+.page #mirai_be7 input:hover {
+  background: none repeat scroll 0 0 #264977;
+}
+.page #mirai_be8 {
+  color: #666666 !important;
+  font-size: 11px;
+  text-decoration: none !important;
+}
+.page #mirai_be8:hover {
+  text-decoration: underline !important;
+}
+.page #motor {}

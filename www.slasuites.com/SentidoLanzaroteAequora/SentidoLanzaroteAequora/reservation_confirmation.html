@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Sentido Lanzarote Aequora</title>
+        <meta name="description" content=""/>
+        <meta name="keywords" content="" />
+        <meta name="language" content="" />
+        <meta name="robots" content="noindex" />
+
+        <script type="text/javascript" src="http://js.miraiglobal.com/mirai_common.js"></script>
+        <script type="text/javascript" src="http://reservation.miraiglobal.com/XMAS/js/reservation_confirmation.js"></script>
+        <script type="text/javascript" src="http://reservation.miraiglobal.com/XMAS/js/reservation-common.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://reservation.miraiglobal.com/XMAS/css/bookingstep2.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="http://reservation.miraiglobal.com/XMAS/css/bookingstep2_print.css" media="print" />
+        <link rel="stylesheet" type="text/css" href="bg_miraibooking.css" />
+
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" type="text/css" href="http://reservation.miraiglobal.com/XMAS/css/bookingstep2_ie6.css" />
+        <![endif]-->
+        <!--[if lte IE 7]>
+          <link rel="stylesheet" type="text/css" href="http://reservation.miraiglobal.com/XMAS/css/bookingstep2_ie67.css" />
+        <![endif]-->
+        <!--[if IE 7]>
+          <link rel="stylesheet" type="text/css" href="http://reservation.miraiglobal.com/XMAS/css/bookingstep2_ie7.css" />
+        <![endif]-->
+        <!--[if IE 8]>
+          <link rel="stylesheet" type="text/css" href="http://reservation.miraiglobal.com/XMAS/css/bookingstep2_ie8.css" />
+        <![endif]-->
+
+        <style type="text/css">
+            body {
+                margin:0;
+                padding:0;
+                overflow:auto;
+                text-align:center;
+            }
+            *+html body {
+                overflow:hidden;
+            }
+            #background_wrapper {
+                width:1000px;
+                margin: 0 auto;
+            }
+            #background_div {
+                background-repeat:no-repeat;
+                background-position:center top;
+                width: 1000px;
+                height: 980px;
+                position:fixed;
+                top:0;
+            }
+            * html #background_div, *+html #background_div{
+                position:static;
+            }
+            table#confirmationPage {
+                text-align:left;
+            }
+        </style>
+       
+        <!-- MIRAI ASYNC ANALYTICS BEGIN -->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-23280717-38']);
+            _gaq.push(['_setDomainName', 'none']);
+            _gaq.push(['_setAllowLinker', true]);
+            _gaq.push(['_trackPageview', 'Booking Step 3']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- MIRAI ASYNC ANALYTICS END -->
+    </head>
+
+    <body id="confirmation" style="background-color: #FFF">
+        <div id="background_wrapper">
+            <div id="background_div" >
+            </div>
+        </div>
+        <script type="text/javascript">
+            mjQuery = $.noConflict();
+            mjQuery(document).ready(function() {
+                requestConfirmationClient();
+            });
+        </script>
+    </body>
+</html>

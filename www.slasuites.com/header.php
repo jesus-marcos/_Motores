@@ -20,6 +20,8 @@
     <?php wp_head(); ?>
 
     <link href="/lztic/flick/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/bookingentranceLine.css" />
+
       <!-- desactivados estilos de datepicker en styles del padre -->
       <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
@@ -187,8 +189,12 @@
    $textos["fr"] = array("titulo"=>"Resérver","llegada"=>"Date d'arrivée","salida"=>"Sortie", "adultos"=>"Adultos", "ninos"=>"Enfant","preciominimo"=>"Prix Minimum online Garanti ","enviar"=>"Envoyer","codprom" => "Code Promotion");
 
     ?>     
+	
+	
+	<?php if (!is_user_logged_in()) { ?>
             <div id="cajaFormreserva">
               <h2> <?php echo $textos[$idiAct]["titulo"]; ?></h2>
+			  
               <form id="FormReservas" name="FormReservas" action="https://www.thebookingbutton.co.uk/properties/aequoradirect" method="get" target="_self">
 
                 <input type="hidden" name="currency" value="EUR" />
@@ -227,6 +233,35 @@
             <div class="botonRes"><input type="submit" value="<?php echo $textos[$idiAct]["enviar"]; ?>" id="ver_dispo" /></div>
             <div class="preciominimo"><a href="/<?php echo $idiAct; ?>/formulario-garantia-mejor-precio-online/"><img src="/lztic/euro.png" /><?php echo $textos[$idiAct]["preciominimo"]; ?></a></div>
             </form>
+			
+			<?php } else { ?>
+
+				<div id="motor">
+				<h2> <?php echo $textos[$idiAct]["titulo"]; ?></h2>
+					<div id="mirai_bookentrance"></div>
+						<!-- start bookengine 2010 -->
+						<script type="text/javascript">
+							if (typeof(mirai_be_params) == "undefined" || !mirai_be_params) {
+							  mirai_be_params={};
+							}
+							mirai_be_params.idhotel=100375690;
+							mirai_be_params.lang="<?php echo $idiAct; ?>";
+							mirai_be_params.hsri="02040";
+							mirai_be_params.doctype="xhtml";
+							mirai_be_params.datepicker_months_number=3;
+						</script>
+						<script type="text/javascript" src="http://js.miraiglobal.com/be_dependencies.js"></script>
+						<script type="text/javascript">
+							mjQuery = $.noConflict(true);
+							bookingEntrance.loadBookingEntrance();
+							jQuery('#mirai_be5').html('Promo:');
+						</script>
+						<!-- end bookengine 2010 -->
+						<div class="preciominimo"><a href="/<?php echo $idiAct; ?>/formulario-garantia-mejor-precio-online/"><img src="/lztic/euro.png" /><?php echo $textos[$idiAct]["preciominimo"]; ?></a></div>
+				</div>
+				
+				
+			<?php } ?>
 
             </div>
        
