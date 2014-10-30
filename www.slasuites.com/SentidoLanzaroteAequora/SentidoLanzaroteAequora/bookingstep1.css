@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
 html { background: transparent; }
  
 body { background: #FFF !important; }
@@ -236,14 +238,15 @@ dl.dropdown dt.focus {
 }
  
 #container {
-    margin: 0 auto;
-    width: 980px;
+  margin: 0 auto;
+  position: relative;
+  width: 980px;
 }
  
 #mirai_bookentrance {
-    background: #C1D3E0;
-    margin-top: 20px;
-    padding: 10px 0;
+  background: none repeat scroll 0 0 #c1d3e0;
+  margin-top: 50px;
+  padding: 10px 0;
 }
  
 #mirai_be2, #mirai_be4, #mirai_be6 {
@@ -273,3 +276,55 @@ dl.dropdown dt.focus {
 #mirai_be1, #mirai_be3, #mirai_be5, #mirai_be8 {
     color: #333;
 } 
+/* menu */
+#primary-nav-id {
+  display: block;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+.slideMenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+}
+.slideMenu ul li {
+  display: inline;
+  float: left;
+  position: relative;
+}
+.primary-nav.slideMenu > ul > li > a {
+  border-right: 1px solid #aaa;
+  font-size: 11px;
+  line-height: 30px;
+  margin: 9px 0 0;
+  padding: 0 13px;
+}
+.primary-nav.slideMenu > ul > li > a {
+    font-size: 15px;
+    margin: 0;
+    padding: 0 18px;
+}
+.primary-nav.slideMenu ul li a {
+    font-size: 11px;
+}
+.primary-nav.slideMenu ul li a:hover {
+	color: #396cb2;
+}
+.slideMenu ul li a:link, .slideMenu ul li a:visited {
+}
+.primary-nav ul li a {
+    color: #202020;
+    z-index: 0;
+	font-family: "Roboto",Arial,sans-serif;
+	text-transform: uppercase;
+}
+.slideMenu ul li a {
+    display: block;
+    padding: 8px 10px;
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+}
