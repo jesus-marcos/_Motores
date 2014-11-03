@@ -1,0 +1,11 @@
+User-agent: *
+Sitemap: http://www.monteros.com/page-sitemap.xml
+Sitemap: http://www.monteros.com/urllist.txt
+Disallow: /hg-inc/
+Disallow: /hg-inc/calendario-es.php
+Disallow: /hg-inc/calendario-en.php
+Disallow: /feed/
+Disallow: /trackback/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php

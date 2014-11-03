@@ -80,6 +80,21 @@
     </div><!-- END .body-wrapper -->
 </div><!-- END .body-outer-wrapper -->
 <?php wp_footer(); ?>
-	
+<script>
+	jQuery(document).ready(function(){
+		var engineWidth = jQuery('#motor').innerWidth();
+		jQuery('#motor > div').css("width", engineWidth);
+		var enginePosition = jQuery('#motor > div').offset().top; // Detect engine top position
+		jQuery(window).scroll(function() {
+		var iScrollY = (window.pageYOffset !== undefined) ? window.pageYOffset :
+		(document.documentElement || document.body.parentNode || document.body).scrollTop;
+		if(iScrollY >= enginePosition) {
+		jQuery('#motor > div').addClass('fixed_engine');
+		} else {
+		jQuery('#motor > div').removeClass('fixed_engine');
+		}
+		});
+	});
+</script>
 </body>
 </html>

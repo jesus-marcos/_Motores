@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--[if lt IE 7]> <html class="ie6" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Reservas - Hotel Los Monteros</title>
+<link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/bookingentranceLine.css" />
+<meta name="robots" content="noindex" /> 
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.2r1/build/reset-fonts-grids/reset-fonts-grids.css" />
+<link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/mirai_bookingProcess.css" />
+<link rel="stylesheet" type="text/css" href="bookingstep1.css" />
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+ 
+
+ 
+  <script id="be_script" type="text/javascript" src="http://js.miraiglobal.com/be_dependencies.js"></script>
+  <script type="text/javascript">
+        mjQuery = $.noConflict();
+        if (typeof(mirai_be_params) == "undefined" || !mirai_be_params) {
+            mirai_be_params={};
+        }
+        mirai_be_params.hideTrackCancel='true';
+        mjQuery(document).ready(function() {
+            initializeParametersFromUrl();
+            bookingEntrance.loadBookingEntrance();
+            initializeRoomsSelectionEvents();
+        });
+  </script>
+<!-- *************** siguiente "if conditional" tienen que estar bloques separados, no se puede juntar con otros css ************************* -->
+<!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/mirai_selectionSummary.bottom_ie6.css" />
+<![endif]-->
+<!-- *************** siguiente "if conditional" tienen que estar bloques separados, no se puede juntar con otros css ************************* -->
+<!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/mirai_selectionSummary.right_ie6.css" />
+<![endif]-->
+<!--[if lte IE 6]>
+  <link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/mirai_bookingProcess_ie6.css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/mirai_bookingProcess_ie67.css" />
+<![endif]-->
+<!--[if IE 7]>
+  <link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/mirai_bookingProcess_ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+  <link rel="stylesheet" type="text/css" href="http://js.miraiglobal.com/revalidate/mirai_bookingProcess_ie8.css" />
+<![endif]-->
+ 
+</head>
+<body>
+        <div id="header">
+            <div id="logo">
+                <a href="http://www.monteros.com/" title="Hotel">Hotel</a>
+            </div>
+            <ul class="menu_web">
+              <li><a href="http://www.monteros.com/">Hotel</a></li>
+              <li><a href="http://www.monteros.com/habitaciones-y-suites">Habitaciones</a></li>
+              <li><a href="http://www.monteros.com/servicios-hotel-los-monteros">Servicios</a></li>
+              <li><a href="http://www.monteros.com/ofertas">Ofertas</a></li>
+              <li><a href="http://www.monteros.com/convenciones-congresos-e-incentivos">Reuniones</a></li>
+              <li><a href="http://www.monteros.com/bodas-y-eventos/bodas-en-marbella">Bodas</a></li>
+              <li><a href="http://www.monteros.com/la-cabane-club-de-playa">La Cabane</a></li>
+            </ul>
+        </div>
+        <div id="container">
+            <div id="mirai_bookentrance"></div>
+            <div id="mirai_roomSelectionContainer"></div>
+        </div>
+</body>
+</html>
+
