@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+
+<!-- Mirrored from www.valentinhotels.com/en/spa-hotel-offer-spain.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 13:04:15 GMT -->
+<head>
+		<title>Spa Hotel Offer Spain</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="Valentin Hotels Official Website. Spa Hotel Offer Spain. Family holidays Minorca, Romantic hotels Mallorca, Apartment gran canaria, Spa hotels in Sancti Petri " />
+		<meta name="keywords" content="spa hotel offer spain, valentin hotels" />
+		
+
+
+
+<!-- General CSS - HotelManager -->
+<link title="general" rel="stylesheet" href="../css/compress-en-25.css"/>
+
+
+<script type="text/javascript" src="../js/compress-en-25.js"></script>
+<script type="text/javascript">
+	(function() {
+		HOTELMANAGER.lang.setLanguage('en');
+	})();
+	(function() {
+		HOTELMANAGER.utils.Onload(function() {
+			try {
+				var txt = document.getElementById('inicio-contenido');
+				var rexexp = new RegExp('[a-zA-Z0-9]+');
+				var results = rexexp.exec( txt.innerHTML );
+				if (!results) {
+					txt.parentNode.style.display='none';
+				}
+			}
+			catch(e) {}
+		});
+	})();
+	$(document).ready(function() {
+		$('.slideshow').cycle({
+			fx: 'fade',
+			timeout: 6000,
+			speed: 2000
+		});
+	});
+</script>
+	
+</head>
+<body id="idioma-es">
+<div id="calendarDiv" class="calendarDivStyle"></div>
+<div id="valentin">
+	<div class="idiomas">
+		<ul>
+			<li id="es"><a href="../es/oferta-hotel-spa.html" title="Ver la web en castellano" class=""><span>Espa&ntilde;ol</span></a></li>
+			<li id="en"><a href="spa-hotel-offer-spain.html" title="View english version" class="active"><span>English</span></a></li>	
+			<li id="de"><a href="../de/angebot-hotel-wellness.html" title="Siehe Deutsche Version" class=""><span>Deutsch</span></a></li>	
+
+		</ul>
+	</div>
+	<div class="limp"></div>
+	<div class="cabecera" id="cab"><h1><a href="index.html" title="Valent&iacute;n Hoteles"><span>Valent&iacute;n Hoteles</span></a></h1></div>
+	<div class="contenido">
+		<div class="destacados">
+			<div class="reservas"><link title="general" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script src="../js/calendarTranslation_en.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	HOTELMANAGER.booking.habitaciones.default_adults_number = Number(6);
+	HOTELMANAGER.booking.habitaciones.default_childs_number = Number(5);
+	HOTELMANAGER.booking.habitaciones.default_childs_age = Number(17);
+	HOTELMANAGER.booking.habitaciones.default_child_age = 0;
+	
+	
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.booking.init({ form: 'form_buscador', link: 'link_reservas', paxroomsdiv: 'paxrooms', paxroomsnum: 'paxnumrooms' });
+	});
+	
+	HOTELMANAGER.utils.Onload(function() {
+		inicializarCalendario();
+	});
+	
+})();
+function agenciaempresa(ac){
+	if (ac == 'a') {
+		$('#codigoEmpresa').val("");
+		$('#orgType').val("A");
+	} else if (ac == 'c'){
+		$('#codigoAgencia').val("");
+		$('#orgType').val("C");
+	}
+}
+var formatoFecha = "dd-mm-yy";
+var hoy = new Date();
+var manana = getNDaysAfter(hoy,1);
+var numeroMesesAMostrar = 2;
+var primerDia = 1;
+$(document).ready(function(){
+	var i = 0;
+	while(!isAvailable(hoy)[0] || !isAvailable(manana)[0]){
+		hoy = getNDaysAfter(hoy,1);
+		manana = getNDaysAfter(hoy,1);
+		if(i++ > 200) break;
+	}
+	$('#fechaLlegada').val($.datepicker.formatDate(formatoFecha, hoy));
+	$('#fechaSalida').val($.datepicker.formatDate(formatoFecha, manana));
+	// inicializar calendarios
+    $("#fechaLlegada").datepicker({
+        minDate: hoy,
+		dateFormat: formatoFecha, 
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia,
+        onSelect: function(selected) {
+			var fechaSeleccionada = new Date((selected).split("-")[2], (selected).split("-")[1]-1, (selected).split("-")[0]);
+			$("#fechaSalida").datepicker("option","minDate", $.datepicker.formatDate(formatoFecha,getNDaysAfter(fechaSeleccionada,1)));
+        }
+    });
+    $("#fechaSalida").datepicker({ 
+        minDate: manana,
+		dateFormat: formatoFecha,
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia
+    });
+});
+var calendarioDisp = new Array();
+function isAvailable(date){
+	var dateAsString = $.datepicker.formatDate("dd/mm/yy", date);
+    var result = $.inArray(dateAsString, calendarioDisp) ==-1 ? [true,''] : [false,'closeDay'];
+    return result;
+}
+function getNDaysAfter(date,days){
+	return new Date(date.getTime() + (days * 24 * 60 * 60 * 1000));
+}
+</script>
+
+<div id="reserva-online">
+	<h2>BOOK ONLINE</h2>
+	<form id="form_buscador" method="post" action="#">
+		
+		<input type="hidden" name="zona" value="" />
+		<input type="hidden" name="codigoHotel" value="0" />
+		<input type="hidden" name="idioma" value="en" />
+		<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+		<input type="hidden" name="idPrm" value="MBVALENTIN" />
+		<input type="hidden" name="idONg" value="P47" />
+		<input type="hidden" name="idNom" value="" />
+		<input type="hidden" name="base" value="hotel-availability" />
+		<input type="hidden" name="customCSS" value="1" />
+		<input type="hidden" name="irListaHoteles" value="Y" />
+
+	<div>
+
+	<fieldset class="reservaon">
+		<label class="reserva">Resort</label>
+		<select class="destinohotel" name="numero" id="destinos">
+			<option value ="0">All</option>
+		</select>
+
+		<label class="reserva">Hotel</label>
+			<select class="destinohotel" name="numero" id="hoteles">
+				<option value ="0">All</option>
+			</select>
+	</fieldset>
+
+	<fieldset id="llegada">
+		<label>Arrival date:</label>
+		<input id="fechaLlegada"  name="fechaLlegada" type="text" readonly class="calendario"/>
+	</fieldset>
+	<fieldset id="salida">
+		<label>Departure date:</label>
+		<input id="fechaSalida" name="fechaSalida" type="text" readonly class="calendario"/>
+	</fieldset>
+
+	<p class="pie-BE">If you want to book different types of rooms, we recommend you to request each type individually</p>
+	<fieldset id="habitaciones">
+		<label>Rooms</label>
+		<select name="no_hab" id="paxnumrooms">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</fieldset>
+	<div id="paxrooms">&nbsp;</div>
+	<p class="pie-BE">Promotional Code</p>
+	<fieldset class="codigoEmpresa">
+		<input type="text" id="codigoEmpresa" name="codigoEmpresa" value="" />
+	</fieldset>
+	<div class="reserva_enviar"><a id="link_reservas" href="#">See rates</a></div>
+	<div class="reserva_cancelar"><a href="booking-cancel.html"><span>Booking cancellation</span></a></div>
+
+
+	</div>
+	</form>
+</div>
+
+</div>
+			<div class="modulo"><img src="img/port28994_en.jpg" /></div>
+<div class="modulo"><a href="http://www.valentinsanctipetri.com/exp_i/index.php" target="_blank"><img src="img/port28995_en.gif" /></a></div>
+<div class="modulo"><a href="groups-valentin-hotels.html"><img src="img/port29016_en.jpg" /></a></div>
+<div class="modulo"><a href="hotel-rent-a-car-spain.html"><img src="img/port29015_en.jpg" /></a></div>
+
+			<div class="modulo news">
+			<!-- (i) newsletter -->
+				<script type="text/javascript">
+(function() {
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.newsletter.init({ form: 'subscripcion-contenido', input: 'email', submit: 'newslettersubmit', msgerror: 'Please writte your email or review it has been well written' });
+	});
+})();
+</script>
+<!-- (i) newsletter -->
+					<div id="subscripcion">
+						<form id="subscripcion-contenido" action="http://www.valentinhotels.com/en/newsletter-en.html" method="get">
+							<input type="hidden" name="lang" value="en" />
+							<input type="hidden" name="codigoHotel" value="0" />
+							<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+							<input type="hidden" name="idPrm" value="MBVALENTIN" />
+							<input type="hidden" name="idONg" value="P47" />
+							<input type="hidden" name="promoId" value="" />
+
+							<div class="newsletter">
+								<h2>subscribe to newsletter</h2>
+								<input type="text" id="email" name="email" class="input-text" value='enter your email' onfocus="javascript:this.value = ''" />
+								<button type="submit" id="newslettersubmit" name="enviar" class="enviar"></button>
+							</div>
+						</form>
+					</div> 
+<!-- (f) newsletter -->                                       
+
+<!-- (i) cambiar imagen cabecera -->  
+<script>
+
+if (HOTELMANAGER.lang.actual == "en" || HOTELMANAGER.lang.actual == "de"){
+	//document.write("idioma US DE");
+	document.getElementById('cab').style.backgroundImage = "url(../estilo/img/bg_cab2.jpg)";
+}
+</script>
+<!-- (i) cambiar imagen cabecera --> 
+
+
+<!--script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&page=home' type='text/javascript'%3E%3C/script%3E"));
+</script-->
+
+
+			<!-- (f) newsletter --> 
+			</div>
+		</div>
+		<div class="informacion">
+			<div class="menu" id="nav">
+				 <ul>
+<li id="menu1"><a title='Mallorca Hotels | Holidays Menorca | Gran Canaria Apartments | Cadiz Hotels ' href='index.html'><span>Home</span></a></li>
+<li id="menu2"><a title='Valentin hotels and beach apartments in Spain' href='valentin-hotels-apartments-spain.html'><span>Valentín Hotels</span></a></li>
+<li id="menu3"><a title='Holidays mallorca | Gran Canaria hotels | Holidays Minorca | Sancti Petri Hotels' href='mallorca-holidays-minorca.html'><span>Destinations</span></a></li>
+<li id="menu4"><a title='Family holidays Minorca | Romantic hotels Mallorca | Apartment gran canaria | Spa hotels in Sancti Petri ' href='apartment-gran-canaria-hotels-sancti-petri.html'><span>Specialists in...</span></a></li>
+<li id="menu5"><a title='Valentín Hotels News' href='news-valentin.html'><span>News</span></a></li>
+<li id="menu6"><strong><a title='Cheap holidays Mallorca | Hotel offers Minorca' href='cheap-holidays-mallorca-hotel-minorca.html' class="active"><span>Offers</span></a></strong>
+</li>
+</ul>  		
+			</div>
+			<div class="imagen"><div id="imagediv"><img src='img/section_en_20150.jpg' alt='spa hotel offer spain' title='spa hotel offer spain' width='695' height='275'/></div></div>
+			<div class="intro">
+				<h2><span>Relax</span></h2>				
+				<div class="ofertas">
+	<h3>Relax Escape  (2 days)</h3>
+	<div class="ofertasimg"><img src="img/index.html" alt="" /></div>
+	<div class="ofertastxt">
+		<p><strong>Valent&iacute;n Sancti Petri Spa &amp; Centro de Convenciones ****</strong><br /> &iexcl;Spend a couple of relaxed days in our hotel!<br /> We offer you <strong>a escape for two days with treatments, </strong>the programme includes:<br /> <strong>First day:</strong></p> <ul> <li>Body exfoliation with natural sea salt, lemon and &ldquo;Petigrain&rdquo;</li> <li>Moistuirizing&nbsp; bath &nbsp;and luminous Cleopatra</li> </ul> <p><strong>Second day:</strong></p> <ul> <li>Moistuirizing wrap with esencial oils.</li> <li>Massage with &ldquo;Pindas&rdquo;</li> </ul> <p>Price per package and per person booking online &nbsp;on our website :<strong>127 &euro;</strong></p> (V.A.T included, minimum stay of 3 nights) all the &nbsp;<strong>Programme include</strong> the daily use of the thermal club (Sauna, Turkish Bath, Jacuzzi, Automatic Massage Bed, Bitermic showers, Circular shower, &nbsp;Gym and Heated pool)<br /> <strong>(The price of the package does not include accommodation)</strong><br /> <strong>To book the spa package, once booked on our web site, straight after, you will be able to select the best programme that suits you best.</strong>
+		<div class="lnk"><a href="#">BOOK</a></div>
+	</div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Sweet Sensations</h3>
+	<div class="ofertasimg"><img src="img/port29084_en.jpg" alt="" /></div>
+	<div class="ofertastxt">
+		<strong>Valent&iacute;n Sancti Petri Spa &amp; Convention Centre****</strong><br />Do you fancy being away from the <strong>Jumble</strong>, the <strong>Stress</strong> the <strong>Bad Vibrations</strong>?<br /> <p>We offer you&nbsp; <strong>a 2 day Spa package</strong> in our hotel, <strong>Treatments</strong> that are chose for your relaxation</p> <p><strong>The Sweet Sensations Package</strong> includes:<br /> <br /> <strong>First Day:</strong></p> <ul> <li><strong>Hot chocolate</strong> Wrap</li> <li>Base of <strong>Moistuirizing Cocoa Oil</strong></li> </ul> <p><strong>Second Day:</strong></p> <ul> <li><strong>Facial Treatment</strong> of Seasonal Raspberry&nbsp; and Litchi</li> </ul> <p><strong>All the Programmes Include</strong> the daily use of the thermal club (Sauna, Turkish Bath, Jacuzzi, Automatic Massage Bed, Bitermic showers, Circular shower, Gym and Heated pool)</p> <p><strong>(The price of the package does not include accommodation) 84&euro;</strong><br /> <strong>To book the spa package, once booked on our web site, straight after, you will be able to select the best programme that suits you best. </strong></p> <p>&nbsp;</p>
+		<div class="lnk"><a href="hotel-availability785f.html?codigoHotel=3032&amp;lang=en&amp;idPartner=VALENTINHOTELS&amp;idPrm=MBVALENTIN&amp;idONg=P47&amp;idNom=&amp;tipoTarifa=BAI&amp;mtqe=&amp;otrasFechas=true">BOOK</a></div>
+	</div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Well-Being (4 days)</h3>
+	<div class="ofertasimg"><img src="img/paquetedescrpwellness.jpg" alt="" /></div>
+	<div class="ofertastxt">
+		<p><strong>Valentin Sancti Petri &amp; Spa </strong>****<br /> <br /> &iexcl;&iexcl;&iexcl;We offer you a <strong>very special</strong> package<strong>!!!</strong><br /> our <strong>4 day spa package</strong>, where you can <strong>relax and</strong> <strong>look after yourself</strong>:<br /> The package includes:<br /> <strong>First day:</strong></p> <ul> <li>Relaxing body jet.</li> <li>Aromatheropy massage.</li> </ul> <p><strong>Second day:</strong></p> <ul> <li>Moisturizing advanced facial treatment</li> </ul> <p><strong>Third day:</strong></p> <ul> <li>Moistuirizing seaweed body wrap.</li> <li>Moistuirizing base of scented orange blossom and cedar wood</li> <li>Facial Skull massage.</li> </ul> <p><strong>Fourth day:</strong></p> <ul> <li>Massage Cande Light.</li> </ul> All the&nbsp; <strong>Programes Include</strong> the daily use of the thermal club (Sauna, Turkish Bath, Jacuzzi, Automatic Massage Bed, bitermic showers, Circular shower,&nbsp; Gym and Heated pool)<br /> <strong>(The price of the package does not include accommodation) 220&euro;</strong><br /> <strong>To book the spa package, once booked on our website, straight after, you will be able to select the best programme that suits you best.</strong>
+		<div class="lnk"><a href="hotel-availability785f.html?codigoHotel=3032&amp;lang=en&amp;idPartner=VALENTINHOTELS&amp;idPrm=MBVALENTIN&amp;idONg=P47&amp;idNom=&amp;tipoTarifa=BAI&amp;mtqe=&amp;otrasFechas=true">BOOK</a></div>
+	</div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Magic Moment (4 days)</h3>
+	<div class="ofertasimg"><img src="img/momento%20magico.jpg" alt="" /></div>
+	<div class="ofertastxt">
+		<p><strong>Hotel Valentin Sancti Petri &amp; Spa****</strong><br /> <br />Enjoy a special moment in our <strong>Spa</strong> with one of our best <strong>4 day treatments<br />Magic Moments </strong>&nbsp;package includes:<br /> <br /> <strong>First Day:</strong></p> <ul> <li>Body exfoliation &nbsp;of cherry lotus flower</li> <li>Relaxing body massage &ldquo;Karit&eacute;&rdquo; butter.</li> </ul> <p><strong>Segundo d&iacute;a:</strong></p> <ul> <li>Body massge under water.</li> <li>Facial Flash Beaut&eacute; treatment<strong>.</strong></li> </ul> <p><strong>Third day:</strong></p> <ul> <li>Hidromassage Bath with ensential oils.</li> <li>&ldquo;Ayurveda&rdquo; massage.</li> </ul> <p><strong>Fourth:</strong></p> <ul> <li>Masagge with volcanic stones.</li> </ul> <p><strong>Price per Package per Person 295 &euro;</strong><br /> <br /> (V.AT. minimum 5 night stay) All the&nbsp; <strong>Programmes Include</strong> the daily use of the thermal club (Sauna, Turkish Bath, Jacuzzi, Automatic Massage Bed, Bitermic showers, Circular shower,&nbsp; Gym and Heated pool)<br /> <strong>(The price of the package does not include accommodation) </strong><br /> <strong>To book the spa package, once booked on our web site, straight after, you will be able to select the best programme that suits you best. </strong></p>
+		<div class="lnk"><a href="hotel-availabilityea22.html?codigoHotel=3230&amp;lang=en&amp;idPartner=VALENTINHOTELS&amp;idPrm=MBVALENTIN&amp;idONg=P47&amp;idNom=&amp;tipoTarifa=BAI&amp;mtqe=&amp;otrasFechas=true">BOOK</a></div>
+	</div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Spa De Lux (6 days)</h3>
+	<div class="ofertasimg"><img src="img/relaxmanospaquete.jpg" alt="" /></div>
+	<div class="ofertastxt">
+		<p><strong>Hotel Valentin Sancti Petri &amp; Spa****</strong><br /> <br /> Enjoy a <strong>Deluxe</strong> treatment in our <strong>&nbsp;Hotel Valentin Sancti Petri Spa.</strong><br /> <br /> The 6 day<strong>&nbsp; Spa Deluxe treatment</strong> includes:<br /> <br /> <strong>First Day:</strong></p> <ul> <li>Ginger and Cinammon Exfoliant.</li> <li>Sweedish Massage</li> </ul> <p><strong>Second Day:</strong></p> <ul> <li>A four hand massage in a <strong>chocolate wrap</strong>.</li> </ul> <p><strong>Third Day:</strong></p> <ul> <li>Massage &nbsp;with &ldquo;Pindas&rdquo;.</li> </ul> <p><strong>Fourth Day:</strong></p> <ul> <li>Higt protection treatment look.</li> <li>Hand Massage treatment with paraffin.</li> </ul> <p><strong>Fifth Day:</strong></p> <ul> <li>&ldquo;Ayurv&eacute;dico&rdquo; Massage</li> </ul> <p><strong>Sixth Day:</strong></p> <ul> <li>Facial Siberiano Ginseng treatment combined with con Volcanic Stones</li> </ul> <strong>Price per package and per Person &nbsp; 470 &euro;</strong><br /> <br /> (V.AT. minimum 7 night stay) All the&nbsp; <strong>Programmes Include</strong> the daily use of the thermal club (Sauna, Turkish Bath, Jacuzzi, Automatic Massage Bed, Bitermic showers, Circular shower,&nbsp; Gym and Heated pool)<br /> <strong>(The price of the package does not include accommodation) </strong><br /> <strong>To book the spa package, once booked on our website, straight after, you will be able to select the best programme that suits you best. </strong>
+		<div class="lnk"><a href="hotel-availabilityea22.html?codigoHotel=3230&amp;lang=en&amp;idPartner=VALENTINHOTELS&amp;idPrm=MBVALENTIN&amp;idONg=P47&amp;idNom=&amp;tipoTarifa=BAI&amp;mtqe=&amp;otrasFechas=true">BOOK</a></div>
+	</div>
+	<div class="limp"></div>
+</div>
+
+				<div><a href="cheap-holidays-mallorca-hotel-minorca.html"><< GO BACK TO OFFERS</a></div>
+
+			</div>
+		</div>
+	</div>
+	<div class="limp"></div>
+	<div class="pie">
+		<div class="qweb"><div style="width:97px;"> <a href="http://www.qweb.es/_alojamiento-en-hoteles.html" target="_blank" title="Directorio de Alojamiento en hoteles"><img src="../imagenes/icons/imagen.gif" width="97" height="31" border="0" alt="Directorio de Alojamiento en hoteles" /></a></div></div>
+		<div class="facebook2">
+	<ul>
+		<li><a href="http://www.facebook.com/valentinhotels" target="_blank" title="Facebook"><img src="../estilo/imagenes/ic_facebook.gif" width="34" height="33" /></a></li>
+		<li><a href="https://twitter.com/valentinhotels" target="_blank" title="Twitter"><img src="../estilo/imagenes/ic_twitter.gif" width="34" height="33" /></a></li>
+		<li><a href="http://www.youtube.com/user/Valentinhotels" target="_blank" title="YouTUBE"><img src="../estilo/imagenes/ic_youtube.gif" width="34" height="33" /></a></li>
+	</ul>
+	<div class="limp"></div>
+</div>
+
+		 <ul class="hmpie"><li class="hmli-0"><a title="About Valentín Hotels" href="about-valentin.html">About Valentín Hotels</a></li><li class="hmli-1"><a title="Contact" href="contact.html">Contact</a></li><li class="hmli-2"><a title="Web Map" href="web-map.html">Web Map</a></li><li class="hmli-3"><a title="Terms & Conditions" href="terms-conditions.html">Terms & Conditions</a></li><li class="hmli-4"><a title="Privacy Policy" href="privacy-policy.html">Privacy Policy</a></li><li class="hmli-5"><a title="Cookies" href="cookies.html">Cookies</a></li></ul> 
+	</div>
+</div>
+
+<script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&pid=0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	<script type="text/javascript">
+ var _gaq = _gaq || [];
+_gaq.push(['._setDomainName', 'none']);
+_gaq.push(['_setAccount', 'UA-12940378-1']);
+_gaq.push(['_trackPageview']);
+(function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+
+<!-- Mirrored from www.valentinhotels.com/en/spa-hotel-offer-spain.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 13:04:20 GMT -->
+</html>
+<!-- anuncios.php (valentin) -->

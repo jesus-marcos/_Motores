@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+
+<!-- Mirrored from www.valentinhotels.com/es/noticias-valentin.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 12:48:55 GMT -->
+<head>
+		<title>Noticias de Valentín Hotels</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="Noticias de Valentín Hotels" />
+		<meta name="keywords" content="noticias valentin hotels" />
+		
+
+
+
+<!-- General CSS - HotelManager -->
+<link title="general" rel="stylesheet" href="../css/compress-es-25.css"/>
+
+
+<script type="text/javascript" src="../js/compress-es-25.js"></script>
+<script type="text/javascript">
+	(function() {
+		HOTELMANAGER.lang.setLanguage('es');
+	})();
+	(function() {
+		HOTELMANAGER.utils.Onload(function() {
+			try {
+				var txt = document.getElementById('inicio-contenido');
+				var rexexp = new RegExp('[a-zA-Z0-9]+');
+				var results = rexexp.exec( txt.innerHTML );
+				if (!results) {
+					txt.parentNode.style.display='none';
+				}
+			}
+			catch(e) {}
+		});
+	})();
+	$(document).ready(function() {
+		$('.slideshow').cycle({
+			fx: 'fade',
+			timeout: 6000,
+			speed: 2000
+		});
+	});
+</script>
+	
+</head>
+<body id="idioma-es">
+<div id="calendarDiv" class="calendarDivStyle"></div>
+<div id="valentin">
+	<div class="idiomas">
+		<ul>
+			<li id="es"><a href="noticias-valentin.html" title="Ver la web en castellano" class="active"><span>Espa&ntilde;ol</span></a></li>
+			<li id="en"><a href="../en/news-valentin.html" title="View english version" class=""><span>English</span></a></li>	
+			<li id="de"><a href="../de/news-valentin.html" title="Siehe Deutsche Version" class=""><span>Deutsch</span></a></li>	
+
+		</ul>
+	</div>
+	<div class="limp"></div>
+	<div class="cabecera" id="cab"><h1><a href="index.html" title="Valent&iacute;n Hoteles"><span>Valent&iacute;n Hoteles</span></a></h1></div>
+	<div class="contenido">
+		<div class="destacados">
+			<div class="reservas"><link title="general" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script src="../js/calendarTranslation_es.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	HOTELMANAGER.booking.habitaciones.default_adults_number = Number(6);
+	HOTELMANAGER.booking.habitaciones.default_childs_number = Number(5);
+	HOTELMANAGER.booking.habitaciones.default_childs_age = Number(17);
+	HOTELMANAGER.booking.habitaciones.default_child_age = 0;
+	
+	
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.booking.init({ form: 'form_buscador', link: 'link_reservas', paxroomsdiv: 'paxrooms', paxroomsnum: 'paxnumrooms' });
+	});
+	
+	HOTELMANAGER.utils.Onload(function() {
+		inicializarCalendario();
+	});
+	
+})();
+function agenciaempresa(ac){
+	if (ac == 'a') {
+		$('#codigoEmpresa').val("");
+		$('#orgType').val("A");
+	} else if (ac == 'c'){
+		$('#codigoAgencia').val("");
+		$('#orgType').val("C");
+	}
+}
+var formatoFecha = "dd-mm-yy";
+var hoy = new Date();
+var manana = getNDaysAfter(hoy,1);
+var numeroMesesAMostrar = 2;
+var primerDia = 1;
+$(document).ready(function(){
+	var i = 0;
+	while(!isAvailable(hoy)[0] || !isAvailable(manana)[0]){
+		hoy = getNDaysAfter(hoy,1);
+		manana = getNDaysAfter(hoy,1);
+		if(i++ > 200) break;
+	}
+	$('#fechaLlegada').val($.datepicker.formatDate(formatoFecha, hoy));
+	$('#fechaSalida').val($.datepicker.formatDate(formatoFecha, manana));
+	// inicializar calendarios
+    $("#fechaLlegada").datepicker({
+        minDate: hoy,
+		dateFormat: formatoFecha, 
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia,
+        onSelect: function(selected) {
+			var fechaSeleccionada = new Date((selected).split("-")[2], (selected).split("-")[1]-1, (selected).split("-")[0]);
+			$("#fechaSalida").datepicker("option","minDate", $.datepicker.formatDate(formatoFecha,getNDaysAfter(fechaSeleccionada,1)));
+        }
+    });
+    $("#fechaSalida").datepicker({ 
+        minDate: manana,
+		dateFormat: formatoFecha,
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia
+    });
+});
+var calendarioDisp = new Array();
+function isAvailable(date){
+	var dateAsString = $.datepicker.formatDate("dd/mm/yy", date);
+    var result = $.inArray(dateAsString, calendarioDisp) ==-1 ? [true,''] : [false,'closeDay'];
+    return result;
+}
+function getNDaysAfter(date,days){
+	return new Date(date.getTime() + (days * 24 * 60 * 60 * 1000));
+}
+</script>
+
+<div id="reserva-online">
+	<h2>RESERVE ONLINE</h2>
+	<form id="form_buscador" method="post" action="#">
+		
+		<input type="hidden" name="zona" value="" />
+		<input type="hidden" name="codigoHotel" value="0" />
+		<input type="hidden" name="idioma" value="es" />
+		<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+		<input type="hidden" name="idPrm" value="MBVALENTIN" />
+		<input type="hidden" name="idONg" value="P47" />
+		<input type="hidden" name="idNom" value="" />
+		<input type="hidden" name="base" value="buscar" />
+		<input type="hidden" name="customCSS" value="1" />
+		<input type="hidden" name="irListaHoteles" value="Y" />
+
+	<div>
+
+	<fieldset class="reservaon">
+		<label class="reserva">Destino</label>
+		<select class="destinohotel" name="numero" id="destinos">
+			<option value ="0">Todos</option>
+		</select>
+
+		<label class="reserva">Hotel</label>
+			<select class="destinohotel" name="numero" id="hoteles">
+				<option value ="0">Todos</option>
+			</select>
+	</fieldset>
+
+	<fieldset id="llegada">
+		<label>Fecha de llegada:</label>
+		<input id="fechaLlegada"  name="fechaLlegada" type="text" readonly class="calendario"/>
+	</fieldset>
+	<fieldset id="salida">
+		<label>Fecha de salida:</label>
+		<input id="fechaSalida" name="fechaSalida" type="text" readonly class="calendario"/>
+	</fieldset>
+
+	<p class="pie-BE">Si desea reservar diferentes tipos de habitación, recomendamos solicitar cada una individualmente</p>
+	<fieldset id="habitaciones">
+		<label>Habitaciones</label>
+		<select name="no_hab" id="paxnumrooms">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</fieldset>
+	<div id="paxrooms">&nbsp;</div>
+	<p class="pie-BE">Código de promoción</p>
+	<fieldset class="codigoEmpresa">
+		<input type="text" id="codigoEmpresa" name="codigoEmpresa" value="" />
+	</fieldset>
+	<div class="reserva_enviar"><a id="link_reservas" href="#">Ver precios</a></div>
+	<div class="reserva_cancelar"><a href="booking-cancel.html"><span>Cancelar reserva</span></a></div>
+
+
+	</div>
+	</form>
+</div>
+
+</div>
+			<div class="modulo"><img src="img/port28994_es.gif" /></div>
+<div class="modulo"><a href="http://www.valentinsanctipetri.com/" target="_blank"><img src="img/port28995_es.gif" /></a></div>
+<div class="modulo"><a href="grupos-valentin-hotels.html"><img src="img/port29016_es.jpg" /></a></div>
+<div class="modulo"><a href="alquiler-de-coches-canarias-mallorca.html"><img src="img/port29015_es.jpg" /></a></div>
+
+			<div class="modulo news">
+			<!-- (i) newsletter -->
+				<script type="text/javascript">
+(function() {
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.newsletter.init({ form: 'subscripcion-contenido', input: 'email', submit: 'newslettersubmit', msgerror: 'Por favor introduzca su email o revise que tiene el formato correcto' });
+	});
+})();
+</script>
+<!-- (i) newsletter -->
+					<div id="subscripcion">
+						<form id="subscripcion-contenido" action="http://www.valentinhotels.com/es/newsletter.html" method="get">
+							<input type="hidden" name="lang" value="es" />
+							<input type="hidden" name="codigoHotel" value="0" />
+							<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+							<input type="hidden" name="idPrm" value="MBVALENTIN" />
+							<input type="hidden" name="idONg" value="P47" />
+							<input type="hidden" name="promoId" value="" />
+
+							<div class="newsletter">
+								<h2>suscríbase al newsletter</h2>
+								<input type="text" id="email" name="email" class="input-text" value='Introduzca su email' onfocus="javascript:this.value = ''" />
+								<button type="submit" id="newslettersubmit" name="enviar" class="enviar"></button>
+							</div>
+						</form>
+					</div> 
+<!-- (f) newsletter -->                                       
+
+<!-- (i) cambiar imagen cabecera -->  
+<script>
+
+if (HOTELMANAGER.lang.actual == "en" || HOTELMANAGER.lang.actual == "de"){
+	//document.write("idioma US DE");
+	document.getElementById('cab').style.backgroundImage = "url(../estilo/img/bg_cab2.jpg)";
+}
+</script>
+<!-- (i) cambiar imagen cabecera --> 
+
+
+<!--script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&page=home' type='text/javascript'%3E%3C/script%3E"));
+</script-->
+
+
+			<!-- (f) newsletter --> 
+			</div>
+		</div>
+		<div class="informacion">
+			<div class="menu" id="nav">
+				 <ul>
+<li id="menu1"><a title='Apartamentos en Menorca, hotel en Cádiz, apartamentos en Menorca y Gran Canarias' href='index.html'><span>Inicio</span></a></li>
+<li id="menu2"><a title='Valentín Hoteles playa, valentín apartamentos vacaciones' href='valentin-hoteles-playa-apartamentos-vacaciones.html'><span>Valentín Hotels</span></a></li>
+<li id="menu3"><a title='Vacaciones en Mallorca, Ofertas en Menorca, Hotel Spa en Cádiz, Aparthotel Gran Canarias' href='vacaciones-mallorca-hotel-ofertas-menorca-apartahotel.html'><span>Destinos</span></a></li>
+<li id="menu4"><a title='Agroturismo Mallorca, spa Hoteles Golf Cádiz , Hoteles familiares Menorca y Canarias' href='agroturismo-mallorca-spa-hoteles-golf-cadiz-familias-menorca.html'><span>Especialistas en...</span></a></li>
+<li id="menu5"><strong><a title='Noticias de Valentín Hotels' href='noticias-valentin.html' class="active"><span>Noticias</span></a></strong>
+</li>
+<li id="menu6"><a title='Ofertas Hoteles en Mallorca, Apartamentos baratos Menorca y Canarias, Ofertas Spa Cádiz' href='ofertas-hoteles-en-mallorca-apartamentos-baratos-menorca-canarias.html'><span>Ofertas</span></a></li>
+</ul>  		
+			</div>
+			<div class="imagen"><div id="imagediv"><img src='img/noticias-primavera-es.jpg' alt='noticias valentin hotels' title='noticias valentin hotels' width='695' height='275'/></div></div>
+			<div class="intro">
+				<h2><span>Noticias Valent&iacute;n Hotels</span></h2>				
+				<div class="ofertas">
+	<h3>Nueva Apertura</h3>
+	<div class="ofertasimg"><img src="img/logo-valentin-perla-blanca.jpg" alt="" /></div>
+	<div class="ofertastxt"><p><strong>Valentin Perla Blanca Adults Only<br /><br /></strong></p> <p><strong>Valentin Hotels</strong> tiene el privilegio de anunciarles que pr&oacute;ximamente abrir&aacute; un nuevo <strong>hotel en Cuba</strong>, situado en la magn&iacute;fica zona de <strong>Cayo Santa Mar&iacute;a</strong>.</p> <p>El <strong>Hotel Valentin Perla Blanca*****</strong> en <strong>Cayo Santa Mar&iacute;a</strong> ser&aacute; un <strong>resort Adults Only</strong> (Mayores de 18 a&ntilde;os) con m&aacute;s de medio kilometro de playa de arena blanca y fina.</p> <p>El resort est&aacute; dise&ntilde;ado en un <strong>estilo moderno y caribe&ntilde;o</strong> y est&aacute; situado a tan s&oacute;lo a 90 minutos del <strong>aeropuerto internacional de Santa Clara.</strong></p></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Certificado Medioambiental Hotel Valentin Son Bou y valentin Star</h3>
+	<div class="ofertasimg"><img src="img/hotel-valentin-son-bou-menorca-gold-travelife.jpg" alt="Certificado medioambiental" /></div>
+	<div class="ofertastxt"><strong>Certificado Medioambiental Travelife</strong><br /><br />Nos complace comunicar que el <strong>Hotel Valentin Son Bou</strong> y <strong>Valentin Star Adults Only</strong> en Menorca<strong>,</strong> ha recibido el galard&oacute;n que lo certifica como un hotel que cumple con las <strong>normativas mediambientales</strong> para un <strong>turismo</strong> sostenible y de <strong>calidad</strong>.<br /><br />Desde <strong>Valentin Hotels</strong> revindicamos nuestro compromiso de <strong>calidad</strong> y <strong>mejora continua,</strong> junto con un plan mediambiental elaborado de forma individual para cada uno de nuestros establecimientos.<br /><br />Hoy tenemos el placer de darle la enhorabuena al Hotel Valentin Son Bou**** y Al Hotel Valentin Star Adults Only**** junto con todo el presonal que los conforman, un gran equipo que ha hecho posible dicha realidad.<br />Enhorabuena!!!<br /><br /><br /><br /><br /></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Challenge Paguera-Mallorca</h3>
+	<div class="ofertasimg"><img src="img/challenge.jpg" alt="Challenge Mallorca" /></div>
+	<div class="ofertastxt"><strong><strong>Challenge Paguera-Mallorca<br /><br /></strong></strong>La maravillosa isla de <strong>Mallorca</strong>, m&aacute;s concretamente en la localidad de <strong>Paguera (Calvi&aacute;)</strong> ha sido elegida para acoger este gran evento <strong>&ldquo;Half Challenge&rdquo;</strong> el pr&oacute;ximo <strong>2014</strong>.<br /><br /> <p>Los participantes gozar&aacute;n de un marco incomparable, lleno de naturaleza y con unas infraestructuras de primer nivel.<br /><br /></p> <p>No s&oacute;lo tendr&aacute; lugar dicho gran evento que se realizar&aacute; el <strong>18 de Octubre 2014</strong>, sino que tambi&eacute;n se realizar&aacute;n sesiones de entrenamiento, realizadas o impartidas por los mejores y m&aacute;s prestigiosos profesionales a nivel europeo.<br /><br /></p> <p>Para todos aquellos que quieran inscribirse o deseen mayor informaci&oacute;n visiten el siguiente enlace : <a href="http://www.challenge-paguera-mallorca.com/" target="_blank">http://www.challenge-paguera-mallorca.com</a></p> <strong>Para su alojamiento le recomendamos nuestros hoteles en <a href="valentin-hoteles-playa-apartamentos-vacaciones.html">Paguera</a>.<br /><br /></strong></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Nuevas tarifas 2014</h3>
+	<div class="ofertasimg"><img src="img/noticias-2013.jpg" alt="ofertas valentín hoteles 2014" /></div>
+	<div class="ofertastxt"><strong>Tarifas 2014</strong><br /><br />Descubre nuestras ofertas para el 2014<br /><br />Quieres disfrutar en familia, con tu pareja, en destinos con maravillosas playas, visita ciudades y su cultura.<br />Tenemos las mejores ofertas hechas a tu medida en los diferentes destinos Valent&iacute;n.<br /><a href="ofertas-hoteles-en-mallorca-apartamentos-baratos-menorca-canarias.html">Ver m&aacute;s informaci&oacute;n</a></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Hotel Mallorca Sólo Adultos</h3>
+	<div class="ofertasimg"><img src="img/soloadultos.jpg" alt="Hotel-Solo-adultos-Mallorca" /></div>
+	<div class="ofertastxt"><p><strong>Hoteles S&oacute;lo Adultos.<br /><br /></strong>Apreciados clientes, les informamos de una serie de cambios que se llevaran a cabo en dos establecimientos de <strong>Valentin Hotels en Mallorca</strong>.</p> <p>El <strong>Hotel Valentin Paguera***</strong> y el <strong>Hotel Valentin Reina Paguera***</strong>, pasar&aacute;n a partir del <strong>01 de Abril 2014</strong> a ser establecimientos <strong>s&oacute;lo para adultos</strong>, la edad m&iacute;nima para dichos hoteles es de <strong>18 a&ntilde;os.</strong></p> <p>Si quieren disfrutar de unas vacaciones sin ni&ntilde;os, con un <strong>trato exclusivo y personalizado</strong> en <strong>Mallorca</strong>, tanto en el Hotel Valentin Reina Paguera, como en el Hotel Valentin Paguera son su mejor opci&oacute;n.</p> No deje pasar dicha oportunidad y obtenga un <strong>descuento del 15%</strong>reservando ahora de forma anticipada <p><strong>(Oferta Valida hasta el 31.03.14)</strong></p></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Dormir+</h3>
+	<div class="ofertasimg"><img src="img/noticiaofertasadicionales.jpg" alt="ofertas adicionales Valentín Hotels" /></div>
+	<div class="ofertastxt"><strong>Ofertas adicionales</strong><br /><br />&iquest;De verdad que <strong>solo</strong> quiere <strong>descansar</strong> en sus vacaciones?<br /><br />&iexcl;Descubra nuestras <strong>ofertas adicionales</strong>! Le apetece relax y wellness o un curso de surf? Prefiere hacer una excursi&oacute;n o quiere sorprender su pareja?<br /><br /><strong><a href="oferta-hotel-spa.html">&gt;&gt; Relax</a></strong><br /><a href="hoteles-turismo-activo.html"><br /><strong>&gt;&gt; Activo</strong></a><br /><a href="hoteles-turismo-cultural.html"><br /><strong>&gt;&gt; Cultura</strong></a><br /><strong><a href="hoteles-romanticos-con-encanto.html"><br />&gt;&gt; Momentos especiales</a></strong><br /><br /></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Solsticio de verano 2013</h3>
+	<div class="ofertasimg"><img src="img/verano.jpg" alt="" /></div>
+	<div class="ofertastxt"><p><strong>Noticias de Verano 2013</strong><br /><br />La llegada del <strong>verano</strong> es una fecha esperada por muchos por la llegada del calor, el buen tiempo y, normalmente, <strong>las vacaciones</strong>; Desde <strong>Valentin Hotels</strong> queremos dar la bienvenida al solsticio de verano y desear que todos pod&aacute;is disfrutar de unas merecidas y relajantes <strong>vacaciones</strong>; Si todav&iacute;a no ten&eacute;is vuestras <strong>vacaciones de verano</strong> pod&eacute;is pegar un vistazo a nuestra secci&oacute;n de <a href="ofertas-hoteles-en-mallorca-apartamentos-baratos-menorca-canarias.html">ofertas</a>.</p></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>VI Festival de Música Clásica</h3>
+	<div class="ofertasimg"><img src="img/logo-pianino.gif" alt="" /></div>
+	<div class="ofertastxt"><p><strong>Festival de M&uacute;sica Cl&aacute;sica</strong> <strong>PIANINO!</strong></p> Un A&ntilde;o m&aacute;s se celebra el festival de <strong>piano</strong> <strong>Frederic Chopin y Georg Sand</strong> en la <strong>Cartuja de Valldemossa</strong>; Este a&ntilde;o tendr&aacute;n lugar hasta 9 conciertos de m&uacute;sica cl&aacute;sica siendo los d&iacute;as 7,8,9,14,15,16,22,23 y 28 de <strong>Junio</strong> las fechas escogidas; Los conciertos ser&aacute;n a las 20:30 h y recogen artistas de la talla de: <strong>Flavio Villani, Daniel del Pino, Soo-Jung Ann, Francisco Fierro, Enrique Bernaldo de Quir&oacute;s, Yukiko Akagi, &Aacute;lex Alguacil</strong>.<br /><br />Para m&aacute;s informaci&oacute;n visite <a href="http://www.pianino.es/" target="_blank">http://www.pianino.es/<br /></a>Las entradas pueden reservarse a trav&eacute;s de este correo electr&oacute;nico <strong>info@pianino.es</strong> o por tel&eacute;fono <strong>971 728 312</strong><br /><br />Le recomendamos para su alojamiento nuestros hoteles de <a href="hoteles-mallorca.html">Mallorca</a><br /><br /><br /></div>
+	<div class="limp"></div>
+</div>
+<div class="ofertas">
+	<h3>Valentín Paguera Hotel & Apartamentos</h3>
+	<div class="ofertasimg"><img src="img/bici.jpg" alt="Ciclismo-Mallorca" /></div>
+	<div class="ofertastxt"><p><strong>Novedades 2013</strong></p> <p>Para el 2013&nbsp; <strong>Valentin Paguera</strong> <strong>Hotel &amp; Apartamentos</strong>&nbsp; cuenta con una nueva infraestructura especialmente dedicada a&nbsp; los <strong>ciclistas </strong>tanto de carretera como Mountain bike.<br /> Disponemos de nuevas instalaciones, todas ellas, perfectamente acondicionadas y equipada<strong>s </strong>donde se podr&aacute;&nbsp; hacer uso&nbsp; de las mismas para <strong>estacionar las bicicletas, taller y</strong> <strong>mantenimiento.<br /><br /></strong>(11.03.13)<strong><br /><br /><a href="alquiler-apartamento-mallorca-valentin-paguera.html">M&aacute;s informaci&oacute;n &gt;&gt;</a><br /></strong></p></div>
+	<div class="limp"></div>
+</div>
+
+				
+			</div>
+		</div>
+	</div>
+	<div class="limp"></div>
+	<div class="pie">
+		<div class="qweb"><div style="width:97px;"> <a href="http://www.qweb.es/_alojamiento-en-hoteles.html" target="_blank" title="Directorio de Alojamiento en hoteles"><img src="../imagenes/icons/imagen.gif" width="97" height="31" border="0" alt="Directorio de Alojamiento en hoteles" /></a></div></div>
+		<div class="facebook2">
+	<ul>
+		<li><a href="http://www.facebook.com/valentinhotels" target="_blank" title="Facebook"><img src="../estilo/imagenes/ic_facebook.gif" width="34" height="33" /></a></li>
+		<li><a href="https://twitter.com/valentinhotels" target="_blank" title="Twitter"><img src="../estilo/imagenes/ic_twitter.gif" width="34" height="33" /></a></li>
+		<li><a href="http://www.youtube.com/user/Valentinhotels" target="_blank" title="YouTUBE"><img src="../estilo/imagenes/ic_youtube.gif" width="34" height="33" /></a></li>
+	</ul>
+	<div class="limp"></div>
+</div>
+
+		 <ul class="hmpie"><li class="hmli-0"><a title="Acerca de Valentín Hotels" href="acerca-valentin.html">Acerca de Valentín Hotels</a></li><li class="hmli-1"><a title="Contacto" href="contacto.html">Contacto</a></li><li class="hmli-2"><a title="Mapa web" href="mapa-web.html">Mapa web</a></li><li class="hmli-3"><a title="Términos y Condiciones" href="terminos-condiciones.html">Términos y Condiciones</a></li><li class="hmli-4"><a title="Política de Privacidad" href="politica-privacidad.html">Política de Privacidad</a></li><li class="hmli-5"><a title="Cookies" href="cookies.html">Cookies</a></li></ul> 
+	</div>
+</div>
+
+<script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&pid=0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	<script type="text/javascript">
+ var _gaq = _gaq || [];
+_gaq.push(['._setDomainName', 'none']);
+_gaq.push(['_setAccount', 'UA-12940378-1']);
+_gaq.push(['_trackPageview']);
+(function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+
+<!-- Mirrored from www.valentinhotels.com/es/noticias-valentin.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 12:49:11 GMT -->
+</html>
+<!-- anuncios.php (valentin) -->

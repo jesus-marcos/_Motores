@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+
+<!-- Mirrored from www.valentinhotels.com/en/cookies.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 12:51:26 GMT -->
+<head>
+		<title>Cookies | Valentín Hotels</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+
+
+
+<!-- General CSS - HotelManager -->
+<link title="general" rel="stylesheet" href="../css/compress-en-25.css"/>
+
+
+<script type="text/javascript" src="../js/compress-en-25.js"></script>
+<script type="text/javascript">
+	(function() {
+		HOTELMANAGER.lang.setLanguage('en');
+	})();
+	(function() {
+		HOTELMANAGER.utils.Onload(function() {
+			try {
+				var txt = document.getElementById('inicio-contenido');
+				var rexexp = new RegExp('[a-zA-Z0-9]+');
+				var results = rexexp.exec( txt.innerHTML );
+				if (!results) {
+					txt.parentNode.style.display='none';
+				}
+			}
+			catch(e) {}
+		});
+	})();
+	$(document).ready(function() {
+		$('.slideshow').cycle({
+			fx: 'fade',
+			timeout: 6000,
+			speed: 2000
+		});
+	});
+</script>
+	
+</head>
+<body id="idioma-es">
+<div id="calendarDiv" class="calendarDivStyle"></div>
+<div id="valentin">
+	<div class="idiomas">
+		<ul>
+			<li id="es"><a href="../es/cookies.html" title="Ver la web en castellano" class=""><span>Espa&ntilde;ol</span></a></li>
+			<li id="en"><a href="cookies.html" title="View english version" class="active"><span>English</span></a></li>	
+			<li id="de"><a href="../de/cookies.html" title="Siehe Deutsche Version" class=""><span>Deutsch</span></a></li>	
+
+		</ul>
+	</div>
+	<div class="limp"></div>
+	<div class="cabecera" id="cab"><h1><a href="index.html" title="Valent&iacute;n Hoteles"><span>Valent&iacute;n Hoteles</span></a></h1></div>
+	<div class="contenido">
+		<div class="destacados">
+			<div class="reservas"><link title="general" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script src="../js/calendarTranslation_en.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	HOTELMANAGER.booking.habitaciones.default_adults_number = Number(6);
+	HOTELMANAGER.booking.habitaciones.default_childs_number = Number(5);
+	HOTELMANAGER.booking.habitaciones.default_childs_age = Number(17);
+	HOTELMANAGER.booking.habitaciones.default_child_age = 0;
+	
+	
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.booking.init({ form: 'form_buscador', link: 'link_reservas', paxroomsdiv: 'paxrooms', paxroomsnum: 'paxnumrooms' });
+	});
+	
+	HOTELMANAGER.utils.Onload(function() {
+		inicializarCalendario();
+	});
+	
+})();
+function agenciaempresa(ac){
+	if (ac == 'a') {
+		$('#codigoEmpresa').val("");
+		$('#orgType').val("A");
+	} else if (ac == 'c'){
+		$('#codigoAgencia').val("");
+		$('#orgType').val("C");
+	}
+}
+var formatoFecha = "dd-mm-yy";
+var hoy = new Date();
+var manana = getNDaysAfter(hoy,1);
+var numeroMesesAMostrar = 2;
+var primerDia = 1;
+$(document).ready(function(){
+	var i = 0;
+	while(!isAvailable(hoy)[0] || !isAvailable(manana)[0]){
+		hoy = getNDaysAfter(hoy,1);
+		manana = getNDaysAfter(hoy,1);
+		if(i++ > 200) break;
+	}
+	$('#fechaLlegada').val($.datepicker.formatDate(formatoFecha, hoy));
+	$('#fechaSalida').val($.datepicker.formatDate(formatoFecha, manana));
+	// inicializar calendarios
+    $("#fechaLlegada").datepicker({
+        minDate: hoy,
+		dateFormat: formatoFecha, 
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia,
+        onSelect: function(selected) {
+			var fechaSeleccionada = new Date((selected).split("-")[2], (selected).split("-")[1]-1, (selected).split("-")[0]);
+			$("#fechaSalida").datepicker("option","minDate", $.datepicker.formatDate(formatoFecha,getNDaysAfter(fechaSeleccionada,1)));
+        }
+    });
+    $("#fechaSalida").datepicker({ 
+        minDate: manana,
+		dateFormat: formatoFecha,
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia
+    });
+});
+var calendarioDisp = new Array();
+function isAvailable(date){
+	var dateAsString = $.datepicker.formatDate("dd/mm/yy", date);
+    var result = $.inArray(dateAsString, calendarioDisp) ==-1 ? [true,''] : [false,'closeDay'];
+    return result;
+}
+function getNDaysAfter(date,days){
+	return new Date(date.getTime() + (days * 24 * 60 * 60 * 1000));
+}
+</script>
+
+<div id="reserva-online">
+	<h2>BOOK ONLINE</h2>
+	<form id="form_buscador" method="post" action="#">
+		
+		<input type="hidden" name="zona" value="" />
+		<input type="hidden" name="codigoHotel" value="0" />
+		<input type="hidden" name="idioma" value="en" />
+		<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+		<input type="hidden" name="idPrm" value="MBVALENTIN" />
+		<input type="hidden" name="idONg" value="P47" />
+		<input type="hidden" name="idNom" value="" />
+		<input type="hidden" name="base" value="hotel-availability" />
+		<input type="hidden" name="customCSS" value="1" />
+		<input type="hidden" name="irListaHoteles" value="Y" />
+
+	<div>
+
+	<fieldset class="reservaon">
+		<label class="reserva">Resort</label>
+		<select class="destinohotel" name="numero" id="destinos">
+			<option value ="0">All</option>
+		</select>
+
+		<label class="reserva">Hotel</label>
+			<select class="destinohotel" name="numero" id="hoteles">
+				<option value ="0">All</option>
+			</select>
+	</fieldset>
+
+	<fieldset id="llegada">
+		<label>Arrival date:</label>
+		<input id="fechaLlegada"  name="fechaLlegada" type="text" readonly class="calendario"/>
+	</fieldset>
+	<fieldset id="salida">
+		<label>Departure date:</label>
+		<input id="fechaSalida" name="fechaSalida" type="text" readonly class="calendario"/>
+	</fieldset>
+
+	<p class="pie-BE">If you want to book different types of rooms, we recommend you to request each type individually</p>
+	<fieldset id="habitaciones">
+		<label>Rooms</label>
+		<select name="no_hab" id="paxnumrooms">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</fieldset>
+	<div id="paxrooms">&nbsp;</div>
+	<p class="pie-BE">Promotional Code</p>
+	<fieldset class="codigoEmpresa">
+		<input type="text" id="codigoEmpresa" name="codigoEmpresa" value="" />
+	</fieldset>
+	<div class="reserva_enviar"><a id="link_reservas" href="#">See rates</a></div>
+	<div class="reserva_cancelar"><a href="booking-cancel.html"><span>Booking cancellation</span></a></div>
+
+
+	</div>
+	</form>
+</div>
+
+</div>
+			
+			<div class="modulo news">
+			<!-- (i) newsletter -->
+				<script type="text/javascript">
+(function() {
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.newsletter.init({ form: 'subscripcion-contenido', input: 'email', submit: 'newslettersubmit', msgerror: 'Please writte your email or review it has been well written' });
+	});
+})();
+</script>
+<!-- (i) newsletter -->
+					<div id="subscripcion">
+						<form id="subscripcion-contenido" action="http://www.valentinhotels.com/en/newsletter-en.html" method="get">
+							<input type="hidden" name="lang" value="en" />
+							<input type="hidden" name="codigoHotel" value="0" />
+							<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+							<input type="hidden" name="idPrm" value="MBVALENTIN" />
+							<input type="hidden" name="idONg" value="P47" />
+							<input type="hidden" name="promoId" value="" />
+
+							<div class="newsletter">
+								<h2>subscribe to newsletter</h2>
+								<input type="text" id="email" name="email" class="input-text" value='enter your email' onfocus="javascript:this.value = ''" />
+								<button type="submit" id="newslettersubmit" name="enviar" class="enviar"></button>
+							</div>
+						</form>
+					</div> 
+<!-- (f) newsletter -->                                       
+
+<!-- (i) cambiar imagen cabecera -->  
+<script>
+
+if (HOTELMANAGER.lang.actual == "en" || HOTELMANAGER.lang.actual == "de"){
+	//document.write("idioma US DE");
+	document.getElementById('cab').style.backgroundImage = "url(../estilo/img/bg_cab2.jpg)";
+}
+</script>
+<!-- (i) cambiar imagen cabecera --> 
+
+
+<!--script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&page=home' type='text/javascript'%3E%3C/script%3E"));
+</script-->
+
+
+			<!-- (f) newsletter --> 
+			</div>
+		</div>
+		<div class="informacion">
+			<div class="menu" id="nav">
+				 <ul>
+<li id="menu1"><a title='Mallorca Hotels | Holidays Menorca | Gran Canaria Apartments | Cadiz Hotels ' href='index.html'><span>Home</span></a></li>
+<li id="menu2"><a title='Valentin hotels and beach apartments in Spain' href='valentin-hotels-apartments-spain.html'><span>Valentín Hotels</span></a></li>
+<li id="menu3"><a title='Holidays mallorca | Gran Canaria hotels | Holidays Minorca | Sancti Petri Hotels' href='mallorca-holidays-minorca.html'><span>Destinations</span></a></li>
+<li id="menu4"><a title='Family holidays Minorca | Romantic hotels Mallorca | Apartment gran canaria | Spa hotels in Sancti Petri ' href='apartment-gran-canaria-hotels-sancti-petri.html'><span>Specialists in...</span></a></li>
+<li id="menu5"><a title='Valentín Hotels News' href='news-valentin.html'><span>News</span></a></li>
+<li id="menu6"><a title='Cheap holidays Mallorca | Hotel offers Minorca' href='cheap-holidays-mallorca-hotel-minorca.html'><span>Offers</span></a></li>
+</ul>  		
+			</div>
+			<div class="intro" style="padding-top:25px;">
+				<div style="text-align: justify;"><strong>COOKIES</strong></div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">La p&aacute;gina Web www.valentinhotels.com es titularidad de VALENTIN GESTION, S.L. y cumple con los requisitos derivados de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informaci&oacute;n y de Comercio Electr&oacute;nico, del Real Decreto-ley 13/2012, de 30 de marzo, as&iacute; como de las obligaci&oacute;n de Informaci&oacute;n al usuario contemplada en la Ley Org&aacute;nica 15/1999, de 13 de diciembre, de Protecci&oacute;n de Datos de Car&aacute;cter Personal.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>Datos identificativos </strong></div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">Nombre:&nbsp; VALENTIN GESTION, S.L.</div> <div style="text-align: justify;">CIF/NIF:&nbsp; &nbsp;B07864374</div> <div style="text-align: justify;">Direcci&oacute;n:&nbsp; CALLE LUZ, N&ordm;. 5.</div> <div style="text-align: justify;">Poblaci&oacute;n:&nbsp; PAGUERA &ndash; CALVIA&nbsp; (cp.07160)</div> <div style="text-align: justify;">Provincia&nbsp; &nbsp;ILLES BALEARS</div> <div style="text-align: justify;">Tel&eacute;fono:&nbsp; &nbsp;971032032</div> <div style="text-align: justify;">Fax:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;971032001</div> <div style="text-align: justify;">Email:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:t.vich@valentinhotels.com">t.vich@valentinhotels.com</a></div> <div style="text-align: justify;">URL:&nbsp; www.valentinhotels.com</div> <div style="text-align: justify;">Registro Mercantil de Mallorca. Registrada el 15-11-99, tomo 1695; libro 0,&nbsp; folio 36; hoja n&ordm;.PM.33602; secci&oacute; 8&ordf;; inscripci&oacute;n 1&ordf;.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>Nota Legal&nbsp; </strong></div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">De acuerdo con la normativa vigente en materia de protecci&oacute;n de datos as&iacute; como en materia de servicios de la sociedad de la informaci&oacute;n y de comercio electr&oacute;nico, el usuario acepta que los datos personales aportados en la Web, o cualquier otro facilitado a VALENTIN GESTION, S.L. para su acceso a algunos de los servicios sean incorporados a ficheros titularidad de VALENTIN GESTION, S.L., con la finalidad de facilitar la prestaci&oacute;n de los servicios solicitados, para la correcta identificaci&oacute;n de los usuarios que solicitan servicios personalizados en la Web, para la gesti&oacute;n de tareas b&aacute;sicas de administraci&oacute;n, as&iacute; como para mantenerle informado, bien por correo electr&oacute;nico bien por cualquier otro medio, de novedades, productos y servicios relacionados con VALENTIN GESTION, S.L. &nbsp;En el caso de comunicaciones comerciales a trav&eacute;s de correo electr&oacute;nico o medio equivalente, el usuario presta su consentimiento expreso para el env&iacute;o de publicidad a trav&eacute;s de dicho medio.</div> <div style="text-align: justify;">VALENTIN GESTION , S.L. se compromete al cumplimiento de su obligaci&oacute;n de secreto de los datos de car&aacute;cter personal y de su deber de tratarlos con confidencialidad, y asume, a estos efectos, las medidas de &iacute;ndole t&eacute;cnica, organizativa y de seguridad necesarias para evitar su alteraci&oacute;n, p&eacute;rdida, tratamiento o acceso no autorizado, de acuerdo con lo establecido en la Ley Org&aacute;nica 15/1999 de 13 de diciembre, de Protecci&oacute;n de Datos de Car&aacute;cter Personal, y dem&aacute;s legislaci&oacute;n aplicable.</div> <div style="text-align: justify;">Las respuestas de los campos que contienen un asterisco (*) o se&ntilde;aladas como obligatorio, tienen un car&aacute;cter obligatorio, al considerarse la informaci&oacute;n m&iacute;nima exigible para gestionar la informaci&oacute;n solicitada, sin esta informaci&oacute;n ser&iacute;a imposible desarrollar el servicio solicitado. El resto de los campos son de respuesta facultativa.</div> <div style="text-align: justify;">El usuario responder&aacute;, en cualquier caso, de la veracidad de los datos facilitados, reserv&aacute;ndose VALENTIN GESTION, S.L. el derecho a excluir de los servicios registrados a todo usuario que haya facilitado datos falsos, sin perjuicio de las dem&aacute;s acciones que procedan en Derecho.</div> <div style="text-align: justify;">Cualquier usuario puede en cualquier momento ejercitar sus derechos de acceso, rectificaci&oacute;n, cancelaci&oacute;n y oposici&oacute;n, mediante un escrito, acreditando su identidad, mediante fotocopia del DNI, y especificando el derecho a ejercitar, a: VALENTIN GESTION, S.L. , calle Luz, n&ordm; 5. Paguera-Calvi&aacute;, (cp.07160), Illes Balears.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>Normativa sobre el uso de cookies </strong></div> <div style="text-align: justify;">Esta Pol&iacute;tica de Cookies es parte integrante del Aviso Legal y la Pol&iacute;tica de Privacidad de VALENTIN GESTION, S.L. El acceso y la navegaci&oacute;n en el sitio, o el uso de los servicios del mismo, implican la aceptaci&oacute;n de las Condiciones Generales establecidas en nuestro Aviso Legal (y por tanto de la Pol&iacute;tica de Privacidad y Pol&iacute;tica de Cookies). Por favor, l&eacute;elas atentamente.</div> <div style="text-align: justify;">Te agradecemos que hayas decidido visitarnos. Queremos que tu experiencia en el sitio sea lo mejor posible, y por ese motivo hemos escrito esta Pol&iacute;tica de Cookies de la forma m&aacute;s transparente posible.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>&iquest;Qu&eacute; es una Cookie? </strong></div> <div style="text-align: justify;">Las cookies son archivos que contienen peque&ntilde;as cantidades de informaci&oacute;n que se descargan en el dispositivo del usuario que se utiliza cuando visitas un sitio web. Su finalidad principal es reconocer al usuario cada vez que accede a www.valentinhotels.com nos permite, adem&aacute;s, mejorar la calidad y la usabilidad de nuestra web.</div> <div style="text-align: justify;">Las cookies son esenciales para el funcionamiento de Internet; no pueden da&ntilde;ar el equipo/dispositivo del usuario y, si se encuentran activadas en la configuraci&oacute;n de tu navegador, nos ayudan a identificar y resolver posibles errores de funcionamiento de www.valentinhotels.com.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>Tipos de Cookies </strong></div> <div style="text-align: justify;">Hay diferentes tipos de cookies. Todos ellos trabajan de la misma manera, pero tienen peque&ntilde;as diferencias:</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"> <ul> <li><strong>Cookies de Sesi&oacute;n</strong>. Las cookies de sesi&oacute;n duran solamente por la duraci&oacute;n de tu visita y se borran cuando cierras el navegador. Su finalidad principal es identificar el tipo de dispositivo, apoyar la seguridad sitio web o su funcionalidad b&aacute;sica. No contienen informaci&oacute;n personal que nos permita identificar a una persona.</li> <li><strong>Cookies Persistentes o Permanentes</strong>: Se almacenan en el disco duro del dispositivo y nuestra web las lee cada vez que realizas una nueva visita a www.valentinhotels.com; posee una fecha de caducidad o expiraci&oacute;n determinada, cumplida la cual la cookie deja de funcionar. Nos permiten identificar tus acciones y preferencias; analizar las visitas y nos ayudan a comprender c&oacute;mo llegan los usuarios a nuestra p&aacute;gina y mejorar nuestros servicios.</li> <li><strong>Cookies de Funcionalidad</strong>: Permiten a www.valentinhotels.com recordar decisiones adoptadas por el usuario, como su login o identificador. La informaci&oacute;n de estas cookies recogen se anonimiza (es decir, no contiene ni tu nombre, direcci&oacute;n, u otros datos).</li> <li><strong>Cookies de Terceros</strong>. Las cookies de terceros son las cookies que instala un sitio web que no es el que est&aacute;s visitando; por ejemplo, las usadas por redes sociales (como Facebook) o por complementos externos de contenido (como Google Maps). Adem&aacute;s, algunas empresas de publicidad usan este tipo de archivos para realizar un seguimiento de tus visitas en cada sitio en el que se anuncian.</li> <li><strong>Cookies Anal&iacute;ticas</strong>: Son cookies que tienen por finalidad el mantenimiento peri&oacute;dico y garantizar el mejor funcionamiento y servicio al usuario; recopilando datos de tu actividad.</li> </ul> </div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>Uso de Cookies por parte de www.valentinhotels.com </strong></div> <div style="text-align: justify;">Mediante el acceso a www.valentinhotels.com, aceptas de manera expresa que podamos usar este tipo de cookies en tus dispositivos. Si desactivas las cookies, puede que tu navegaci&oacute;n por www.valentinhotels.com no sea &oacute;ptima y algunas de las utilidades que dispone www.valentinhotels.com no funcionen correctamente.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>a) Cookies de Terceros. Cookies de Google Analytics </strong></div> <div style="text-align: justify;">El sitio utiliza el servicio Google Analytics, que es prestado por Google, Inc., entidad cuya oficina principal est&aacute; en 1600 Amphitheatre Parkway, Mountain View (California), CA 94043, Estados Unidos ("Google").</div> <div style="text-align: justify;">Google Analytics utiliza cookies para ayudarnos a analizar el uso que hacen los usuarios del sitio. La informaci&oacute;n que genera la cookie acerca de tu uso del sitio (incluyendo tu direcci&oacute;n IP) ser&aacute; directamente transmitida y archivada por Google en sus servidores de Estados Unidos. Google usar&aacute; esta informaci&oacute;n por cuenta nuestra con el prop&oacute;sito de seguir la pista de tu uso del sitio, recopilando informes de la actividad del sitio y prestando otros servicios relacionados con la actividad del sitio y el uso de Internet. Google podr&aacute; transmitir dicha informaci&oacute;n a terceros cuando as&iacute; se lo requiera la legislaci&oacute;n, o cuando dichos terceros procesen la informaci&oacute;n por cuenta de Google. Google no asociar&aacute; tu direcci&oacute;n IP con ning&uacute;n otro dato del que disponga Google.</div> <div style="text-align: justify;">Si lo deseas puedes rechazar el tratamiento de los datos o la informaci&oacute;n rechazando el uso de cookies mediante la selecci&oacute;n de la configuraci&oacute;n apropiada de tu navegador. Sin embargo, si lo haces, puede ser que no puedas usar la plena funcionabilidad de este sitio. Al utilizar este sitio consientes el tratamiento tu informaci&oacute;n por Google en la forma y para los fines arriba indicados.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><span style="text-decoration: underline;">Nombre de las cookies:</span></div> <div style="text-align: justify;">_utma</div> <div style="text-align: justify;">_utmb</div> <div style="text-align: justify;">_utmc</div> <div style="text-align: justify;">_utmv</div> <div style="text-align: justify;">_utmz</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><span style="text-decoration: underline;">Prop&oacute;sito de las cookies: </span></div> <div style="text-align: justify;">Estas cookies de Google Analytics generan un ID de usuario an&oacute;nimo, que es el que se utiliza para hacer un recuento de cuantas veces visita <em>www.valentinhotels.com </em>el usuario. Tambi&eacute;n registra cuando fue la primera y la &uacute;ltima vez que visit&oacute; la web. Asimismo, calcula cuando se ha terminado una sesi&oacute;n, origen de usuario y keyword.<br /><br /> <p><strong>b) Cookies de Terceros. Cookies de Google AdWords</strong></p> <p>El sitio utiliza el servicio Google AdWords, que es prestado por Google, Inc., entidad cuya oficina principal est&aacute; en 1600 Amphitheatre Parkway, Mountain View (California), CA 94043, Estados Unidos ("Google").</p> <p>Google AdWords utiliza diferentes tipos de cookies para el funcionamiento de los sitios web y de la actividad publicitaria de los anunciantes sobre el motor de b&uacute;squeda. Las cookies permiten personalizar los anuncios y mejorar la relevancia de los resultados de b&uacute;squeda de los usuarios.</p> <p>Las cookies de Google AdWords pueden ser de Publicidad o de Estado de la sesi&oacute;n.</p> <p><span>Ejemplos de cookies de Publicidad:</span></p> <p>&ldquo;PREF&rdquo;<br />&ldquo;id&rdquo;<br />&ldquo;_drt_&rdquo;<br />&ldquo;FLC&rdquo;<br />"NID"<br />"exchange_uid"<br />"__gads"</p> <p>Los sitios web suelen recopilar informaci&oacute;n sobre la forma en la que los usuarios interact&uacute;an con un sitio web.&nbsp;Google utiliza las denominadas "cookies de estado de la sesi&oacute;n" para poder mejorar el servicios con el fin de mejorar la experiencia de navegaci&oacute;n de los usuarios.</p> <p>&nbsp;</p> <p><span>Ejemplos de cookies de Estado de la sesi&oacute;n:</span></p> <p>"recently_watched_video_id_list"</p> </div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"><strong>Configuraci&oacute;n del usuario para evitar Cookies. </strong></div> <div style="text-align: justify;">Desde www.valentinhotels.com y en cumplimiento de la normativa legal vigente, ponemos a tu disposici&oacute;n la informaci&oacute;n que te permita configurar tu navegador/navegadores de Internet para mantener tu privacidad y seguridad en relaci&oacute;n a las cookies. Por ello, te facilitamos la informaci&oacute;n y enlaces a los sitos de soporte oficiales de los principales navegadores para que puedas decidir si deseas o no aceptar el uso de cookies.</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;">As&iacute;, puedes bloquear las cookies a trav&eacute;s de las herramientas de configuraci&oacute;n del navegador o bien puedes configurar tu navegador para que te avise cuando un servidor quiera guardar una cookie:</div> <div style="text-align: justify;">&nbsp;</div> <div style="text-align: justify;"> <ul> <li>Si utilizas Microsoft Internet Explorer, en la opci&oacute;n de men&uacute; Herramientas &gt; Opciones de Internet &gt; Privacidad &gt; Configuraci&oacute;n. Para saber m&aacute;s visita http://windows.microsoft.com/es-es/windows-vista/block-or-allow-cookies y http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-expl orer-9.</li> <li>Si utilizas Firefox, en la opci&oacute;n de men&uacute; Herramientas &gt; Opciones &gt; Privacidad &gt; Cookies. Para saber m&aacute;s visita</li> </ul> </div> <div style="text-align: justify;">https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios -we</div> <div style="text-align: justify;"> <ul> <li>Si utilizas Chrome, en la secci&oacute;n de Opciones &gt; Opciones avanzadas &gt; Privacidad. Para saber m&aacute;s</li> </ul> </div> <div style="text-align: justify;">http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647</div> <div style="text-align: justify;"> <ul> <li>Si utilizas Opera, en la opci&oacute;n de Seguridad y Privacidad, podr&aacute;s configurar el navegador. Para saber m&aacute;s visita</li> </ul> </div> <div style="text-align: justify;">http://www.opera.com/help/tutorials/security/cookies/</div> <div style="text-align: justify;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<div class="limp"></div>
+	<div class="pie">
+		<div class="qweb"><div style="width:97px;"> <a href="http://www.qweb.es/_alojamiento-en-hoteles.html" target="_blank" title="Directorio de Alojamiento en hoteles"><img src="../imagenes/icons/imagen.gif" width="97" height="31" border="0" alt="Directorio de Alojamiento en hoteles" /></a></div></div>
+		
+		 <ul class="hmpie"><li class="hmli-0"><a title="About Valentín Hotels" href="about-valentin.html">About Valentín Hotels</a></li><li class="hmli-1"><a title="Contact" href="contact.html">Contact</a></li><li class="hmli-2"><a title="Web Map" href="web-map.html">Web Map</a></li><li class="hmli-3"><a title="Terms & Conditions" href="terms-conditions.html">Terms & Conditions</a></li><li class="hmli-4"><a title="Privacy Policy" href="privacy-policy.html">Privacy Policy</a></li><li class="hmli-5"><a title="Cookies" href="cookies.html">Cookies</a></li></ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&pid=0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	<script type="text/javascript">
+ var _gaq = _gaq || [];
+_gaq.push(['._setDomainName', 'none']);
+_gaq.push(['_setAccount', 'UA-12940378-1']);
+_gaq.push(['_trackPageview']);
+(function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+
+<!-- Mirrored from www.valentinhotels.com/en/cookies.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 12:51:26 GMT -->
+</html>
+<!-- texto.php (valentin) -->

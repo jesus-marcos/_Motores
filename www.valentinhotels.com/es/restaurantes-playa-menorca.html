@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+
+<!-- Mirrored from www.valentinhotels.com/es/restaurantes-playa-menorca.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 13:02:05 GMT -->
+<head>
+		<title>Restaurantes playa Menorca</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="Valentín Star Hotel - en nuestros restaurantes en la playa en Menorca encontrará un ambiente adaptado a sus necesidades, con las actividades y juegos más estimulantes y divertidos, tanto para los pequeños como para los adultos." />
+		<meta name="keywords" content="hoteles en cala'n bosch, restaurantes playa en menorca, restaurantes playa menorca" />
+		
+
+
+
+<!-- General CSS - HotelManager -->
+<link title="general" rel="stylesheet" href="../css/compress-es-25.css"/>
+
+
+<script type="text/javascript" src="../js/compress-es-25.js"></script>
+<script type="text/javascript">
+	(function() {
+		HOTELMANAGER.lang.setLanguage('es');
+	})();
+	(function() {
+		HOTELMANAGER.utils.Onload(function() {
+			try {
+				var txt = document.getElementById('inicio-contenido');
+				var rexexp = new RegExp('[a-zA-Z0-9]+');
+				var results = rexexp.exec( txt.innerHTML );
+				if (!results) {
+					txt.parentNode.style.display='none';
+				}
+			}
+			catch(e) {}
+		});
+	})();
+	$(document).ready(function() {
+		$('.slideshow').cycle({
+			fx: 'fade',
+			timeout: 6000,
+			speed: 2000
+		});
+	});
+</script>
+	
+</head>
+<body id="idioma-es">
+<div id="calendarDiv" class="calendarDivStyle"></div>
+<div id="valentin">
+	<div class="idiomas">
+		<ul>
+			<li id="es"><a href="restaurantes-playa-menorca.html" title="Ver la web en castellano" class="active"><span>Espa&ntilde;ol</span></a></li>
+			<li id="en"><a href="../en/restaurant-menorca.html" title="View english version" class=""><span>English</span></a></li>	
+			<li id="de"><a href="../de/restaurants-strand-menorca.html" title="Siehe Deutsche Version" class=""><span>Deutsch</span></a></li>	
+		</ul>
+	</div>
+	<div class="limp"></div>
+	<div class="cabecera" id="cab"><h1><a href="index.html" title="Valent&iacute;n Hoteles"><span>Valent&iacute;n Hoteles</span></a></h1></div>
+	<div class="contenido">
+		<div class="destacados">
+			<div class="reservas"><link title="general" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script src="../js/calendarTranslation_es.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	HOTELMANAGER.booking.habitaciones.default_adults_number = Number(3);
+	HOTELMANAGER.booking.habitaciones.default_childs_number = Number(1);
+	HOTELMANAGER.booking.habitaciones.default_childs_age = Number(17);
+	HOTELMANAGER.booking.habitaciones.default_child_age = 0;
+	
+	
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.booking.init({ form: 'form_buscador', link: 'link_reservas', paxroomsdiv: 'paxrooms', paxroomsnum: 'paxnumrooms' });
+	});
+	
+	HOTELMANAGER.utils.Onload(function() {
+		inicializarCalendario();
+	});
+	
+})();
+function agenciaempresa(ac){
+	if (ac == 'a') {
+		$('#codigoEmpresa').val("");
+		$('#orgType').val("A");
+	} else if (ac == 'c'){
+		$('#codigoAgencia').val("");
+		$('#orgType').val("C");
+	}
+}
+var formatoFecha = "dd-mm-yy";
+var hoy = new Date();
+var manana = getNDaysAfter(hoy,1);
+var numeroMesesAMostrar = 2;
+var primerDia = 1;
+$(document).ready(function(){
+	var i = 0;
+	while(!isAvailable(hoy)[0] || !isAvailable(manana)[0]){
+		hoy = getNDaysAfter(hoy,1);
+		manana = getNDaysAfter(hoy,1);
+		if(i++ > 200) break;
+	}
+	$('#fechaLlegada').val($.datepicker.formatDate(formatoFecha, hoy));
+	$('#fechaSalida').val($.datepicker.formatDate(formatoFecha, manana));
+	// inicializar calendarios
+    $("#fechaLlegada").datepicker({
+        minDate: hoy,
+		dateFormat: formatoFecha, 
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia,
+        onSelect: function(selected) {
+			var fechaSeleccionada = new Date((selected).split("-")[2], (selected).split("-")[1]-1, (selected).split("-")[0]);
+			$("#fechaSalida").datepicker("option","minDate", $.datepicker.formatDate(formatoFecha,getNDaysAfter(fechaSeleccionada,1)));
+        }
+    });
+    $("#fechaSalida").datepicker({ 
+        minDate: manana,
+		dateFormat: formatoFecha,
+        numberOfMonths: numeroMesesAMostrar,
+        beforeShowDay: isAvailable,
+		monthNames: yxMonthsLarge,
+		dayNamesMin: dayHeaders,
+		firstDay: primerDia
+    });
+});
+var calendarioDisp = new Array();
+function isAvailable(date){
+	var dateAsString = $.datepicker.formatDate("dd/mm/yy", date);
+    var result = $.inArray(dateAsString, calendarioDisp) ==-1 ? [true,''] : [false,'closeDay'];
+    return result;
+}
+function getNDaysAfter(date,days){
+	return new Date(date.getTime() + (days * 24 * 60 * 60 * 1000));
+}
+</script>
+
+<div id="reserva-online">
+	<h2>RESERVE ONLINE</h2>
+	<form id="form_buscador" method="post" action="#">
+		
+		<input type="hidden" name="zona" value="" />
+		<input type="hidden" name="codigoHotel" value="3036" />
+		<input type="hidden" name="idioma" value="es" />
+		<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+		<input type="hidden" name="idPrm" value="MBVALENTIN" />
+		<input type="hidden" name="idONg" value="P47" />
+		<input type="hidden" name="idNom" value="" />
+		<input type="hidden" name="base" value="buscar" />
+		<input type="hidden" name="customCSS" value="1" />
+		<input type="hidden" name="irListaHoteles" value="Y" />
+
+	<div>
+
+	<fieldset class="reservaon">
+		<label class="reserva">Destino</label>
+		<select class="destinohotel" name="numero" id="destinos">
+			<option value ="0">Todos</option>
+		</select>
+
+		<label class="reserva">Hotel</label>
+			<select class="destinohotel" name="numero" id="hoteles">
+				<option value ="0">Todos</option>
+			</select>
+	</fieldset>
+
+	<fieldset id="llegada">
+		<label>Fecha de llegada:</label>
+		<input id="fechaLlegada"  name="fechaLlegada" type="text" readonly class="calendario"/>
+	</fieldset>
+	<fieldset id="salida">
+		<label>Fecha de salida:</label>
+		<input id="fechaSalida" name="fechaSalida" type="text" readonly class="calendario"/>
+	</fieldset>
+
+	<p class="pie-BE">Si desea reservar diferentes tipos de habitación, recomendamos solicitar cada una individualmente</p>
+	<fieldset id="habitaciones">
+		<label>Habitaciones</label>
+		<select name="no_hab" id="paxnumrooms">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</fieldset>
+	<div id="paxrooms">&nbsp;</div>
+	<p class="pie-BE">Código de promoción</p>
+	<fieldset class="codigoEmpresa">
+		<input type="text" id="codigoEmpresa" name="codigoEmpresa" value="" />
+	</fieldset>
+	<div class="reserva_enviar"><a id="link_reservas" href="#">Ver precios</a></div>
+	<div class="reserva_cancelar"><a href="booking-cancel.html"><span>Cancelar reserva</span></a></div>
+
+
+	</div>
+	</form>
+</div>
+
+</div>
+			<div class="modulo"><img src="img/port28994_es.gif" /></div>
+<div class="modulo"><a href="http://www.valentinsanctipetri.com/" target="_blank"><img src="img/port28995_es.gif" /></a></div>
+<div class="modulo"><a href="grupos-valentin-hotels.html"><img src="img/port29016_es.jpg" /></a></div>
+<div class="modulo"><a href="alquiler-de-coches-canarias-mallorca.html"><img src="img/port29015_es.jpg" /></a></div>
+
+			<div class="modulo news">
+			<!-- (i) newsletter -->
+				<script type="text/javascript">
+(function() {
+	HOTELMANAGER.utils.Onload(function() {
+		HOTELMANAGER.newsletter.init({ form: 'subscripcion-contenido', input: 'email', submit: 'newslettersubmit', msgerror: 'Por favor introduzca su email o revise que tiene el formato correcto' });
+	});
+})();
+</script>
+<!-- (i) newsletter -->
+					<div id="subscripcion">
+						<form id="subscripcion-contenido" action="http://www.valentinhotels.com/es/newsletter.html" method="get">
+							<input type="hidden" name="lang" value="es" />
+							<input type="hidden" name="codigoHotel" value="3036" />
+							<input type="hidden" name="idPartner" value="VALENTINHOTELS" />
+							<input type="hidden" name="idPrm" value="MBVALENTIN" />
+							<input type="hidden" name="idONg" value="P47" />
+							<input type="hidden" name="promoId" value="" />
+
+							<div class="newsletter">
+								<h2>suscríbase al newsletter</h2>
+								<input type="text" id="email" name="email" class="input-text" value='Introduzca su email' onfocus="javascript:this.value = ''" />
+								<button type="submit" id="newslettersubmit" name="enviar" class="enviar"></button>
+							</div>
+						</form>
+					</div> 
+<!-- (f) newsletter -->                                       
+
+<!-- (i) cambiar imagen cabecera -->  
+<script>
+
+if (HOTELMANAGER.lang.actual == "en" || HOTELMANAGER.lang.actual == "de"){
+	//document.write("idioma US DE");
+	document.getElementById('cab').style.backgroundImage = "url(../estilo/img/bg_cab2.jpg)";
+}
+</script>
+<!-- (i) cambiar imagen cabecera --> 
+
+
+<!--script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&page=home' type='text/javascript'%3E%3C/script%3E"));
+</script-->
+
+
+			<!-- (f) newsletter --> 
+			</div>
+		</div>
+		<div class="informacion">
+			<div class="menu" id="nav"><ul>
+<li id="menu1"><a title='Apartamentos en Menorca, hotel en Cádiz, apartamentos en Menorca y Gran Canarias' href='index.html'><span>Inicio</span></a></li>
+<li id="menu2"><strong><a title='Valentín Hoteles playa, valentín apartamentos vacaciones' href='valentin-hoteles-playa-apartamentos-vacaciones.html' class="active"><span>Valentín Hotels</span></a></strong>
+</li>
+<li id="menu3"><a title='Vacaciones en Mallorca, Ofertas en Menorca, Hotel Spa en Cádiz, Aparthotel Gran Canarias' href='vacaciones-mallorca-hotel-ofertas-menorca-apartahotel.html'><span>Destinos</span></a></li>
+<li id="menu4"><a title='Agroturismo Mallorca, spa Hoteles Golf Cádiz , Hoteles familiares Menorca y Canarias' href='agroturismo-mallorca-spa-hoteles-golf-cadiz-familias-menorca.html'><span>Especialistas en...</span></a></li>
+<li id="menu5"><a title='Noticias de Valentín Hotels' href='noticias-valentin.html'><span>Noticias</span></a></li>
+<li id="menu6"><a title='Ofertas Hoteles en Mallorca, Apartamentos baratos Menorca y Canarias, Ofertas Spa Cádiz' href='ofertas-hoteles-en-mallorca-apartamentos-baratos-menorca-canarias.html'><span>Ofertas</span></a></li>
+</ul></div>
+			<div class="imagen"><div id="imagediv"><img src='img/section_es_20116.jpg' alt='restaurantes playa en menorca' title='restaurantes playa en menorca' width='695' height='275'/></div></div>
+			<div class="intro">
+				<div id="breadcrumbs"><a href="index.html">Inicio</a> &raquo; <a href="valentin-hoteles-playa-apartamentos-vacaciones.html">Valentín Hotels</a> &raquo; <a href="hoteles-4-estrellas-menorca-valentin-star.html">Valentín Star Hotel ****</a> &raquo; Restauración </div>
+				<div class="vcard"><h2 class="fn n org">Valentín Star Hotel ****</h2><div class="adr"><div class="street-address">
+	Cala'n Bosch <br />07760 Ciudadela - Menorca (Espa&ntilde;a)
+</div>
+</div></div>
+				<div class="navhotel">
+					<div class="menuhotel"><ul>
+<li><a title="Valentín star Hotel | Hoteles 4 estrellas Menorca" alt="Valentín star Hotel | Hoteles 4 estrellas Menorca" href="hoteles-4-estrellas-menorca-valentin-star.html"><span>Hotel</span></a></li>
+<li><a title="Hoteles Ciutadella, Menorca" alt="Hoteles Ciutadella, Menorca" href="hoteles-ciutadella-menorca.html"><span>Habitaciones </span></a></li>
+<li class="active"><strong><a title="Restaurantes playa en Menorca" alt="Restaurantes playa en Menorca" href="restaurantes-playa-menorca.html"><span>Restauración </span></a></strong></li>
+<li><a title="Vacaciones con niños en Menorca" alt="Vacaciones con niños en Menorca" href="vacaciones-con-ninos-menorca.html"><span>Servicios e instalaciones</span></a></li>
+<li><a title="Hotel en menorca playa" alt="Hotel en menorca playa" href="hotel-menorca-playa.html"><span>Ubicación</span></a></li>
+<li><a title="Hotel cala bosch, Menorca" alt="Hotel cala bosch, Menorca" href="hotel-cala-bosh-menorca.html"><span>Entorno</span></a></li>
+<li><a title="hotel solo adultos menorca" alt="hotel solo adultos menorca" href="hotel-solo-adultos-menorca.html"><span>Sólo Adultos</span></a></li>
+<li><a title="Alojamientos baratos en Menorca" alt="Alojamientos baratos en Menorca" href="alojamientos-baratos-menorca.html"><span>Fotos</span></a></li>
+<li><a title="Ofertas Valentin Star Hotel" alt="Ofertas Valentin Star Hotel" href="ofertas-star.html"><span>Ofertas</span></a></li>
+</ul></div>
+					<div class="otroshoteles">
+	<a href="valentin-hoteles-playa-apartamentos-vacaciones.html">Otros hoteles</a>
+</div>
+
+					<div class="masinfo"></div><!-- Boton enlace externo -->
+						
+				</div>
+				<div class="conthotel"><h2><span>Restaurantes playa en Menorca</span></h2> En nuestro <strong>restaurante</strong> encontrar&aacute; una amplia variedad de elecci&oacute;n para desayunar, con un buffet de car&aacute;cter internacional, y para la cena nada mejor que disponer de una amplia oferta de show cooking. <br /><br /> En el <strong>Snack-Bar</strong> situado en uno de los v&eacute;rtices de la piscina exterior, podr&aacute; disfrutar de una carta / snack bastante completa y unos cocktails muy buenos. Puede disfrutar de una maravillosa vista al lago Cala&rsquo;n Bosch en el <span style="font-weight: bold;">bar</span> situado en la terraza exterior del hotel. Y por la noche, disfrute de un estupendo cocktail con m&uacute;sica en vivo en la <strong>terraza</strong> de nuestro hotel, en el unsuperable marco del puerto deportivo.<br /><br /> <p>Informamos a todos nuestros clientes que es <strong>obligatorio</strong> el uso de <strong>pantal&oacute;n largo</strong> en el restaurante.</p></div>
+				<div class="limp"></div>
+			</div>
+		</div>
+	</div>
+	<div class="limp"></div>
+	<div class="pie">
+		<div class="qweb"><div style="width:97px;"> <a href="http://www.qweb.es/_alojamiento-en-hoteles.html" target="_blank" title="Directorio de Alojamiento en hoteles"><img src="../imagenes/icons/imagen.gif" width="97" height="31" border="0" alt="Directorio de Alojamiento en hoteles" /></a></div></div>
+		<div class="facebook2">
+	<ul>
+		<li><a href="http://www.facebook.com/valentinhotels" target="_blank" title="Facebook"><img src="../estilo/imagenes/ic_facebook.gif" width="34" height="33" /></a></li>
+		<li><a href="https://twitter.com/valentinhotels" target="_blank" title="Twitter"><img src="../estilo/imagenes/ic_twitter.gif" width="34" height="33" /></a></li>
+		<li><a href="http://www.youtube.com/user/Valentinhotels" target="_blank" title="YouTUBE"><img src="../estilo/imagenes/ic_youtube.gif" width="34" height="33" /></a></li>
+	</ul>
+	<div class="limp"></div>
+</div>
+
+		 <ul class="hmpie"><li class="hmli-0"><a title="Acerca de Valentín Hotels" href="acerca-valentin.html">Acerca de Valentín Hotels</a></li><li class="hmli-1"><a title="Contacto" href="contacto.html">Contacto</a></li><li class="hmli-2"><a title="Mapa web" href="mapa-web.html">Mapa web</a></li><li class="hmli-3"><a title="Términos y Condiciones" href="terminos-condiciones.html">Términos y Condiciones</a></li><li class="hmli-4"><a title="Política de Privacidad" href="politica-privacidad.html">Política de Privacidad</a></li><li class="hmli-5"><a title="Cookies" href="cookies.html">Cookies</a></li></ul>
+	</div>
+</div>
+<script type="text/javascript">
+var adJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + adJsHost + "scripts.affilired.com/customs/M3929.php?merchant=3929&pid=3036' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+_gaq.push(['._setDomainName', 'none']);
+_gaq.push(['_setAccount', 'UA-12940378-1']);
+_gaq.push(['_trackPageview']);
+(function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+
+<!-- Mirrored from www.valentinhotels.com/es/restaurantes-playa-menorca.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Sep 2014 13:02:07 GMT -->
+</html>
+<!-- ficha.php (valentin) -->
