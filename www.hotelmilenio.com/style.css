@@ -1,0 +1,3485 @@
+﻿/*
+Theme Name: Twenty Twelve
+Theme URI: http://wordpress.org/extend/themes/twentytwelve
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2012 theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom , header image, and background.
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: twentytwelve
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* =Notes
+--------------------------------------------------------------
+This stylesheet uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables:
+
+$rembase:     14;
+$line-height: 24;
+
+---------- Examples
+
+* Use a pixel value with a rem fallback for font-size, padding, margins, etc.
+	padding: 5px 0;
+	padding: 0.357142857rem 0; (5 / $rembase)
+
+* Set a font-size and then set a line-height based on the font-size
+	font-size: 16px
+	font-size: 1.142857143rem; (16 / $rembase)
+	line-height: 1.5; ($line-height / 16)
+
+---------- Vertical spacing
+
+Vertical spacing between most elements should use 24px or 48px
+to maintain vertical rhythm:
+
+.my-new-div {
+	margin: 24px 0;
+	margin: 1.714285714rem 0; ( 24 / $rembase )
+}
+
+---------- Further reading
+
+http://snook.ca/archives/html_and_css/font-size-with-rem
+http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
+
+
+
+}*/
+
+#sanvalentin{
+	position:relative;
+	bottom:1.5em;
+	/*margin-left: 26%;*/
+}
+
+.hot-potatoe { 
+	/*bottom: 5.5em!important;*/
+	bottom: 16em!important;
+}
+
+/*---------------------@font-face---------------------------*/
+
+@font-face {
+    font-family: 'Meta';
+    src: url('fonts/MetaNormal-Roman.eot');
+    src: url('fonts/MetaNormal-Roman.eot?#iefix') format('embedded-opentype'),
+         url('fonts/MetaNormal-Roman.woff') format('woff'),
+         url('fonts/MetaNormal-Roman.ttf') format('truetype'),
+         url('fonts/MetaNormal-Roman.svg#Meta') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meta';
+    src: url('fonts/MetaBold-Roman.eot');
+    src: url('fonts/MetaBold-Roman.eot?#iefix') format('embedded-opentype'),
+         url('fonts/MetaBold-Roman.woff') format('woff'),
+         url('fonts/MetaBold-Roman.ttf') format('truetype'),
+         url('fonts/MetaBold-Roman.svg#Meta') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meta';
+    src: url('fonts/MetaNormalLF-Italic.eot');
+    src: url('fonts/MetaNormalLF-Italic.eot?#iefix') format('embedded-opentype'),
+         url('fonts/MetaNormalLF-Italic.woff') format('woff'),
+         url('fonts/MetaNormalLF-Italic.ttf') format('truetype'),
+         url('fonts/MetaNormalLF-Italic.svg#Meta') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/*---------------------CUSTOM CSS--------------------------*/
+
+body{
+	font-size: 62.5%;
+	font-family: 'Meta', sans-serif;
+	background-color: #f6f6f6 !important;
+	margin: 0px;
+	color: #888;
+}
+ul{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+ul li{
+	list-style: none;
+}
+
+img{border: none; max-width: 100%; height: auto;}
+a{text-decoration: none; color: #555;}
+
+
+
+#boton-mapa{display:none;}
+
+
+
+.contenedor-all{
+	max-width: 1000px;
+	width: 94%;
+	padding: 0 3%;
+	margin:0px auto;
+}
+
+.mid-width{
+	max-width: 1000px;
+	width: 100%;
+	/*margin:0px auto;*/
+	float:left;
+}
+
+#main-header{ height: 100px; position: relative; }
+
+#mirai_roomSelectionContainer {
+    margin-bottom: 5%;
+    padding-bottom: 1%;
+    visibility: visible;
+}
+
+body.home #reservas #mirai_bookentrance, 
+body.home #reservas #mirai_bookentrance form, 
+body.home #reservas #mirai_bookentrance form #mirai_be0{
+	height: 50px !important;
+}
+
+#page{ position: relative; }
+
+.site{
+	overflow: visible\0/ !important;
+}
+
+.responsive-slider div.slide{
+	width: 100%;
+}
+
+#slider{ position: relative; }
+
+.hot-potatoe{
+	position: absolute;
+	left: 63.8%;
+	bottom: 2em;
+	z-index: 50;
+	width: 32%;
+	background-color: rgba(51,51,51,.5);
+	padding: 0em 2%;
+	text-align: center;
+}
+
+.hot-potatoe h2{ 
+	font-size: 3em; 
+	font-weight: normal;
+	border-bottom: 0;
+}
+
+.hot-potatoe h2 a{ 
+	color: white !important;
+}
+
+.fix{
+	clear:both;
+}
+
+#aviso-legal{
+	float:none;
+	margin:0px auto;
+}
+
+footer > section{
+	float: none !important;
+	margin:0px auto;
+}
+
+
+
+h2 {
+	font-size: 1.9em;
+	color: #666;
+	text-transform: uppercase;
+	border-bottom: 1px #cacaca solid;
+	line-height: 38px;
+	font-weight: bold;
+}
+h3{
+font-family: 'Meta', sans-serif;
+color: #666;
+font-weight: bold;
+font-size: 1.5em;
+}
+
+#contenido-medio{
+	margin-top: 8em;	
+}
+
+#contenido-medio p{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+#contenido-medio blockquote{
+	background-color: #f6f6f6;
+	font-style: italic;
+	padding: 2em 2em 1em;
+	background-image: url('images/quotes.png');
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+}
+
+body.home #contenido-medio, body.page-template-page-templatesservicios-php #contenido-medio{
+	margin-top: 0 !important;
+}
+
+#logo{
+	float: left;
+	margin: 20px 0 20px;
+	overflow: hidden;
+	width: 130px;	
+}
+#slider{
+	min-height: 410px;
+	width: 100%;
+	*margin-top: 20px;
+}
+
+
+#preguntanos {
+	display:none;
+}
+
+#menu-principal{
+	width: 78%;
+	float:right;
+	font-size: 1.4em;
+	font-family: 'Meta', sans-serif;
+	margin-top: 1.2em;
+	position: relative;
+	z-index: 501;
+}
+#menu-principal ul li{
+	display:inline;
+}
+#menu-principal li a{ margin-left:2.5%; color:#767676;}
+
+#menu-principal li.menu-item-188 a{ color:#FF9B39;}
+
+body.home .responsive-slider.flexslider .slides img {
+	z-index: 0;
+}
+
+#secciones-home article{
+	width: 31.3%;
+	float: left;
+	margin-right: 3%;
+	margin-bottom: 2%;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	position: relative;
+}
+
+#secciones-home a{
+	position: relative;
+}
+
+.acceder-btn{
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	bottom: 0;
+	opacity: .9;
+	color: white;
+	transition: all linear 250ms;
+	background: #f2a02e url('images/ico-acceder.png') no-repeat 98% center;
+}
+
+#secciones-home a:hover div.acceder-btn{
+	opacity: 1;
+	transition: all ease-in-out 250ms;
+	-moz-transition: all ease-in-out 250ms;
+	-webkit-transition: all ease-in-out 250ms;
+	-o-transition: all ease-in-out 250ms;
+}
+
+#secciones-home h3{
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.4em;
+	margin: .35em 4%;
+}
+
+#gastronomia{
+	margin-right: 0% !important;
+}
+
+#mapa-home{
+	width: 50%;
+	float:left;
+}
+
+#descripcion-mapa{
+	width: 45%;
+	margin-left: 3%;
+	float:left;
+	font-size: 1.3em;
+	line-height: 1.5em;
+}
+#boton-mapa{
+	width: 150px;
+	height: 3em;
+	background-color: #FF9B39;
+	float: right;
+	border-radius: 5px;
+	border: 1px #D07D2E solid;
+
+}
+#boton-mapa a span {
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: normal;
+	padding-top: 7%;
+	display: block;
+	width: 150px;
+	height: 3em;
+	text-transform: uppercase;
+	text-align: center;
+	margin-left: 3px;
+}
+
+#boletin{
+	margin-bottom: 5em;
+	clear: both;
+	float: left;
+	width: 100%
+}
+
+.sombra-boton{
+	height: 109px;
+	background: url('images/shadow-btn.png') no-repeat;
+	background-position: 74% 99%;
+	width: 196px;
+	float: left;
+}
+
+
+
+#contenedor {
+    background-color: #FFFFFF;
+    clear: both;
+    margin-top: 0;
+    overflow: hidden;
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+
+body.error404 #contenedor{
+
+}
+
+.main-navigation .assistive-text:hover,
+.main-navigation .assistive-text:active,
+.main-navigation .assistive-text:focus {
+	background: #fff;
+	border: 2px solid #333;
+	border-radius: 3px;
+	clip: auto !important;
+	color: #000;
+	display: block;
+	font-size: 12px;
+	padding: 12px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+
+
+/* Navigation Menu */
+.main-navigation {
+	margin-top: 24px;
+	margin-top: 1.714285714rem;
+	text-align: center;
+}
+.main-navigation li {
+	margin-top: 24px;
+	margin-top: 1.714285714rem;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 1.42857143;
+	text-align: center;
+}
+.main-navigation a {
+	color: #5e5e5e;
+}
+.main-navigation a:hover {
+	color: #21759b;
+}
+.main-navigation ul.nav-menu,
+.main-navigation div.nav-menu > ul {
+	display: none;
+}
+.main-navigation ul.nav-menu.toggled-on,
+.menu-toggle {
+	display: inline-block;
+}
+
+
+
+
+
+
+	.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		display: inline-block !important;
+		text-align: right;
+		width: 100%;
+	}
+	.main-navigation ul {
+		margin: 0;
+		text-indent: 0;
+	}
+	.main-navigation li a,
+	.main-navigation li {
+		display: inline-block;
+		text-decoration: none;
+	}
+	.main-navigation li a {
+		border-bottom: 0;
+		color: #6a6a6a;
+		line-height: 3.692307692;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+	.main-navigation li a:hover {
+		color: #000;
+	}
+	.main-navigation li {
+		position: relative;
+	}
+.main-navigation li ul {
+    display: none;
+    left: -44px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    z-index: 1;
+}
+	.main-navigation li ul ul {
+		top: 0;
+		left: 100%;
+	}
+	.main-navigation ul li:hover > ul {
+		border-left: 0;
+		display: block;
+	}
+	.main-navigation li ul li a {
+		background: #efefef;
+		border-bottom: 1px solid #e1e1e1;
+		display: block;
+		font-size: 11px;
+		font-size: 0.785714286rem;
+		line-height: 2.181818182;
+		padding: 1em 8%;
+		width: 12em;
+		white-space: normal;
+	}
+	.main-navigation li ul li a:hover {
+		background: #e3e3e3;
+		color: #444;
+	}
+	.main-navigation .current-menu-item > a,
+	.main-navigation .current-menu-ancestor > a,
+	.main-navigation .current_page_item > a,
+	.main-navigation .current_page_ancestor > a {
+		color: #636363;
+		font-weight: bold;
+	}
+	.menu-toggle {
+		display: none;
+	}
+	.entry-header .entry-title {
+		font-size: 22px;
+		font-size: 1.571428571rem;
+	}
+	
+	.promo_slider_wrapper{
+		position: absolute;
+		z-index: 0;
+		*position: relative;
+		*z-index: 0;
+		position: relative \0/;
+		z-index: 0 \0/;
+	}
+	.promo_slider {
+		overflow: hidden;
+		position: relative;
+}
+	#servicios-hotel{
+		position: relative;
+		margin-top: 21%;
+	}
+/* Fixed Header styles */
+
+.header{
+	background-color: white;
+	position: fixed !important;
+	z-index: 2000;
+	width: 100%;
+	top: -100px;
+	height: 50px;
+	box-shadow: 0px 1px 2px #c1c1c1;
+	opacity: 0;
+	transition: opacity .1s ease-out;
+}
+
+.fixed-header{
+	opacity: 1;
+	top: 0 !important;
+	transition: opacity .1s ease-in-out;
+	-moz-transition: opacity .1s ease-in-out;
+	-webkit-transition: opacity .1s ease-in-out;
+	-o-transition: opacity .1s ease-in-out;
+}
+
+#header{
+	position: relative;
+	max-width: 1000px;
+	width: 96%;
+	padding: 0 2%;
+	margin: 0 auto;
+}
+
+.header a.shrink-logo, .header #menu-principal{
+	display: none;
+}
+
+.header a.shrink-logo img{
+	width: 25px;
+	height: 25px;
+}
+
+#header #menu-principal{
+	margin-top: 0;
+	position: relative;
+	margin-right: 12px;
+}
+
+.reservas-op{
+	position: fixed !important;
+	top: 51px;
+	margin-top: 0 !important;
+	max-width: 924px;
+	width: 90% !important;
+}
+
+body.home .reservas-op, body.page-template-page-templatesservicios-php .reservas-op{
+	top: 51px !important;
+	margin-left: 0 !important;
+}
+
+.shrink-logo{
+	margin-top: 1.2em;
+	float: left;
+}
+
+.fixed-header a.shrink-logo, .fixed-header #menu-principal{
+	display: block;
+}
+
+/* Mirai Styles Overwrite */
+
+#reservas{
+	background-color: rgba(242,160,46,.9);
+	background: #f2a02e\0/;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#E5F2A02E,endColorstr=#E5F2A02E)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E5F2A02E,endColorstr=#E5F2A02E);   /* IE6 & 7 */
+    zoom: 1;
+    background-color: #;
+	height: 45px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-o-border-radius: 2px;
+	position: relative;
+	z-index: 100;
+	float: left;
+    height: 50px;
+    z-index: 500;
+    padding: 0 2%;
+    width: 96%;
+}
+
+body.home #reservas, body.page-template-page-templatesservicios-php #reservas{
+    /*top: 15px;
+    width: 92%;
+    margin-left: 2%;*/
+}
+
+#reservas h2{
+	color: white;
+	font-size: 1.4em;
+	font-weight: 600;
+	float: left;
+	margin: 1em 3% 0 0;
+}
+
+#mirai_bookentrance, #mirai_bookentrance form,#mirai_bookentrance form #mirai_be0{
+	float: left;
+	width:100%;
+	height: 60px;
+}
+
+#mirai_bookentrance form *{float:left;position: inherit !important;}
+
+
+#mirai_bookentrance form div{margin-top: 0.9em;}
+
+#mirai_bookentrance form div#mirai_be7 {
+    margin-right: 1.5%;
+    margin-top: -0.5%;
+}
+
+#mirai_bookentrance form div span{
+	color: white;
+	font: bold .9em 'Meta', sans-serif;
+	
+	opacity: 1;
+}
+
+#reservas h2, #mirai_bookentrance form div span {
+    font-size: 12px;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+#mirai_bookentrance input, #mirai_bookentrance select {
+    -moz-appearance: none;
+    background-color: white;
+    border: 0 none;
+    box-shadow: 0 1px 2px #333333;
+    color: #555555;
+    font: normal 1em 'Meta', sans-serif;
+    margin-top: 4px;
+    margin-left: 0.9% !important;
+    margin-right: 0.9%;
+    outline: medium none;
+    padding: 0.2em 1.6%;
+}
+
+#mirai_bookentrance input.hasDatepicker{
+	background: #fff url('images/ico-calendar.jpg') no-repeat 94% center;
+	width: 9%;
+	*border: 1px solid #d0860e;
+	border: 1px solid #d0860e\0/;
+	margin-top: 4px;
+}
+
+#mirai_bookentrance select{
+	border-radius: 0;
+	background: white url('images/arrow-nights.gif') no-repeat 90% center;
+	*border: 1px solid #d0860e;
+	border: 1px solid #d0860e\0/;
+	margin-top: 4px;
+}
+
+#mirai_be4{
+	*width: 20px;
+	width: 20px\0/;
+}
+
+#mirai_be5 {
+ 	line-height: 2.4em !important;
+    width: 11em;
+    margin-top: 0 !important;
+}
+
+#mirai_be7 input{
+	background-color: #F2A01A;
+	text-transform: uppercase;
+	color: white;
+	box-shadow: #333 0px 1px 1px;
+	font-size: 1.3em;
+	text-shadow: #333 0px 1px 2px;
+	*border: 1px solid #d0860e;
+	border: 1px solid #d0860e\0/;
+}
+
+#mirai_be7 input:hover{
+	background-color: #fff;
+	color:#F2A01A;
+	text-shadow: #bbb 0px 1px 2px;
+}
+
+#mirai_be8{
+	text-transform: none !important;
+	font-weight:bold !important;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+	padding-bottom: .1em;
+	display:inline-block;
+	margin-top:.4%;
+}
+
+#availableRoomList{
+	color: #555;
+}
+
+#mirai_rootTable td, #mirai_roomSelection tr.roomtype th{
+	border-color: #e5e5e5 !important;
+}
+
+.roomtype .imgWrapper img{
+	box-shadow: none;
+}
+
+#mirai_roomSelection tr.roomtype p.roomName{
+	color: #555;
+	font-family: 'Meta', sans-serif;
+	
+	font-size: 1.5em;
+}
+
+div.mirai_button.selectRoom, div.mirai_button.selectRoom:visited{
+	background-color: #FF9B39 !important;
+	background-image: none; 
+	color: white;
+	box-shadow: none;
+	font-family: 'Meta', sans-serif;
+	
+}
+
+
+#mirai_totalPrice span {
+    color: #FF9B39!important;
+    font-weight:bold;;
+}
+
+dl.dropdown dt{
+	border-color: #e5e5e5 !important;
+	background: none !important;
+}
+
+#currencyWrapper, #mirai_rootTable #summaryContainer{
+	background-color: #f1f1f1 !important;	
+}
+
+#currencyDropdownContents, #mirai_rootTable #summaryElements{
+	background-color: white !important;
+	z-index: 100;
+}
+
+input.mirai_button{
+	font-family: 'Meta', sans-serif;
+	
+	font-weight: bold;
+	font-size: 1.3em !important;
+	background-color: #98a83c;
+	background-image: none !important;
+	text-shadow: none !important;
+	color: white !important;
+	border: 1px solid #e9e9e9;
+}
+
+input.button_disabled{
+	color: #555 !important;
+	background-color: #f9f9f9 !important;
+}
+
+input.button_disabled:hover{
+	cursor: pointer;
+	border: 1px solid #e5e5e5;
+	background-color: white !important;
+}
+
+#mirai_cart_div{
+	margin-left: 2%;
+}
+
+#mirai_book{
+}
+
+#mirai_roomSelection a, #mirai_roomSelection tr.roomtype, #mirai_roomSelection tr.roomtype.widthdetail, #mirai_roomSelection tr.roomtype p, #mirai_roomSelection tr.roomrate p, #mirai_roomSelection tr.roomrate span, #mirai_roomSelection tr.roomtype.widthdetail p {
+    font-size: 13px!important;
+	font-weight: bold;
+}
+
+#mirai_roomSelection tr.roomrate td.col2 li, #mirai_roomSelection #availableRoomList div.roomtypedetail ul, #mirai_roomSelection #availableRoomList table.roomdetailBottomTable li {
+    font-size: 13px!important;
+    line-height: 15px!important;
+}
+
+.page-template-page-templatesbookingstep1-php {background-color:transparent!important;}
+
+#mirai_roomSelection tr.roomrate td.col5 .mirai_button .integerPart, #mirai_roomSelection tr.roomrate td.col5 span {
+    font-size: 1.4em !important;
+}
+
+
+
+
+.ngg-gallery-thumbnail-box {
+	margin: 1%;
+}
+
+.ngg-gallery-thumbnail{
+	width: 100px !important;
+	height: 85px !important;
+}
+
+/*-----------------------------EVENTOS-------------------------------------*/
+
+.text{ }
+
+.text li{ font-size: 1.8em; }
+
+#mi-evento{
+	padding: 2em 2% 0;
+	background-color: #f9f9f9;
+	width: 96% !important;
+	overflow: hidden;
+}
+
+#mi-evento a{
+	float: left;
+	display: block;
+	width:16.5%;
+	margin-left: 4%;
+	margin-bottom: 1em;
+	transition: all 250ms linear;
+}
+
+#mi-evento a img{
+	max-width: 158px;
+}
+
+#mi-evento a:first-child{
+	margin-left: 0;
+}
+
+#mi-evento a:hover{
+	opacity: .9;
+	transition: all 250ms ease-in-out;
+}
+
+#mi-evento p{
+	font-size: 1.6em;
+	font-weight: bold;
+	text-align: center;
+	margin: .5em 0;
+}
+
+.slide{
+	width: 60%;
+	margin-right: 2%;
+	min-height: 450px;
+}
+
+.texto-espacios, .texto-catering{
+	width: 38%;
+}
+
+.texto-catering{
+	float: left;
+}
+
+.espacios h3{
+	font-size: 1.8em;
+margin-top: 30px;
+float: left;
+width: 100%;
+}
+
+.espacios{
+	overflow: hidden;
+	margin: 3em 0;
+	float: left;
+}
+
+.page-template-page-templatesfaq-php .espacios {
+	width: 100%;
+}
+
+.espacios p, .espacios li, .text p{
+	font-size: 1.4em;
+	line-height: 1.5em;
+	color: #666;
+	margin-top:0;
+}
+
+.espacios #container p {
+    bottom: 22px;
+    font-size: 1em !important;
+    position: relative;
+}
+
+.espacios p a,
+.bloque a {color: #FF9B39;}
+
+.espacios ul.bloque{width:100%;}
+
+.espacios .bloque li {
+	list-style: none !important;
+}
+
+.espacios .bloque .respuesta {
+	 margin-top: 35px;
+}
+
+.espacios .bloque .respuesta li {
+	font-size: 1em !important;
+
+}
+
+.espacios li.pregunta {
+	list-style: square !important;
+}
+
+.espacios .pregunta:hover {
+	cursor:pointer;
+}
+
+.espacios img{
+	float: left;
+	margin-right: 2%;
+	width: 60%;
+}
+
+.espacios #container {
+	float: left;
+border: 1px solid #DFDFDF;
+background-color: #fff;
+overflow: hidden;
+padding: 2em 2%;
+width: 95%;
+}
+
+#espacios #contenedor h3{width:100%; float:left;}
+
+.slide, .texto-espacios{
+	float: left;
+}
+
+.uds-bb-thumbnail-container{
+	position: static !important;
+}
+
+#contenedor h4{
+	font-size: 1.8em;
+}
+
+.btn-download{
+	float: left;
+	display: block;
+	color: white;
+	background-color: #F2A01A;
+	padding: 1em 2%;
+	font-size: 1.4em;
+	margin: 1em 0 0;
+	transition: all 250ms linear;
+}
+
+.btn-download:hover{
+	background-color: #dd9114;
+	transition: all 250ms ease-in-out;
+	-webkit-transition: all 250ms ease-in-out;
+	-moz-transition: all 250ms ease-in-out;
+	-o-transition: all 250ms ease-in-out;
+}
+
+
+.page-id-897 .btn-download, .page-id-901 .btn-download{
+	min-width: 96.5%;
+    text-align: center;	
+}
+
+.page-id-897 .espacios{ margin-bottom:0; }
+
+.page-id-897 .espacios+.espacios, .page-id-901 .espacios+.espacios{margin-top:0!important;}
+
+.page-id-897 .espacios+.espacios .texto-full{display:none;}
+
+.page-id-897 #contacto-eventos{ margin-top:0!important; }
+
+
+.txt-evento{
+    float: left;
+    margin-bottom: 2.5%;
+    margin-right: 2.5%;
+    width: 47.5%;
+}
+
+.page-id-900 .texto-espacios ul li, .txt-evento ul li{ list-style:circle; }
+
+
+.txt-evento h3, .txt-evento #wpcf7-f987-p900-o1, .txt-evento #wpcf7-f987-p900-o1 form{ float:left; width:100%;}
+
+.txt-evento #wpcf7-f987-p900-o1, .txt-evento #wpcf7-f987-p900-o1 form{  height: 460px; }
+
+div.wpcf7-validation-errors {
+    border: 2px solid #F7E700;
+    margin-top: 16%;
+    text-align: center;
+}
+
+span.wpcf7-not-valid-tip {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #FF0000;
+    font-size: 10pt;
+    left: 0;
+    padding: 2px;
+    position: absolute;
+    top: 20%;
+    width: 228px;
+    z-index: 100;
+}
+
+
+#btn-catering, .texto-catering2{
+    float: left;
+    margin-top: 3% !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.btn-download-catering {
+    background-color: rgba(242, 160, 46, 0.9);
+    color: white;
+    display: block;
+    float: left;
+    font-size: 1.4em;
+    margin: 1em 0 0 2%;
+    padding: 1em 2%;
+    text-align: center;
+    transition: all 250ms linear 0s;
+    width: 28%;
+}
+
+.btn-download-catering:first-child{margin-left:0;}
+
+.btn-download-catering:hover {
+    background-color: #DD9114;
+    transition: all 250ms ease-in-out 0s;
+}
+
+.btn-download-catering a{color:#fff;}
+
+
+/*-------------------------------------------PROMOCIONES-----------------------------------------*/
+
+#offersHs #headerOffers { display: none;}
+
+#boletin img{
+	float: left;
+	margin-left: 0;
+	margin-top:15px;
+}
+#form-boletin{
+	background-color: #F9F9F9;
+	height: 91px;
+	width: 74%;
+	float: right;
+	position: relative;
+	right: -56px;
+	right: -70px\0/;
+	padding: 2em 0 0 3%;
+}
+
+#form-boletin p{
+	font-size: 1.3em;
+	font-family: Meta, sans-serif;
+	
+	color: #545454;
+	margin: 0;
+}
+
+#form-boletin input[type="text"]{
+	width: 58%;
+	border: #d7d7d7 1px solid;
+	height: 30px;
+	color: #999;
+	font-size: 1.8em;
+	float: left;
+	font-weight: normal;
+	font-family: Meta;
+	padding: 5px;
+}
+
+#form-boletin input[type="submit"]{
+	width: 83%;
+	height: 40px;
+	background-color: #BCD146;
+	border: #828C4D 1px solid;
+	color: #fff;
+	font-size: 1.7em;
+	font-family: Meta, sans-serif;
+	text-shadow: 1px 1px 1px #000;
+	appearance: none !important;
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	-o-appearance: none !important;
+}
+
+#form-boletin .sombra {
+	background: url('images/shadow-btn-newsletter.png') no-repeat;
+	background-position: -3px 40px;
+	height: 50px;
+	width: 32%;
+	float: left;
+	background-size: 86%;
+	*margin-top:-42px;
+	margin-left: 5%;
+}
+
+#enlaces-pie div{
+	width: 19.7%;
+	height: 150px;
+	float: left;
+	margin-top: 2%;
+	text-align: center;
+}
+
+#enlaces-pie div p.tit-pie{
+	margin: 5.8em 0 .5em 0;
+}
+
+.tit-pie{ font-size: 1.5em; font-family: Meta, sans-serif;  color: #adadad;}
+.tit-pie a{ color: #adadad; }
+.tit-pie2{ font-size: 1.5em; font-family: Meta, sans-serif;  color: #adadad;}
+.small{ font-size: 1em; font-family: Meta, sans-serif;  color: #adadad; margin: 0;}
+.small a{color: #adadad;;}
+#phone{background: url('images/ico-phone-footer.png') no-repeat; background-position: 50% 30%; border-right: #E9E9E9 1px solid;}
+#correo{background: url('images/ico-mail-footer.png') no-repeat; background-position:50% 30%; border-left: #fff 1px solid; border-right: #E9E9E9 1px solid;}
+#rss{background: url('images/ico-rss-footer.png') no-repeat; background-position:50% 30%; border-left: #fff 1px solid; border-right: #E9E9E9 1px solid;}
+#preguntas{background: url('images/ico-faq-footer.png') no-repeat; background-position:50% 30%; border-left: #fff 1px solid; border-right: #E9E9E9 1px solid;}
+#whatsapp{background: url('images/ico-whatsapp-footer.png') no-repeat; background-position:50% 30%;border-left: #fff 1px solid; }
+
+#opiniones {
+    background: url("images/ico-opiniones-footer.png") no-repeat scroll 50% 30% rgba(0, 0, 0, 0);
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #E9E9E9;
+}
+
+#separador-pie{background: url('images/ralla-sep.gif') repeat-x; height: 2px; margin-top:20px; margin-bottom: 20px;}
+
+
+#qualidad {
+    float: right;
+    height: auto;
+    margin-left: 2%;
+    margin-top: -1%;
+    width: 12%;
+}
+
+#enlaces-seo article div {
+width: 21%;
+float: left;
+font-size: 1.2em;
+line-height: 25px;
+margin-left: 4%
+}
+
+#enlaces-seo a{font-family: Meta, sans-serif;  color: #adadad; text-decoration: none;}
+
+#enlaces-seo a:hover{color:#FF9B39;}
+
+
+#logo-pie p{font-family: Meta, sans-serif;  color: #adadad; font-size:2.5em; font-weight: normal; float: right; text-shadow: 1px 1px 1px #fff; margin-right: 50px;}
+#logo-pie img{float: right; margin-right: 2%}
+
+
+#pie-naranja{
+	background-color:#FF9B39;
+	height: 50px;
+	margin-top: 40px;
+}
+
+
+#aviso-legal ul{
+	width: 90%;
+	margin-top: 1.8em !important;
+	float: left;
+}
+#aviso-legal ul li{
+	display:inline;
+	margin-right: 20px;
+	color:#fff;
+	font-size: 1.3em;
+	font-family: Meta, sans-serif;
+	
+}
+#aviso-legal img{float:right; margin-top: 13px; margin-right: 2%;}
+
+
+#aviso-legal a{color:#fff;}
+
+#blog article img{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.titulo-excerpt a{
+	text-decoration: none;
+	font-family: Meta, sans-serif;
+	 
+	color: #555555; 
+	font-size:1.5em; 
+	font-weight: normal;
+}
+.titulo-excerpt{
+	width: 81%;
+	float: left;
+	margin-top: -20px;
+}
+
+#blog article p {
+	width: 82%;
+	*width: 78%;
+	float: left;
+	font-size: 1.2em;
+	font-family: Meta, sans-serif;
+	
+	margin-top: -6px;
+	color: #555555;
+}
+
+.leer-mas{
+    background-color: #FF9B39;
+    border-radius: 5px 5px 5px 5px;
+    float: right;
+    margin-right: 1.5%;
+    margin-top: -1%;
+    padding: 0.5% 1%;
+    width: 100px;
+}
+
+.leer-mas a, .leer-mas-featured  a {
+	color: #fff;
+	font-size: 1.3em;
+	font-family: Meta, sans-serif;
+	
+	padding-left: 20px;
+	text-decoration: none;
+	width: 100px;
+	height: 20px;
+
+}
+
+#post-62 a {
+    color: #F2A01A;
+    font-weight: bold;
+}
+
+#blog article{
+	float: left;
+	margin-bottom: 10px;
+}
+#titulo-pagina{
+
+}
+
+#habitaciones{
+	margin-top: 3%;
+}
+
+#columna-habitaciones-der article{
+	margin-top: -10px !important;
+}
+#columna-habitaciones-der .ngg-galleryoverview {
+overflow: hidden;
+margin-top: 10px;
+width: 100%;
+clear: both;
+display: block !important;
+margin-top: -20px !important;
+}
+ul.habitaciones{
+	overflow: hidden;
+}
+ul.habitaciones a{
+	text-decoration: none;
+	color:#C5C5C5;
+}
+ul.habitaciones a span{
+padding-left: 5px;
+padding-top: 10px;
+text-align: center;
+display: block;
+font-size: 2em;
+}
+ul.habitaciones a {
+width: 49%;
+list-style: none;
+text-decoration: none;
+margin: 0px;
+list-style-type: none;
+font-family: Meta, sans-serif;
+
+background-color: #F0F0F0;
+height: 44px;
+margin-top: 2%;
+display: block;
+margin-right: 2%;
+float:left;
+
+}
+body.page-id-16 ul.habitaciones a.doble {
+	border-bottom: 1px solid #cacaca;
+	background: #F7F7F7 ;
+	color:#555555;
+
+}
+body.page-id-18 ul.habitaciones a.suite{
+	border-bottom: 1px solid #cacaca;
+	background: #F7F7F7 ;
+	color:#555555;
+
+}
+ul.habitaciones a:hover{
+	border-bottom: 1px solid #cacaca;
+	background: #F7F7F7 ;
+	color:#555555;
+}
+
+.suite{
+	margin-right: 0% !important;
+}
+
+#columna-habitaciones-izq p{
+	font-family: Meta, sans-serif;
+	
+	font-size: 1.3em;
+	color:#555555;
+}
+#columna-habitaciones-der h3{
+	font-size: 1.8em;
+	color:#555555;
+	font-family: Meta, sans-serif;
+	
+	font-weight: normal;
+}
+#imagen-habitacion{
+	width: 48.5%;
+	float:left;
+
+}
+#caracteristicas-habitacion {
+width: 48.5%;
+float: left;
+margin-left: 3%;
+}
+.prestaciones{
+	width:50%;
+	float: left;
+	font-family: Meta, sans-serif;
+	
+	font-size: 1.3em;
+	color:#8D8D8D;
+}
+#descripcion-habitacion{
+	width: 100%;
+	font-size: 1.4em;
+	margin-top: 1.5%;
+	line-height: 1.5em;
+	font-weight: normal;
+	font-family: Meta, sans-serif;
+	
+}
+
+ul.prestaciones li{
+	min-height: 27px;
+	padding: 9px 0 0 40px;
+	margin-bottom: 1em;
+}
+
+.banos{background: url('images/ico-bath.png') no-repeat; background-position: 0px;}
+.jardines{background: url('images/ico-tree.png') no-repeat;background-position: 0px;}
+.musica{background: url('images/ico-music.png') no-repeat;background-position: 0px;}
+.aire{background: url('images/ico-fan.png') no-repeat;background-position: 0px;}
+.despertador{background: url('images/ico-clock.png') no-repeat;background-position: 0px;}
+.servicio{background: url('images/ico-coverplates.png') no-repeat;background-position: 0px;}
+.tv{background: url('images/ico-satellite.png') no-repeat;background-position: 0px;}
+.wifi{background: url('images/ico-wifi.png') no-repeat;background-position: 0px;}
+.escritorio{background: url('images/ico-desktop.png') no-repeat;background-position: 0px;}
+.telefono{background: url('images/ico-phone.png') no-repeat;background-position: 0px;}
+.cajafuerte{background: url('images/ico-safebox.png') no-repeat;background-position: 0px;}
+.minibar{background: url('images/ico-minibar.png') no-repeat;background-position: 0px;}
+.insonorizada{background: url('images/ico-soundproof.png') no-repeat;background-position: 0px;}
+
+
+.faq{width:100%;} 
+
+ 
+#contacto{
+	border-bottom: 1px #cacaca solid;
+}
+
+#texto-contacto{
+	width: 30%;
+	float: left;
+	font-family: Meta, sans-serif;
+	
+	font-size: 1.3em;
+	color: #555555;
+	padding: 2%;
+}
+#texto-contacto h3{
+font-size: 1.8em;
+color: #474747;
+font-weight: normal;
+margin: 0px;
+
+}
+#mapa{
+	width: 64%;
+	float: left;
+	margin-left: 2%;
+}
+
+#mapa iframe{height:320px;}
+
+
+/* Contenedor de formulario de abajo */
+.page-template-page-templatesmi-descubre-php #contacto-eventos {
+	width: 99%;
+float: left;
+margin-bottom: 0 !important;
+height: 520px;
+margin-top:5%;
+}
+
+
+
+#wpcf7-f20-p21-o1 p, #wpcf7-f987-p900-o1 p, #contacto-eventos form p{
+	font-size: 1.3em;
+	color: #555555;
+	font-family: Meta, sans-serif;
+	
+}
+
+#wpcf7-f20-p21-o1 input[type="text"],
+.wpcf7-email, #wpcf7-f987-p900-o1 input[type="text"], #contacto-eventos form input[type="text"]{
+	width: 96%;
+	border: 1px #cacaca solid;
+	height: 40px;
+	font-size: 2em;
+	padding: 2%;
+	color: #666;
+	font-family: Meta, sans-serif;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	
+}
+
+#wpcf7-f20-p21-o1 textarea, #wpcf7-f987-p900-o1 textarea, #contacto-eventos form textarea{
+	width:96%;
+	border: 1px #c1c1c1 solid;
+	height: 150px;
+	color: #666;
+	font-family: Meta, sans-serif;
+	
+	font-size: 1.3em;
+	padding: 2%;
+}
+#wpcf7-f20-p21-o1 input[type="submit"], #wpcf7-f987-p900-o1 input[type="submit"], #contacto-eventos form input[type="submit"]{
+	-webkit-appearance:none!important;
+	-moz-appearance:none;
+	float:right;
+	width:30%;
+	height: 45px;
+	background-color: #F4B347 ;
+	color:#fff;
+	font-family: Meta, sans-serif;
+	
+	font-size: 1.3em;
+	border: none;
+}
+
+#contacto-izq{
+	width:49%;
+	float:left;
+	margin-right: 2%;
+}
+#contacto-der{
+	width:49%;
+	float:left;
+}
+#img-blog{
+	float: left;
+	width:35%;
+}
+#texto-blog{
+	float:left;
+	width:60%;
+}
+
+#form-eventos{
+	width:100%;
+	float:left;
+}
+
+#contacto-eventos td {
+    color: #555555;
+    font-family: Meta,sans-serif;
+    font-size: 1.3em;
+}
+
+#contacto-eventos td input[type="text"], #contacto-eventos td input[type="email"], #contacto-eventos td input[type="text"], #contacto-eventos td input[type="email"] {
+    border: 1px solid #C1C1C1;
+    color: #666666;
+    font-family: Meta,sans-serif;
+    font-size: 2em;
+    height: 25px;
+    padding: 2%;
+    width: 96%;
+}
+
+#contacto-eventos td select {
+    border: 1px solid #C1C1C1 !important;
+    padding: 2%;
+    width: 104%!important;
+}
+
+#contacto-eventos td textarea {
+    border: 1px solid #C1C1C1;
+    color: #666666;
+    font-family: Meta,sans-serif;
+    font-size: 1.3em;
+    height: 100px;
+    padding: 2%;
+    width: 93%;
+}
+
+#contacto-eventos td input[type="submit"], #contacto-eventos td input[type="reset"] {
+    background-color: #FF9B39;
+    border: medium none;
+    color: #FFFFFF;
+    float: right;
+    font-family: Meta,sans-serif;
+    font-size: 1.3em;
+    height: 35px;
+    margin-right: 3%;
+    text-align: center;
+    width: 28%;
+}
+
+#contacto-eventos h3{margin-bottom:0;}
+
+
+
+
+
+.titulo-featured{
+	width: 100%;
+	float: left;
+	margin-top: -20px;
+}
+
+.titulo-featured a{
+	text-decoration: none;
+	font-family: Meta, sans-serif;
+	
+	color: #555555;
+	font-size: 2.5em;
+	font-weight: normal;
+}
+#texto-blog p{
+	font-size: 1.3em;
+	margin-bottom: 15px;
+}
+.leer-mas-featured {
+width: 100px;
+height: 25px;
+background-color: #009457;
+float: right;
+margin-right: 30px;
+border-radius: 5px;
+}
+
+
+.fecha{
+	color:#a1a1a1;
+	font-size: 1.2em !important;
+	margin-top: -10px !important;
+}
+
+#descubre-slider{
+	position: relative;
+	z-index: 0;
+}
+
+#descubre-texto{
+	margin-right: 4%;
+}
+
+#descubre-texto h3{
+	font-size: 2em;
+	font-weight: normal;
+	color: #555555;
+	line-height: 30px;
+	font-family: 'Meta', sans-serif;
+	
+}
+
+#descubre-texto p{
+	font-size: 1.4em;
+	font-weight: normal;
+	color: #555;
+	font-family: 'Meta', sans-serif;
+	
+	line-height: 1.8em;
+}
+
+
+#servicios-contenido{
+	margin-right: 4%;
+}
+
+#servicios-contenido h3{
+	font-size: 2em;
+	font-weight: normal;
+	color: #555555;
+	line-height: 1.5em;
+	font-family: 'Meta', sans-serif;
+	
+}
+#servicios-contenido h4{
+		font-size: 1.6em;
+	font-weight: normal;
+	color: #555555;
+	line-height: 15px;
+	font-family: 'Meta', sans-serif;
+	
+}
+#servicios-contenido p{
+	font-size: 1.3em;
+	font-weight: normal;
+	font-family: 'Meta', sans-serif;
+	
+	line-height: 1.8em;
+}
+
+.deportes{
+	width:49%;
+	border-right:1px #c1c1c1 solid; 
+	float: left;
+}
+.deportes-der{
+	float:left;
+	width: 45%;
+	margin-left: 5%;
+}
+.deportes ul li{
+	margin-bottom: 1em;
+	padding-left: 72px;
+	font-size: 1.4em;
+	min-height: 37px;
+	padding-top: 16px;
+}
+
+#golf{
+	width: 97%;
+	background-color: #F9F9F9;
+	padding: 2%;
+}
+
+#golf h2 {
+color: #F3AC38;
+border: none;
+font-size: 1.8em;
+line-height: 1em !important;
+}
+
+#bodas img{
+	margin-left: 2%;
+}
+a.download-btn{
+	display: block;
+	background: #FFA84C;
+	width: 150px;
+	color: #fff;
+	border-radius: 5px;
+	border: 1px #D07D2E solid;
+	text-align: center;
+	padding: 11px 2%;
+	font-size: 1.2em;
+}
+
+
+
+#empresas a{
+display: block;
+background: #FFA84C;
+height: 51px;
+color: #fff;
+width: 191px;
+margin-right: 5%;
+float: left;
+border-radius:5px;
+border: 1px #D07D2E solid;
+margin-bottom: 2%;
+
+
+}
+#empresas span{
+display: block;
+padding-top: 0;
+margin-left: 3px;
+font-size: 1.1em;
+text-align: center;
+}
+.titulo-pagina-servicios{
+display: none;
+}
+.natacion{
+	background: url('images/ico-natacion.png') no-repeat; background-position: 0px;
+}
+.pinpong{
+	background: url('images/ico-ping-pong.png') no-repeat; background-position: 0px;
+}
+.baloncesto{
+	background: url('images/ico-basket.png') no-repeat; background-position: 0px;
+}
+.sauna{
+	background: url('images/ico-sauna.png') no-repeat; background-position: 0px;
+}
+.masajes{
+	background: url('images/ico-massage.png') no-repeat; background-position: 0px;
+}
+.futbol{
+	background: url('images/ico-football.png') no-repeat; background-position: 0px;
+}
+.joggin{
+	background: url('images/ico-jogging.png') no-repeat; background-position: 0px;
+}
+.golf{
+	background: url('images/ico-golf.png') no-repeat; background-position: 0px;
+}
+.fitness{
+	background: url('images/ico-fitness.png') no-repeat; background-position: 0px;
+}
+
+/*---------------- EVENTOS --------------------*/
+.bloques{
+	overflow: hidden;
+	margin-bottom: 2em;
+}
+
+.descubre-botones{
+	float:left;
+	width: 30.5%;
+	margin-left: 4%;
+	overflow: hidden;
+}
+
+.descubre-botones:first-child,
+.descubre-botones:nth-child(4){
+	margin-left: 0;
+}
+
+.descubre-botones a.descubre-head-btn{
+	background: #F2A01A url('images/arrow-right.png') no-repeat 90% center;
+	font-family: Meta, sans-serif;
+	display: block;
+	color: #fff;
+	font-size: 2.3em;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	float: none;
+	padding: .6em 0 .6em 0;
+	transition: all 250ms linear;
+}
+
+.descubre-botones a.descubre-head-btn:hover{
+	background-color: #dd9114 !important;
+	-webkit-transition: ease-in-out 250ms linear;
+	-moz-transition: ease-in-out 250ms linear;
+	-o-transition: ease-in-out 250ms linear;
+}
+
+.descubre-botones a{
+	color: #F2A01A;
+}
+
+.descubre-botones a.read-more{
+	float: right;
+	font-size: 1.4em;
+	color: #F2A01A;
+}
+
+.descubre-botones p, .descubre-botones li{
+	font-size: 1.4em;
+	line-height: 1.6em;
+	color: #666;
+}
+
+.descubre-botones ul{
+	padding-left: 20px !important;
+}
+
+.descubre-botones li{
+	margin-bottom: 1em;
+}
+
+.blog-single{
+	width:100%;
+	margin:5%;
+	font-size: 1.3em;
+	line-height: 1.8em;
+
+}
+
+.blog-izq{
+margin-top: 1% !important;
+position: relative !important;
+width: 62% !important;
+text-align: justify;
+float: left;
+
+}
+#sidebar {
+	width: 28%;
+	float: left;
+	margin-left: 8%;
+	margin-top: 9%;
+}
+
+
+.widget-title{
+	color: #555555;
+	font-size: 1.5em;
+}
+
+
+
+#sidebar ul li a{
+	color: #a1a1a1;
+	font-size: 1.3em;
+	text-decoration: none;
+}
+
+
+#texto-pagina{
+	width: 96%;
+	font-size: 1.3em;
+	line-height: 1.8em;
+}
+
+
+/*#descubre-botones{
+	border-top:1px #a1a1a1 solid;
+	width:100%;
+
+}
+
+#descubre-botones ul li{
+	margin-top: 2%;
+	margin-left: 1.5%;
+	float: left;
+	width: 32.3%;
+}
+
+#descubre-botones ul li a{
+	height: 50px;
+	background-color: #DED9D8;
+	border: 1px #C4C4C4 solid;
+	border-radius: 5px;
+	text-shadow: 0px 1px 3px #666;
+	color: #fff;
+	font-size: 2em;
+	text-align: center;
+	line-height: 46px;
+	display: block;
+}
+#descubre-botones ul li:first-child{
+	margin-left: 0;
+}
+
+#descubre-botones ul li a:hover,
+#descubre-botones ul li.current_page_item a{
+	background-color: #C9C4C5;
+	box-shadow:inset 0px 2px 6px #888;
+}*/
+.responsive-slider.flexslider .slide-title a {
+	display: none;
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+	
+	.banos{background: url('images/ico-bath@2x.png') no-repeat; background-size: 33px 33px;}
+	.jardines{background: url('images/ico-tree@2x.png') no-repeat; background-size: 33px 33px;}
+	.musica{background: url('images/ico-music@2x.png') no-repeat; background-size: 33px 33px;}
+	.aire{background: url('images/ico-fan@2x.png') no-repeat; background-size: 33px 33px;}
+	.despertador{background: url('images/ico-clock@2x.png') no-repeat; background-size: 33px 33px;}
+	.servicio{background: url('images/ico-coverplates@2x.png') no-repeat; background-size: 33px 33px;}
+	.tv{background: url('images/ico-satellite@2x.png') no-repeat; background-size: 33px 33px;}
+	.wifi{background: url('images/ico-wifi@2x.png') no-repeat; background-size: 33px 33px;}
+	.escritorio{background: url('images/ico-desktop@2x.png') no-repeat; background-size: 33px 33px;}
+	.telefono{background: url('images/ico-phone@2x.png') no-repeat; background-size: 33px 33px;}
+	.cajafuerte{background: url('images/ico-safebox@2x.png') no-repeat; background-size: 33px 33px;}
+	.minibar{background: url('images/ico-minibar@2x.png') no-repeat; background-size: 33px 33px;}
+	.insonorizada{background: url('images/ico-soundproof@2x.png') no-repeat; background-size: 33px 33px;}
+	.natacion{background: url('images/ico-natacion@2x.png') no-repeat; background-size: 53px 53px;}
+	.pinpong{background: url('images/ico-ping-pong@2x.png') no-repeat; background-size: 53px 53px;}
+	.baloncesto{background: url('images/ico-basket@2x.png') no-repeat; background-size: 53px 53px;}
+	.sauna{background: url('images/ico-sauna@2x.png') no-repeat; background-size: 53px 53px;}
+	.masajes{background: url('images/ico-massage@2x.png') no-repeat; background-size: 53px 53px;}
+	.futbol{background: url('images/ico-football@2x.png') no-repeat; background-size: 53px 53px;}
+	.joggin{background: url('images/ico-jogging@2x.png') no-repeat; background-size: 53px 53px;}
+	.golf{background: url('images/ico-golf@2x.png') no-repeat; background-size: 53px 53px;}
+	.fitness{background: url('images/ico-fitness@2x.png') no-repeat; background-size: 53px 53px;}
+	#phone{background: url('images/ico-phone-footer@2x.png') no-repeat; background-position: 50% 30%; background-size: 49px 42px; }
+	#correo{background: url('images/ico-mail-footer@2x.png') no-repeat; background-position: 50% 30%; background-size: 47px 33px; }
+	#rss{background: url('images/ico-rss-footer@2x.png') no-repeat; background-position: 50% 30%; background-size: 42px 44px; }
+	#preguntas{background: url('images/ico-faq-footer@2x.png') no-repeat; background-position: 50% 30%; background-size: 23px 44px; }
+	#whatsapp{background: url('images/ico-whatsapp-footer@2x.png') no-repeat; background-position: 50% 30%; background-size: 50px 52px; }
+	#preguntanos{ background-image: url('images/ico-whatsapp-footer@2x.png') !important; background-size: 50px 52px; }
+	.descubre-botones a.descubre-head-btn{ background: #F2A01A url('images/arrow-right@2x.png') no-repeat 90% center; background-size: 24px; }
+}
+
+
+
+.page-id-928 .btn-download, .page-id-91 .btn-download,.page-id-82 .btn-download{
+	text-align: center;
+	min-width: 96.5%;
+}
+
+
+
+/*EMPRESAS*/
+
+.texto-full, .texto-eventos {
+    float: left;
+    width: 100%;
+}
+
+.espacios ul {
+    margin-bottom: 2em !important;
+    padding-left: 20px !important;
+	float:left;
+}
+
+.espacios ul.bloque{width:100%;}
+
+.slide a.btn-download[href=""]{display:none;}
+
+.page-id-91 .espacios+.espacios .texto-espacios{  width: 100%;}
+
+.oferta {
+	width:47.5%;
+	float:left;
+	margin-right:2.5%;
+}
+
+
+/*SERVICIOS*/
+
+.page-id-58 #post{
+	margin-top:10%;
+}
+
+
+/*SLIDES*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide{
+	width:100%!important;
+
+}
+
+.texto-espacios, .texto-catering {
+    float: right !important;
+    width: 38%;
+}
+
+/*POLITICA PRIVACIDAD*/
+
+.page-id-62 h2, .page-id-66 h2{margin-top:10%;}
+
+#idiomas{
+	width:5%;
+	font-size:1.5em;
+	float:right;
+	border:none;
+	-moz-appareance:none;
+	color:#777;
+	background-color:#fff;
+	box-shadow:none;
+	display:none;
+}
+
+
+
+
+
+.fixed-header #idiomas{display:inline-block;margin-top: 14px;}
+
+
+
+/*NUEVOS IDIOMAS (BANDERAS)*/
+
+aside#qtranslate-3 {
+    float: right;
+    position: relative;
+    z-index: 5;
+	margin-top: 1%;
+}
+
+ul#qtranslate-3-chooser {
+    float: left;
+    width: 100%;
+}
+
+aside#qtranslate-3 ul li {
+    float: left;
+    margin-left: 6px;
+}
+
+.qtrans_flag {
+    display: block;
+    height: 23px;
+    width: 23px;
+}
+
+.qtrans_flag span { display: none;}
+
+.qtrans_flag_es { background: url("http://www.hotelmilenio.com/wp-content/themes/twentytwelve/images/es.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);}
+
+.qtrans_flag_en { background: url("http://www.hotelmilenio.com/wp-content/themes/twentytwelve/images/uk.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);}
+
+.qtrans_flag_fr { background: url("http://www.hotelmilenio.com/wp-content/themes/twentytwelve/images/fr.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);}
+
+.qtrans_flag_nl { background: url("http://www.hotelmilenio.com/wp-content/themes/twentytwelve/images/ru.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);}
+
+#qtranslate-3-chooser li a{
+	background-size:100% 80%;
+	position:relative;
+	top:4px;
+}
+
+
+.fixed-header aside#qtranslate-3{display:none;}
+
+#tlf {
+   color: #FF9B39;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 1%;
+    margin-top: 1.2%;
+    width: auto;
+}
+
+
+
+/*------------------------------ESPACIOS------------------------*/
+
+#espacios{ margin-top: 5em; }
+
+#espacios #contenedor li{
+	width:30%;
+	height:auto;
+	float:left;
+	margin:1.5%;
+}
+
+#espacios #contenedor li img{
+	width:100%;
+	float:left;
+	height:auto;
+}
+
+/*GALERIA ESPACIOS*/
+
+#espacios #contenedor article.text li{ width:100%; }
+
+
+
+.page-template-page-templatesespacio-php #contenedor article.text{
+	width:48%;
+	float:left;
+}
+
+.page-template-page-templatesespacio-php #galeria {
+    float: left;
+    margin-top: 1.5%;
+    width: 50%;
+}
+
+.page-template-page-templatesespacio-php #galeria ul { float:left; }
+
+.page-template-page-templatesespacio-php #galeria ul li{
+	position:relative!important;
+	margin: 2.5%!important;
+}
+
+.page-template-page-templatesespacio-php #galeria ul li.destacada {
+    bottom: 0 !important;
+    height: auto!important;
+    top: 0 !important;
+    width: 100% !important;
+	margin:1.5% 0!important;
+}
+
+.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img{
+	max-height:87px;
+}
+
+.page-template-page-templatesespacio-php #espacios #contenedor #galeria .destacada img{ max-height:300px; }
+
+
+.page-template-page-templatesespacio-php #galeria ul li:nth-child(2),
+.page-template-page-templatesespacio-php #galeria ul li:nth-child(5),
+.page-template-page-templatesespacio-php #galeria ul li:nth-child(8) { margin-left:0!important;}
+
+.page-template-page-templatesespacio-php #galeria ul li:nth-child(4),
+.page-template-page-templatesespacio-php #galeria ul li:nth-child(7),
+.page-template-page-templatesespacio-php #galeria ul li:nth-child(10) { margin-right:0!important;} 
+
+
+.page-template-page-templatesespacio-php #contenedor > img{
+	width:100%;
+	height:auto;
+	float:left;
+}
+
+/*RESTAURANTE*/
+
+#slide-restaurante{
+	width:69.7%;
+	float:left;
+}
+
+#slide-restaurante img{width:100%!important;height:auto!important;}
+
+#botones-restaurante{
+	width:27%;
+	float:left;
+	margin-left:3%;
+}
+
+#botones-restaurante ul{margin-top:0!important;}
+
+#botones-restaurante .btn-download-catering {
+    margin-bottom: 5%;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+}
+
+#botones-restaurante .btn-download-catering a {
+    color: #FFFFFF;
+    font-size: .9em;
+}
+
+#btn-catering {
+    margin: 3% 0 2em !important;
+    margin-top: 0;
+}
+
+.page-id-1149 a.botonegro {
+    background-color: rgba(242, 160, 46, 0.9);
+    border-radius: 5px;
+    color: #FFFFFF !important;
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    margin-right: 2%;
+    padding: 0.8%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+/*------------------------------------------------------------------------------------ 1040px and 1650px --------------------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 1040px) and (max-width: 1650px) {
+	#reservas{
+		width: 96% !important;
+		max-width: 945px !important;
+	}
+}
+/*------------------------------------------------------------------------------------ 1024px --------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1024px) {
+	/*-------------------INDEX-----------------*/
+	#contenedor{
+		border: 0;
+	}
+	#mirai_be8{
+		font-size: 10px !important;
+	}
+	#slider {
+		min-height: 0 !important;
+	}
+	.sombra-boton {
+			height: 109px;
+			background: url('images/shadow-btn.png') no-repeat;
+			background-position: 50px 101px;
+			width: 20%;
+			float: left;
+	}
+
+	#aviso-legal{
+		width:98%;
+	}
+	
+/*-------GALERIA---------------*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 565px;}	
+
+.page-id-193  #uds-bb-0, .page-id-193  #uds-bb-0 *{ max-width:1000px; }
+
+}
+
+#pins-feed-follow{ display: none; }
+
+/*------------------------------------------------------------------------------------ 1017px --------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1017px) {
+#mirai_bookentrance form div#mirai_be7 { margin-right: 1%;}
+}
+
+
+/*------------------------------------------------------------------------------------ 960px ---------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 960px) {
+	/*-------------------INDEX-----------------*/
+	
+	#mirai_bookentrance form div#mirai_be7 {  margin-right: 0.8%;}
+
+	#menu-principal{
+		width: 80%;
+	}
+
+	.sombra-boton {
+			height: 109px;
+			background: url('images/shadow-btn.png') no-repeat;
+			background-position: 47px 101px;
+			width: 20%;
+			float: left;
+	}
+	
+	#aviso-legal{
+		width:98%;
+	}
+
+	/*--------------------BLOG----------------------*/
+	#blog article p {
+		width: 76%;
+	}
+	#form-boletin {
+		width: 64%;
+	}
+	
+/*-------GALERIA---------------*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 530px;}	
+
+.page-id-193  #uds-bb-0, .page-id-193  #uds-bb-0 *{ max-width:900px; }
+	
+	/*--------------------Galeria Espacios----------------------*/
+	.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img {
+    max-height: 82px;
+}
+
+}
+
+/*------------------------------------------------------------------------------------ 900px ---------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 900px) {
+	/*--------------------Galeria Espacios----------------------*/
+	.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img { max-height: 77px;}
+	
+	#botones-restaurante .btn-download-catering a {  font-size: .8em;}
+}	
+
+/*------------------------------------------------------------------------------------ 875px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 875px) {
+		
+	/*------------------------- INDEX -----------------------------------*/	
+
+#reservas h2, #mirai_bookentrance form div span {
+    font-size: 10px;
+    margin-top: 9px;
+}
+
+#mirai_bookentrance input.hasDatepicker {
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+#mirai_be7 input { font-size: 1em;}
+
+#mirai_be5 { line-height: 3.4em !important;}
+
+#mirai_bookentrance form div#mirai_be7 { margin-top: -0.2%;}
+
+	.prestaciones {
+		font-size: 1em;
+	}
+
+	.main-navigation li {
+		font-size: .8em !important;
+	}
+
+	#fixed-header .main-navigation li{
+		font-size: 13px !important;
+	}
+
+	#menu-principal{
+		margin-top: 2em;
+	}
+
+/*-------GALERIA---------------*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 480px;}
+
+.uds-bb-slide { background-position: center top !important;}
+
+.uds-bb-paginator.oldskool .uds-bb-position-indicator-bullets, .uds-bb-paginator.ubbv2 .uds-bb-position-indicator-bullets, .uds-bb-paginator.oldskool-bright .uds-bb-position-indicator-bullets {
+	right: 0!important;
+}
+
+	/*---------------------EVENTOS--------------------*/
+	
+.btn-download-catering {
+    height: 30px;
+    padding: 3% 2%;
+}
+	
+
+}
+/*------------------------------------------------------------------------------------ 800px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 800px) {
+	
+	/*------------------------- INDEX -----------------------------------*/		
+
+	#mirai_bookentrance input#mirai_be6{width:65px;}
+	
+	#correo .small { font-size: 0.9em; }
+
+	.titulo-excerpt {
+		width: 75%;
+	}
+
+	#aviso-legal{
+		width:98%;
+	}
+
+	/*----------------DESCUBRE-------------------*/
+	.deportes {
+		width: 94%;
+		border-right: none;
+		float: none;
+		margin: 0px auto;
+	}
+	.deportes-der {
+		float: none;
+		width: 94%;
+		margin: 0px auto;
+	}
+
+
+
+	/*-------------------BLOG-------------------*/
+	#blog article p {
+		width: 76%;
+	}
+	#texto-blog {
+		float: left;
+		width: 60%;
+		margin-left: 2%;
+	}
+
+/*-------GALERIA---------------*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 440px;}	
+
+.uds-bb-paginator.oldskool, .uds-bb-paginator.oldskool-bright, .uds-bb-paginator.silver, .uds-bb-paginator.ubbv2 { height: 92%!important;}
+
+	/*-------Galeria Espacios--------*/
+	.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img {
+    max-height: 68px;
+}
+
+#botones-restaurante .btn-download-catering a {  font-size: .7em;}
+
+}
+/*------------------------------------------------------------------------------------ 794px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 794px) {
+	
+	/*------------------------- INDEX -----------------------------------*/	
+
+	#mirai_bookentrance input#mirai_be6{width:60px;}
+
+	.texto-der {
+		margin-left: -37%;
+	}
+
+	#reservas{
+		height: 60px;
+	}
+
+	#m_book{
+		font-size: 1.2em;
+		background: #F2A01A !important;
+		font-family: 'Meta', sans-serif;
+		font-weight: bold;
+		color: white;
+		background-color: #F2A01A;
+		text-transform: uppercase;
+		color: white;
+		box-shadow: #333 0px 1px 1px;
+		text-shadow: #333 0px 1px 2px;
+		padding: 5px !important;
+		margin-left: 5%;
+	}
+	#reservas a#m_book{
+		background: #F2A01A !important;
+	}
+
+	#m_cancellation{
+		margin-top: 7px !important;
+		margin-left: 1%;
+		background: none !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
+}
+	/*------------------------------------------------------------------------------------ 768px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+		
+	/*------------------------- INDEX -----------------------------------*/	
+	
+	#mirai_bookentrance form div#mirai_be7 {
+    	margin-right: 1.5%;
+		margin-top: 0.2%;
+}
+
+#mirai_be7 input {
+    font-size: 0.8em;
+}
+	
+	.texto-der {
+		margin-left: -37%;
+	}
+	#form-boletin .sombra {
+		width: 29%;
+	}
+	
+/*-------GALERIA---------------*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 420px;}	
+
+.page-id-900 #uds-bb-0{ height: 321px!important;}
+
+.uds-bb-thumbnails.bottom { bottom: -70px;}
+
+
+/*CONTACTO EVENTOS*/
+
+div.wpcf7-validation-errors { margin-top: 19%;}
+
+.txt-evento #wpcf7-f987-p900-o1, .txt-evento #wpcf7-f987-p900-o1 form {  height: 470px;}
+
+}
+/*------------------------------------------------------------------------------------ 766px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 766px) {
+		
+	/*------------------------- INDEX -----------------------------------*/	
+	#enlaces-seo{
+		display:none;
+	}
+	
+	#logo-pie{
+		text-align: center;
+	}
+
+	/*#logo-pie img{ float: none; }*/
+	.texto-der {
+	margin-left: -40%;
+	}
+
+}
+/*------------------------------------------------------------------------------------ 749px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 749px) {
+	
+	/*------------------------- INDEX -----------------------------------*/	
+	
+	#mirai_bookentrance form div#mirai_be7 { margin-right: 0.7%;}
+	
+	#main-header{
+		height: 100px;
+	}
+
+	.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		display: none !important;
+	}
+	
+	#idiomas {
+	    margin-left: 5%;
+	    margin-top: 6%;
+	    width: 10%;
+}
+
+	#menu-principal{
+		width: 60%;
+	}
+
+	.responsiveSelectContainer select.responsiveMenuSelect, select.responsiveMenuSelect {
+		font: 1.3em 'Meta', sans-serif;
+		padding: 0.5em;
+		height: 2.5em;
+		width: 95%;
+		-webkit-appearance: listbox;
+		border: 1px solid #d9d9d9;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		outline: none;
+		line-height: 18px;
+		background: #fcfcff;
+		background: #fcfcff url('images/select-arrow.png') no-repeat 96% center;
+		display: block !important;
+		float: right;
+	}	
+
+	#fixed-header #menu-principal{
+		width: 63%;
+		float: right;
+		padding-top: .5em;
+	}
+
+	#fixed-header .responsiveMenuSelect{
+		padding: .1em 2%;
+		font-size: 1em;
+	}
+
+	.texto-der {
+		width: 463px;
+		margin-left: -55% ;
+	}
+
+	.texto-izq {
+		width: 463px;
+	}
+
+/*-------GALERIA---------------*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 410px;}
+	
+}
+
+
+/*------------------------------------------------------------------------------------ 700px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 700px) {
+#botones-restaurante .btn-download-catering a {  font-size: .6em;}
+
+}
+
+/*------------------------------------------------------------------------------------ 640px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 640px) {
+	
+	
+	/*------------------------- INDEX -----------------------------------*/	
+
+#main-header { height: 123px;}
+
+#reservas, #mirai_bookentrance, #mirai_bookentrance form, #mirai_bookentrance form #mirai_be0 { height: 90px;}
+
+#reservas h2, #mirai_bookentrance form div span {
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+#mirai_bookentrance input.hasDatepicker {
+    font-size: 11px;
+    margin-right: 5%;
+    padding: 5px 10px;
+	  width: 15%;
+}
+
+#mirai_be5 {
+    line-height: 2.2em !important;
+    margin-left: 4%;
+}
+
+#mirai_be7 input {
+    font-size: 1.3em;
+    margin-top: 4%;
+    width: 100%;
+}
+
+#mirai_bookentrance form div#mirai_be7 {
+    margin-right: 18.7%;
+    width: 50%;
+}
+
+#mirai_be8 {
+    font-size: 16px !important;
+    margin-top: 15px !important;
+}
+		
+			
+	#enlaces-pie div {
+		width: 32%;
+	}
+	
+	#phone{	width: 49% !important; float:left;}
+
+	#correo{ width: 49% !important; float:left;}
+
+	.main-navigation li {margin: 0 3% 0 0;}
+
+	.main-navigation li a { font-size: 1em;}
+
+
+	.main-navigation li {
+	margin: 0 0 0 0;
+	}
+
+	#form-boletin {
+		width: 66%;
+		 right: -39px;
+	}
+	
+
+	#boletin img {
+	    width: 160px;
+	}
+
+	#form-boletin .sombra {
+		background-position: -2px 40px;
+		height: 50px;
+	}
+	#logo-pie p {
+		font-size: 1.8em;
+	}
+
+	/*----------------BLOG-----------------*/
+	.titulo-excerpt {
+		width: 70%;
+	}
+
+	#blog article p {
+		width: 71%;
+	}
+	/*-----------------DESCUBRE----------------------*/
+	
+	ul.prestaciones li.insonorizada{
+		font-size: 0.9em;
+	}
+	.prestaciones {
+	font-size: 0.85em;
+	}
+	
+	.slide { width: 100%;}
+	
+	.texto-espacios, .texto-catering { width: 100%;}
+	
+	
+	/*EVENTO*/
+	
+	.btn-download-catering {padding-top:1%;}
+	
+	/*-----------------HABITACIONES-------------------*/
+	/*h2 {
+	font-size: 2.8em;
+	font-weight: normal;
+	color: #555555;
+	line-height: 20px;
+	}*/
+	h2 {
+	font-size: 2.2em;
+	}
+	ul.habitaciones a{
+		color:#555555;
+		padding-top: ;
+		text-decoration: none;
+	}
+	ul.habitaciones a span{
+		padding-left: 10px;
+		padding-top:9px;
+	}
+	ul.habitaciones a {
+		width: 100%;
+		list-style: none;
+		text-decoration: none;
+		margin: 0px;
+		list-style-type: none;
+		font-family: Meta, sans-serif;
+		font-size: 1em;
+		background-color: #F3F3F3;
+		height: 44px;
+		margin-top: 2%;
+		display: block;
+	}
+	#imagen-habitacion {
+		width: 99%;
+		float: none;
+		margin: 0px auto;
+		margin-left: -2px;
+	}
+	#caracteristicas-habitacion {
+		width: 100%;
+		float: none;
+		margin-left: 3%;
+	}
+
+	#columna-habitaciones-izq p{
+		font-family: Meta, sans-serif;
+		font-size: 1.1em;
+	}
+	#columna-habitaciones-der h3{
+		font-size: 1.1em;
+
+		font-family: Meta, sans-serif;
+		font-weight: normal;
+	}
+	.prestaciones{
+		width:50%;
+		float: left;
+		font-family: Meta, sans-serif;
+		font-size: 1.2em;
+	}
+
+
+	ul.prestaciones li.insonorizada{
+		font-size: 0.9em;
+
+	}
+
+	.titulo-excerpt {
+		width: 61%;
+	}
+	/*-----------------PROMOCIONES----------------------*/
+
+	#offersHs{
+		padding: 0 !important;
+	}
+	#offersHs .rowOffers { 
+		width: 90% !important;
+		padding: 5% !important;
+		overflow: hidden !important;
+	}
+
+	#offersHs .contents{
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	#offersHs .contents h2{
+		width: 100%;
+	}
+
+	#offersHs .photo {
+		margin: 2em auto !important;
+		position: static !important;
+		overflow: hidden !important;
+		position: static !important;
+	}
+
+	#offersHs .photo .photoText{
+		position: static !important;
+	}
+
+	.wrapperForm{
+		margin: 0 auto !important;
+	}
+
+	#offersHs ul{
+		padding-left: 5% !important;
+	}
+
+	#offersHs .offer_calendar{
+		position: static !important;
+	}
+
+	/*-----------------OPINIONES----------------------*/
+
+	#xdhsReviewSummaryContent-XdHs, div.hssurveys_full, .hssurveys_full div {
+	    margin-left: -1%;
+	    width: 94%;
+	}
+
+	div.hssurveys_full .comments p.commentsPerson span.date { margin-right: 8%;}
+
+	div.hssurveys_full p.more a {  margin-right: 4%;}
+	
+	/*---------------------EVENTOS---------------------*/
+	
+	.bloques{
+		margin-bottom: 0;
+	}
+
+	.descubre-botones{
+		float:none;
+		width: 100%;
+		margin-left: 0 !important;
+		overflow: hidden;
+		margin-bottom: 2em;
+	}
+	
+	.slide {  margin-bottom: 5%;}
+	
+	.oferta {
+    margin-right: 0;
+    width: 100%;
+}
+
+	#faq, #contacto-eventos{ width:99%; }
+
+
+
+/*------GALERêA-----------*/
+
+.slide {  margin-bottom: 12%;}
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 580px;}
+
+.uds-bb-paginator.oldskool, .uds-bb-paginator.oldskool-bright, .uds-bb-paginator.silver, .uds-bb-paginator.ubbv2 { height: 115% !important;}
+
+
+/*EVENTOS*/
+
+.uds-bb-thumbnails.bottom { bottom: -140px !important;}
+
+.page-id-900 .uds-bb-paginator.oldskool,.page-id-900 .uds-bb-paginator.oldskool-bright,.page-id-900 .uds-bb-paginator.silver,.page-id-900 .uds-bb-paginator.ubbv2 { height: 127% !important;}
+
+.page-id-900 .espacios img {
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+	/*-------Galeria Espacios--------*/
+	.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img {
+    max-height: 68px;
+}	
+
+/*resturante*/
+#slide-restaurante, #botones-restaurante {
+    float: left;
+    width: 100%;
+}
+
+#botones-restaurante {
+    margin-left: 0;
+    margin-top: 5%;
+}
+
+#botones-restaurante  ul{margin-bottom:0!important;}
+
+#botones-restaurante .btn-download-catering a {
+    font-size: 1em;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+}
+
+
+/*------------------------------------------------------------------------------------ 550px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 550px) {
+	
+
+#main-header {
+    height: 185px;
+}
+
+#idiomas {
+    margin-top: -14%;
+	width:13%;
+}
+	
+#reservas h2, #mirai_bookentrance form div span {
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+#mirai_be5 {
+    line-height: 1.5em !important;
+    margin-left: 2%;
+    width: 5%;
+}
+
+
+#mirai_bookentrance input#mirai_be6 {
+    margin-left: 14% !important;
+    width: 60px;
+}
+
+
+#mirai_bookentrance form div#mirai_be7 {
+    font-size: 12px;
+    margin-right: 13.7%;
+    width: 43%;
+}
+	
+	.contenedor-all {
+		width: 88%;
+		padding: 0 6%;
+	}
+	#main-header{
+		height:	168px;
+	}
+
+	#logo {
+		width: 121px;
+		margin: 20px auto;
+		float: none;
+	}
+	#menu-principal{
+		width: 100%;
+		margin-top: 0;
+	}
+	.responsiveMenuSelect{
+		margin-bottom: 0 !important;
+		width: 100% !important;
+	}
+
+	#reservas{
+		margin-top: 20px;
+	}
+
+	div.reservas-op{
+		top: 50px !important;
+		width: 84% !important;
+	}
+
+	#mirai_be0{
+		height: 60px !important;
+	}
+
+	#secciones-home article {
+		width: 100%;
+		float: none;
+		margin:0px auto;
+	}
+	
+	#slider{
+		display: none;
+	}
+
+	#preguntanos {
+	    background-color: #f1f1f1;
+		background-image: url("images/ico-whatsapp-footer.png");
+		background-position: 18px center;
+		background-repeat: no-repeat;
+		border: 1px solid #c1c1c1;
+		color: #FF9B39;
+		display: inline-block;
+		font-size: 2.2em;
+		padding: 1em 0 1em 20%;
+		width: 77%;
+		border-radius: 10px;
+		margin: 4em 0 1em 0;
+		box-shadow: 0px 0px 2px #c1c1c1, inset 0px 2px 1px #fff;
+		text-align: center;
+	}
+
+	#secciones-home article img{width:100%; height:auto;}
+
+	#mapa-home {
+		width: 100%;
+		float: none;
+		margin: 0px auto;
+	}
+	#descripcion-mapa {
+		width: 100%;
+		margin-left: 0%;
+		float: none;
+		margin: 0px auto;
+	}
+
+	#form-boletin {
+		width: 90%;
+		position: static;
+		float: none;
+		margin: 0 auto;
+	}
+
+	#form-boletin input[type="submit"]{
+		width: 100%;
+		font-size: 1.3em !important;
+	}
+
+	#boletin img {
+	    width: 190px;
+	    margin: 1em auto;
+	    float: none;
+	    display: block;
+	}
+	#texto-contacto {
+		width: 100%;
+		float: none;
+	}
+	#mapa {
+		width: 100%;
+		float: none;
+		margin: 2em 0 !important;
+	}
+	
+	
+	/*DESCUBRE*/
+	#mi-evento a {
+    margin-left: 0;
+    margin-right: 5%;
+    width: 45%;
+}
+
+.espacios img {  width: 100%;margin-bottom: 5%;}
+
+/*GALERIA*/
+
+.slide { margin-bottom: 4%;}
+
+.uds-bb-paginator.oldskool, .uds-bb-paginator.oldskool-bright, .uds-bb-paginator.silver, .uds-bb-paginator.ubbv2 { height: 100% !important;}
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 465px;}
+
+
+.uds-bb-button{top: 148px!important;}
+
+/*EVENTOS*/
+
+.uds-bb-thumbnails.bottom { bottom: -90px !important;}
+
+.page-id-900 .uds-bb-paginator.oldskool,.page-id-900 .uds-bb-paginator.oldskool-bright,.page-id-900 .uds-bb-paginator.silver,.page-id-900 .uds-bb-paginator.ubbv2 { height: 105% !important;}
+
+.page-id-900 .espacios img {
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.btn-download { margin: -2em 0 0;}
+
+.txt-evento{width:100%;}
+
+.btn-download-catering{
+	width:100%;
+	padding:3% 0;
+	margin:2% 0;
+	height:auto;
+}	
+
+	/*-------Galeria Espacios--------*/
+	.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img {
+    max-height: 46px;
+}
+
+#qualidad {
+    float: right;
+    height: auto;
+    margin-left: 9%;
+    margin-top: -1%;
+    width: 23%;
+}
+	
+}
+
+/*------------------------------------------------------------------------------------ VERTICAL 480px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 480px) {
+	
+	#form-boletin {
+		padding: 2em 5%;
+	}
+
+	#form-boletin .sombra{
+		background: none;
+		width: 38%;
+		float: left;
+		font-size: 1em !important;
+	}
+	
+	#menu-principal { margin-top: 5%;}
+	
+	/*------------------------- INDEX -----------------------------------*/	
+	
+	.sombra-boton{
+		background:none;
+		height: 100%;
+
+	}
+	
+	.leer-mas {
+	    margin-top: 0;
+	}
+
+
+	#logo-pie p {
+	font-size: 1.3em;
+	}
+
+	#form-boletin p {
+	    margin-bottom: 1%;
+	}
+
+	#form-boletin .sombra {background-position: 16px 40px;}
+
+	#form-boletin input[type="text"] {  width: 53%;}
+
+	/*.tit-pie {
+	font-size: 1.1em;
+	font-family: Meta, sans-serif;
+	color: #ADADAD;
+	}
+	.tit-pie2 {
+	font-size: 1.1em;
+	font-family: Meta, sans-serif;
+	color: #ADADAD;
+	}
+	.small {
+	font-size: 0.8em;
+	font-family: Meta, sans-serif;
+	color: #ADADAD;
+	}*/
+
+	#correo{
+		border: none !important;
+	}
+
+	/*-----------------DESCUBRE----------------------*/
+	
+	.deportes ul li{
+		
+	}
+	
+
+
+	/*-------------------BLOG-------------------*/
+	#blog article p {
+		width: 60%;
+	}
+
+	/*----------------CONTACTO------------------*/
+	#contacto-izq, #contacto-der{
+		width: 100%;
+	}
+	
+
+/*GALERIA*/
+
+.slide { margin-bottom: 0px;}
+
+.uds-bb-paginator.oldskool, .uds-bb-paginator.oldskool-bright, .uds-bb-paginator.silver, .uds-bb-paginator.ubbv2 { height: 88% !important;}
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide {  max-width: 400px;}
+
+.uds-bb-button { top: 110px !important;}
+
+/*EVENTOS*/
+
+.uds-bb-thumbnails.bottom { bottom: -30px !important;}
+
+.page-id-900 .uds-bb-paginator.oldskool,.page-id-900 .uds-bb-paginator.oldskool-bright,.page-id-900 .uds-bb-paginator.silver,.page-id-900 .uds-bb-paginator.ubbv2 { height: 92% !important;}
+
+.btn-download {  margin: -5.2em 0 0;}
+
+.txt-evento #wpcf7-f987-p900-o1, .txt-evento #wpcf7-f987-p900-o1 form {
+    height: 615px;
+}
+
+	/*-------Galeria Espacios--------*/
+.page-template-page-templatesespacio-php #contenedor article.text {
+    float: left;
+    width: 100%;
+}	
+
+.page-template-page-templatesespacio-php #galeria {
+    float: left;
+    margin-top: 1.5%;
+    width: 97%;
+}
+
+.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img {
+    max-height: 78px;
+}
+
+#qualidad {
+    float: right;
+    height: auto;
+    margin-left: 9%;
+    margin-top: -1%;
+    width: 20%;
+}
+/*restaurante*/
+
+.page-id-1149 a.botonegro {
+    padding: 3% 0;
+    width: 100%;
+}
+	
+}	
+	
+	
+	
+
+/*------------------------------------------------------------------------------------ VERTICAL 320px --------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 320px) {
+	
+	/*------------------------- INDEX -----------------------------------*/	
+	.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		display: none !important;
+	}
+	
+	#fixed-header .responsiveMenuSelect {  margin-right: -8%;}
+	
+	aside#qtranslate-3 {
+    float: right;
+    margin-bottom: 2%;
+    margin-right: 27%;
+    margin-top: 0;
+    position: relative;
+    z-index: 5;
+}
+	
+	#idiomas {
+    margin-top: -23%;
+    width: 18%;
+}
+
+body.home #contenido-medio{ margin-top: 11em !important;}
+
+#contenido-medio{ margin-top: 17em !important;}
+	.sombra-boton{
+		background:none;
+		height: 100%;
+	}
+	
+	#form-boletin {  height: 110px;}
+
+	#boletin img {
+	    float: none;
+	    margin-left: 25%;
+	    margin-top: 13px;
+	    width: 50%;
+	}
+	
+	#form-boletin input[type="text"] {
+  	  width: 95%;
+	     margin-bottom: 5%;
+	}
+	
+	#form-boletin input[type="submit"] { width: 102%;}
+
+	#form-boletin .sombra {
+    margin-left: 0;
+    width: 98%;
+}
+
+	.leer-mas {
+	    margin-top: 0;
+	}
+
+	#logo-pie p {
+	    color: #555555;
+	    float: right;
+	    font-family: Meta,sans-serif;
+	    font-size: 1.4em;
+	    font-weight: normal;
+	    margin-right: 6px;
+	    text-shadow: 1px 1px 1px #FFFFFF;
+	}
+
+	/*-----------------DESCUBRE----------------------*/
+	
+	#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage{height:210px!important;}
+	
+	.uds-bb-slide{background-position:center top!important;}
+	
+	.uds-bb-button{top: 73px!important;}
+	
+	.uds-bb-position-indicator-bullets{display:none;}
+	
+	.btn-download-catering {
+    margin: 5% 0;
+    padding: 5% 0;
+}
+	
+	/*-----------------HABITACIONES-------------------*/
+	/*h2 {
+	font-size: 2.8em;
+	font-weight: normal;
+	color: #555555;
+	line-height: 20px;
+	}*/
+	h2 {
+	font-size: 2.2em;
+	}
+	ul.habitaciones a{
+		color:#555555;
+		padding-top: ;
+		text-decoration: none;
+	}
+	ul.habitaciones a span{
+		padding-left: 10px;
+		padding-top:9px;
+	}
+	ul.habitaciones a {
+		width: 100%;
+		list-style: none;
+		text-decoration: none;
+		margin: 0px;
+		list-style-type: none;
+		font-family: Meta, sans-serif;
+		font-size: 1em;
+		background-color: #F3F3F3;
+		height: 44px;
+		margin-top: 2%;
+		display: block;
+	}
+	#imagen-habitacion {
+		width: 99%;
+		float: none;
+		margin: 0px auto;
+		margin-left: -2px;
+	}
+	#caracteristicas-habitacion {
+		width: 100%;
+		float: none;
+		margin-left: 3%;
+	}
+
+	#columna-habitaciones-izq p{
+		font-family: Meta, sans-serif;
+		font-size: 1.1em;
+	}
+	#columna-habitaciones-der h3{
+		font-size: 1.1em;
+
+		font-family: Meta, sans-serif;
+		font-weight: normal;
+	}
+	.prestaciones{
+		width:50%;
+		float: left;
+		font-family: Meta, sans-serif;
+		font-size: 0.7em;
+	}
+
+
+	ul.prestaciones li.insonorizada{
+		font-size: 0.9em;
+
+	}
+
+	.titulo-excerpt {
+		width: 61%;
+	}
+
+	
+	#texto-contacto {
+		width: 100%;
+		float: none;
+	}
+	#mapa {
+		width: 100%;
+		float: none;
+		height: 375px !important;
+	}
+	
+	#correo{border: none !important;}
+	
+/*-----------GALERêA---------*/
+
+#uds-bb-0, .uds-bb-controls, .uds-bb-slides, .uds-stage, .uds-bb-slide { max-width: 265px;}
+
+.uds-bb-paginator.ubbv2 .uds-bb-button.uds-bb-prev { left: 0!important;}	
+
+.uds-bb-paginator.ubbv2 .uds-bb-button.uds-bb-next { right:0!important;}
+
+/*EVENTOS*/
+
+.uds-bb-thumbnails.bottom {  display: none;}
+
+.page-id-900 #uds-bb-0 { 
+	height: 165px !important;
+	margin-bottom: 30px !important;
+}
+
+.btn-download {
+    margin: 0 0 10%;
+    width: 100%;
+}
+
+	/*-------Galeria Espacios--------*/
+.page-template-page-templatesespacio-php #espacios #contenedor #galeria li img {
+    max-height: 51px;
+}
+
+
+h2 { font-size: 2.4em;}
+
+#qualidad {
+    float: right;
+    height: auto;
+    margin-bottom: 4%;
+    margin-left: 9%;
+    margin-right: 22% !important;
+    margin-top: -1%;
+    width: 49%;
+}
+
+}
+
+
+/*-----------------*/
+
+.uds-bb-description.uds-transparent, .uds-bb-description.uds-undefined{
+    left: 475px !important;
+    top: 180px !important;
+    width: 50% !important;
+	background:none!important;
+}
+
+.uds-bright .uds-bb-description.uds-transparent, .uds-dark .uds-bb-description.uds-transparent, .uds-undefined .uds-bb-description-inside p {
+    color: #FFFFFF!important;
+    font-size: 4em !important;
+    text-align: right;
+    text-shadow: none;
+	text-shadow: 2px 2px 3px #000!important;
+	line-height: 40px !important;
+}
+
+.page-template-page-templatesgastronomia-php .espacios #container, .page-id-1118 .espacios #container, .page-template-page-templateshabitaciones-php #container {
+    width: 95%;
+}
+#container {
+    background-color: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    overflow: hidden;
+    padding: 2em 2%;
+    width: 96%;
+}
+#container {
+    margin: 0 auto;
+}
+
+.page-id-189 #container{ width: 95.8%;}
+
+.page-id-901 .mid-width section, .page-id-189 .mid-width section{ margin-top:7%; }
+
+
+
+#post-143{font-size:14px;} 
